@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://qfb4y8yvxqxm"]
+
+[ext_resource type="Texture2D" uid="uid://ka8111r0wioc" path="res://escritorio.jpg" id="1_7ihep"]
+
+[node name="SalaEscritorio" type="Control" unique_id=2127862707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1491837093]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -69.0
+offset_right = 1405.0
+offset_bottom = 705.0
+texture = ExtResource("1_7ihep")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BotaoPC" type="Button" parent="." unique_id=1454272482]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 94.0
+offset_right = 555.0
+offset_bottom = 595.0
+flat = true
+
+[node name="BotaoCelular" type="Button" parent="." unique_id=147603738]
+layout_mode = 0
+offset_left = 646.9454
+offset_top = 372.987
+offset_right = 772.98334
+offset_bottom = 532.21155
+rotation = 0.3944444
+flat = true
