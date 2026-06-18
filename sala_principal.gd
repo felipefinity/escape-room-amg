@@ -27,4 +27,6 @@ func _on_button_pressed():
 	# Se deu tudo certo, mostramos no console
 	print("O time ", nome_do_time, " está pronto para começar o Escape Room!")
 	
+	get_tree().change_scene_to_file("res://sala_escritorio.tscn")
+	
 	# Futuramente, colocaremos aqui a lógica para salvar esse nome e abrir a sala do escritório.

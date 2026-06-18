@@ -1,6 +1,26 @@
 [gd_scene format=3 uid="uid://qfb4y8yvxqxm"]
 
 [ext_resource type="Texture2D" uid="uid://ka8111r0wioc" path="res://escritorio.jpg" id="1_7ihep"]
+[ext_resource type="Script" uid="uid://cchwlvfr4bt1x" path="res://sala_escritorio.gd" id="1_8b26b"]
+[ext_resource type="Texture2D" uid="uid://cae5e7koph4fb" path="res://user.webp" id="2_6q6if"]
+[ext_resource type="Texture2D" uid="uid://bytxwjoxydkqn" path="res://notbook.png" id="2_yukba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b26b"]
+bg_color = Color(1, 1, 1, 0.19607843)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv8jf"]
+bg_color = Color(1, 1, 1, 0.39215687)
 
 [node name="SalaEscritorio" type="Control" unique_id=2127862707]
 layout_mode = 3
@@ -9,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8b26b")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1491837093]
 layout_mode = 0
@@ -26,6 +47,7 @@ offset_left = 120.0
 offset_top = 94.0
 offset_right = 555.0
 offset_bottom = 595.0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="BotaoCelular" type="Button" parent="." unique_id=147603738]
@@ -35,4 +57,61 @@ offset_top = 372.987
 offset_right = 772.98334
 offset_bottom = 532.21155
 rotation = 0.3944444
+mouse_default_cursor_shape = 2
 flat = true
+
+[node name="PopupPC" type="ColorRect" parent="." unique_id=590835551]
+visible = false
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="FundoTela" type="ColorRect" parent="PopupPC" unique_id=2101455956]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 35.0
+offset_right = 1024.0
+offset_bottom = 478.0
+color = Color(0, 0.3529412, 0.61960787, 1)
+
+[node name="SenhaPC" type="LineEdit" parent="PopupPC/FundoTela" unique_id=370612955]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 238.0
+offset_right = 664.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.7529412)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q6if")
+placeholder_text = "Digite a senha:"
+
+[node name="EntrarPC" type="Button" parent="PopupPC/FundoTela" unique_id=1570191839]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 327.0
+offset_right = 525.0
+offset_bottom = 374.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b26b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yv8jf")
+text = "Entrar"
+
+[node name="IconUser" type="TextureRect" parent="PopupPC/FundoTela" unique_id=1617406170]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 47.0
+offset_right = 590.0
+offset_bottom = 207.0
+texture = ExtResource("2_6q6if")
+expand_mode = 1
+
+[node name="MonitorUI" type="TextureRect" parent="PopupPC" unique_id=1967727813]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -158.0
+offset_right = 1184.0
+offset_bottom = 781.0
+texture = ExtResource("2_yukba")
+expand_mode = 1
+
+[connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
