@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cchwlvfr4bt1x" path="res://sala_escritorio.gd" id="1_8b26b"]
 [ext_resource type="Texture2D" uid="uid://cae5e7koph4fb" path="res://user.webp" id="2_6q6if"]
 [ext_resource type="Texture2D" uid="uid://bytxwjoxydkqn" path="res://notbook.png" id="2_yukba"]
+[ext_resource type="Texture2D" uid="uid://dck6rc7kpgvdk" path="res://fundophone.jpg" id="5_dklfc"]
+[ext_resource type="Texture2D" uid="uid://b323ym0332xt0" path="res://iphone6.png" id="6_sgto0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -22,6 +24,35 @@ border_width_bottom = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv8jf"]
 bg_color = Color(1, 1, 1, 0.39215687)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dklfc"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgto0"]
+bg_color = Color(0.9732714, 0.1387926, 0.19965008, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
+bg_color = Color(0.6, 0.6, 0.59607846, 0.29411766)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho6ja"]
+bg_color = Color(0.6, 0.6, 0.6, 0.78431374)
+
 [node name="SalaEscritorio" type="Control" unique_id=2127862707]
 layout_mode = 3
 anchors_preset = 15
@@ -34,9 +65,9 @@ script = ExtResource("1_8b26b")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1491837093]
 layout_mode = 0
 offset_left = -8.0
-offset_top = -69.0
+offset_top = -58.0
 offset_right = 1405.0
-offset_bottom = 705.0
+offset_bottom = 716.0
 texture = ExtResource("1_7ihep")
 expand_mode = 1
 stretch_mode = 4
@@ -52,10 +83,10 @@ flat = true
 
 [node name="BotaoCelular" type="Button" parent="." unique_id=147603738]
 layout_mode = 0
-offset_left = 646.9454
-offset_top = 372.987
-offset_right = 772.98334
-offset_bottom = 532.21155
+offset_left = 647.69666
+offset_top = 376.74353
+offset_right = 771.5974
+offset_bottom = 545.44305
 rotation = 0.3944444
 mouse_default_cursor_shape = 2
 flat = true
@@ -109,9 +140,178 @@ expand_mode = 1
 layout_mode = 0
 offset_left = -30.0
 offset_top = -158.0
-offset_right = 1184.0
-offset_bottom = 781.0
+offset_right = 1180.0
+offset_bottom = 775.0
 texture = ExtResource("2_yukba")
 expand_mode = 1
 
+[node name="BotaoFecharPC" type="Button" parent="PopupPC/MonitorUI" unique_id=1040764459]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 209.0
+offset_right = 1039.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sgto0")
+text = "X"
+
+[node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="FundoCelular" type="TextureRect" parent="PopupCelular" unique_id=910940579]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 86.0
+offset_right = 754.0
+offset_bottom = 590.0
+texture = ExtResource("5_dklfc")
+expand_mode = 1
+
+[node name="CelularUI" type="TextureRect" parent="PopupCelular" unique_id=1034048943]
+layout_mode = 0
+offset_left = 130.0
+offset_top = -72.0
+offset_right = 1048.0
+offset_bottom = 730.0
+texture = ExtResource("6_sgto0")
+expand_mode = 1
+
+[node name="LineEdit" type="LineEdit" parent="PopupCelular/CelularUI" unique_id=2083258369]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 210.0
+offset_right = 585.0
+offset_bottom = 259.0
+placeholder_text = "PIN"
+alignment = 1
+max_length = 4
+
+[node name="BotaoFecharCel" type="Button" parent="PopupCelular/CelularUI" unique_id=1911492446]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 76.0
+offset_right = 1019.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sgto0")
+text = "X"
+
+[node name="GridContainer" type="GridContainer" parent="PopupCelular/CelularUI" unique_id=2006729914]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 289.0
+offset_right = 568.0
+offset_bottom = 585.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="1" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=8009001]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "1"
+
+[node name="2" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=273041014]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "2"
+
+[node name="3" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=161407241]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "3"
+
+[node name="4" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=489223341]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "4"
+
+[node name="5" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=499828405]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "5"
+
+[node name="6" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1935675360]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "6"
+
+[node name="7" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1397957443]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "7"
+
+[node name="8" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=134241797]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "8"
+
+[node name="9" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=820092418]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "9"
+
+[node name="espaco-vazio" type="Control" parent="PopupCelular/CelularUI/GridContainer" unique_id=2007456805]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="0" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1218376688]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "0"
+
+[node name="espaco-vazio1" type="Control" parent="PopupCelular/CelularUI/GridContainer" unique_id=981841401]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
+[connection signal="pressed" from="BotaoCelular" to="." method="_on_botao_celular_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
