@@ -2,6 +2,7 @@ extends Control
 
 @onready var input_pin = $PopupCelular/CelularUI/LineEdit
 @onready var teclado = $PopupCelular/CelularUI/GridContainer
+@onready var mensagem_pin = $PopupCelular/CelularUI/MensagemPIN
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -38,10 +39,23 @@ func _on_botao_numero_pressed(numero_digitado: String):
 		validar_pin()
 
 func validar_pin():
-	if input_pin.text == "1638": # Coloque a senha que os jogadores deverão achar
-		print("Celular Desbloqueado! Senha Correta.")
-		# Futuramente: Esconder teclado e mostrar a tela de sucesso/apps
+	if input_pin.text == "1234": 
+		# Feedback de Sucesso
+		mensagem_pin.text = "DESBLOQUEADO"
+		mensagem_pin.modulate = Color.GREEN # Muda a cor do texto para verde
+		
+		# Opcional: Aqui também colocaremos um delay pequeno antes de 
+		# sumir com essa tela e mostrar a tela dos apps/dicas do celular
+		
 	else:
-		print("Senha Incorreta!")
-		# Limpa o input para o jogador tentar novamente
-		input_pin.text = ""
+		# Feedback de Erro
+		mensagem_pin.text = "PIN INCORRETO"
+		mensagem_pin.modulate = Color.RED # Muda a cor do texto para vermelho
+		
+		# O Timer que já havíamos colocado
+		await get_tree().create_timer(2).timeout 
+		
+		# Limpa o input e volta a mensagem para o estado original
+		input_pin.text = "" 
+		mensagem_pin.text = "Aguardando PIN..."
+		mensagem_pin.modulate = Color.WHITE # Volta para a cor branca original

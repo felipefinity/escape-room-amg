@@ -25,21 +25,14 @@ border_width_bottom = 2
 bg_color = Color(1, 1, 1, 0.39215687)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dklfc"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(1, 0, 0, 0.78431374)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgto0"]
-bg_color = Color(0.9732714, 0.1387926, 0.19965008, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
-bg_color = Color(0.6, 0.6, 0.59607846, 0.29411766)
+bg_color = Color(0.6, 0.6, 0.59607846, 0.39215687)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -49,9 +42,6 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho6ja"]
-bg_color = Color(0.6, 0.6, 0.6, 0.78431374)
 
 [node name="SalaEscritorio" type="Control" unique_id=2127862707]
 layout_mode = 3
@@ -123,6 +113,7 @@ offset_left = 326.0
 offset_top = 327.0
 offset_right = 525.0
 offset_bottom = 374.0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8b26b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yv8jf")
 text = "Entrar"
@@ -151,9 +142,10 @@ offset_left = 977.0
 offset_top = 209.0
 offset_right = 1039.0
 offset_bottom = 252.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sgto0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
@@ -183,12 +175,23 @@ expand_mode = 1
 [node name="LineEdit" type="LineEdit" parent="PopupCelular/CelularUI" unique_id=2083258369]
 layout_mode = 0
 offset_left = 353.0
-offset_top = 210.0
+offset_top = 191.0
 offset_right = 585.0
-offset_bottom = 259.0
+offset_bottom = 240.0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/caret_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
 placeholder_text = "PIN"
 alignment = 1
 max_length = 4
+editable = false
+secret = true
 
 [node name="BotaoFecharCel" type="Button" parent="PopupCelular/CelularUI" unique_id=1911492446]
 layout_mode = 0
@@ -196,9 +199,10 @@ offset_left = 964.0
 offset_top = 76.0
 offset_right = 1019.0
 offset_bottom = 118.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sgto0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
 
 [node name="GridContainer" type="GridContainer" parent="PopupCelular/CelularUI" unique_id=2006729914]
@@ -215,81 +219,108 @@ columns = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "1"
 
 [node name="2" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=273041014]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "2"
 
 [node name="3" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=161407241]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "3"
 
 [node name="4" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=489223341]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "4"
 
 [node name="5" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=499828405]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "5"
 
 [node name="6" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1935675360]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "6"
 
 [node name="7" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1397957443]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "7"
 
 [node name="8" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=134241797]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "8"
 
 [node name="9" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=820092418]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "9"
 
 [node name="espaco-vazio" type="Control" parent="PopupCelular/CelularUI/GridContainer" unique_id=2007456805]
@@ -301,15 +332,29 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "0"
 
 [node name="espaco-vazio1" type="Control" parent="PopupCelular/CelularUI/GridContainer" unique_id=981841401]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="MensagemPIN" type="Label" parent="PopupCelular/CelularUI" unique_id=358149750]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 242.0
+offset_right = 579.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 16
+text = "Aguardando PIN..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
 [connection signal="pressed" from="BotaoCelular" to="." method="_on_botao_celular_pressed"]
