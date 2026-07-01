@@ -3,6 +3,8 @@ extends Control
 @onready var input_pin = $PopupCelular/CelularUI/LineEdit
 @onready var teclado = $PopupCelular/CelularUI/GridContainer
 @onready var mensagem_pin = $PopupCelular/CelularUI/MensagemPIN
+@onready var input_pc = $PopupPC/MonitorUI/SenhaPC
+@onready var mensagem_pc = $PopupPC/MonitorUI/MensagemPC
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -53,9 +55,34 @@ func validar_pin():
 		mensagem_pin.modulate = Color.RED # Muda a cor do texto para vermelho
 		
 		# O Timer que já havíamos colocado
-		await get_tree().create_timer(2).timeout 
+		await get_tree().create_timer(1.5).timeout 
 		
 		# Limpa o input e volta a mensagem para o estado original
 		input_pin.text = "" 
 		mensagem_pin.text = "Aguardando PIN..."
 		mensagem_pin.modulate = Color.WHITE # Volta para a cor branca original
+
+func _on_entrar_pc_pressed() -> void:
+	var senha_digitada = input_pc.text
+	
+	if senha_digitada.to_lower() == "admin123": # Troque pela senha oficial do seu jogo
+		# Feedback de Sucesso
+		mensagem_pc.text = "ACESSO CONCEDIDO"
+		mensagem_pc.modulate = Color.GREEN
+		
+		# (O próximo passo será esconder esta tela e mostrar o Desktop)
+		
+	else:
+		# Feedback de Erro
+		mensagem_pc.text = "ACESSO NEGADO"
+		mensagem_pc.modulate = Color.RED
+		
+		await get_tree().create_timer(1.5).timeout
+		
+		# Limpa o input e reseta a mensagem para o estado original
+		input_pc.text = ""
+		mensagem_pc.text = "Digite a Senha"
+		mensagem_pc.modulate = Color.WHITE
+
+func _on_senha_pc_text_submitted(new_text: String) -> void:
+	_on_entrar_pc_pressed()

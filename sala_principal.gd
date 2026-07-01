@@ -14,19 +14,27 @@ func _process(delta: float) -> void:
 # O símbolo $ serve para acessar diretamente um nó filho na árvore.
 # @onready garante que a variável só seja carregada quando a tela estiver pronta.
 @onready var input_nome = $LineEdit
+@onready var aviso_erro = $AvisoErro
 
 func _on_button_pressed():
-	# Pegamos o valor da propriedade 'text' do nosso LineEdit
-	var nome_do_time = input_nome.text
+	# strip_edges() remove espaços em branco no começo e no fim
+	var nome_do_time = input_nome.text.strip_edges()
 	
-	# Validação simples
+	# Validação 1: Está vazio?
 	if nome_do_time == "":
-		print("Por favor, digite o nome da equipe!")
+		aviso_erro.text = "ALERTA: O nome da equipe é obrigatório!"
+		return # Interrompe a função aqui, não deixa mudar de tela
+		
+	# Validação 2: É muito curto?
+	if nome_do_time.length() < 3:
+		aviso_erro.text = "ALERTA: O nome deve ter pelo menos 3 letras."
 		return
 		
-	# Se deu tudo certo, mostramos no console
-	print("O time ", nome_do_time, " está pronto para começar o Escape Room!")
+	# Se passou nas validações, limpa o erro (caso tivesse algum)
+	aviso_erro.text = ""
 	
+	# --- AQUI ENTRARÁ O CÓDIGO DE SALVAR O NOME GLOBALMENTE ---
+	print("Time validado: ", nome_do_time)
+	
+	# Muda para a tela do escritório
 	get_tree().change_scene_to_file("res://sala_escritorio.tscn")
-	
-	# Futuramente, colocaremos aqui a lógica para salvar esse nome e abrir a sala do escritório.
