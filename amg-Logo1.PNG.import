@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv0pxiqrj3g5w"
-path="res://.godot/imported/windows-7.webp-2fcb6ca47dda9757043682b0ec953df7.ctex"
+uid="uid://k7sq6odoayc0"
+path="res://.godot/imported/amg-Logo1.PNG-cb4b85abb238ba8f8033183c9a15532f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://windows-7.webp"
-dest_files=["res://.godot/imported/windows-7.webp-2fcb6ca47dda9757043682b0ec953df7.ctex"]
+source_file="res://amg-Logo1.PNG"
+dest_files=["res://.godot/imported/amg-Logo1.PNG-cb4b85abb238ba8f8033183c9a15532f.ctex"]
 
 [params]
 

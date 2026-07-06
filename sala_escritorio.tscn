@@ -5,14 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cae5e7koph4fb" path="res://user.webp" id="2_6q6if"]
 [ext_resource type="Texture2D" uid="uid://bytxwjoxydkqn" path="res://notbook.png" id="2_yukba"]
 [ext_resource type="Texture2D" uid="uid://dck6rc7kpgvdk" path="res://fundophone.jpg" id="5_dklfc"]
+[ext_resource type="Texture2D" uid="uid://k7sq6odoayc0" path="res://amg-Logo1.PNG" id="5_sgto0"]
 [ext_resource type="Texture2D" uid="uid://b323ym0332xt0" path="res://iphone6.png" id="6_sgto0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dklfc"]
-bg_color = Color(1, 0, 0, 0.78431374)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -40,6 +34,22 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgto0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5et8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho6ja"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dklfc"]
+bg_color = Color(1, 0, 0, 0.78431374)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0.39215687)
@@ -120,6 +130,109 @@ offset_bottom = 1189.0
 texture = ExtResource("2_yukba")
 expand_mode = 1
 
+[node name="TelaLogin" type="Control" parent="PopupPC/MonitorUI" unique_id=1838292297]
+visible = false
+anchors_preset = 0
+offset_left = 257.0
+offset_top = 296.0
+offset_right = 1600.0
+offset_bottom = 896.0
+
+[node name="SenhaPC" type="LineEdit" parent="PopupPC/MonitorUI/TelaLogin" unique_id=370612955]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 338.0
+offset_right = 900.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.7529412)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/caret_width = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q6if")
+placeholder_text = "Digite a senha:"
+caret_blink = true
+secret = true
+
+[node name="EntrarPC" type="Button" parent="PopupPC/MonitorUI/TelaLogin" unique_id=1570191839]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 439.0
+offset_right = 861.9336
+offset_bottom = 493.44293
+rotation = -0.0016889572
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b26b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yv8jf")
+text = "Entrar"
+
+[node name="IconUser" type="TextureRect" parent="PopupPC/MonitorUI/TelaLogin" unique_id=1617406170]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 70.0
+offset_right = 918.0
+offset_bottom = 306.0
+texture = ExtResource("2_6q6if")
+expand_mode = 1
+
+[node name="MensagemPC" type="Label" parent="PopupPC/MonitorUI/TelaLogin" unique_id=1030058460]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 395.0
+offset_right = 832.0
+offset_bottom = 421.0
+theme_override_font_sizes/font_size = 18
+text = "Aguardando Login..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoOlho" type="Button" parent="PopupPC/MonitorUI/TelaLogin" unique_id=1361763850]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 348.0
+offset_right = 896.0
+offset_bottom = 384.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_sgto0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y5et8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
+text = "👁️"
+
+[node name="TelaDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=1743420263]
+anchors_preset = 0
+offset_left = 254.0
+offset_top = 296.0
+offset_right = 1601.0
+offset_bottom = 895.0
+
+[node name="BotaoLogs" type="Button" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=678573200]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 20.0
+offset_right = 116.0
+offset_bottom = 87.0
+text = "Logs
+"
+
+[node name="BotaoTerminal" type="Button" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1970446826]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 102.0
+offset_right = 116.0
+offset_bottom = 169.0
+text = "Terminal
+
+"
+
+[node name="LogoAMG" type="TextureRect" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1647441637]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 218.0
+offset_right = 879.0
+offset_bottom = 387.0
+texture = ExtResource("5_sgto0")
+expand_mode = 1
+
 [node name="BotaoFecharPC" type="Button" parent="PopupPC/MonitorUI" unique_id=1040764459]
 layout_mode = 0
 offset_left = 1518.0
@@ -131,53 +244,6 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
-
-[node name="SenhaPC" type="LineEdit" parent="PopupPC/MonitorUI" unique_id=370612955]
-layout_mode = 0
-offset_left = 683.0
-offset_top = 634.0
-offset_right = 1157.0
-offset_bottom = 686.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.7529412)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_constants/caret_width = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_6q6if")
-placeholder_text = "Digite a senha:"
-caret_blink = true
-secret = true
-
-[node name="EntrarPC" type="Button" parent="PopupPC/MonitorUI" unique_id=1570191839]
-layout_mode = 0
-offset_left = 720.0
-offset_top = 735.0
-offset_right = 1118.9336
-offset_bottom = 789.44293
-rotation = -0.0016889572
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_8b26b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv8jf")
-text = "Entrar"
-
-[node name="IconUser" type="TextureRect" parent="PopupPC/MonitorUI" unique_id=1617406170]
-layout_mode = 0
-offset_left = 682.0
-offset_top = 366.0
-offset_right = 1175.0
-offset_bottom = 602.0
-texture = ExtResource("2_6q6if")
-expand_mode = 1
-
-[node name="MensagemPC" type="Label" parent="PopupPC/MonitorUI" unique_id=1030058460]
-layout_mode = 0
-offset_left = 751.0
-offset_top = 691.0
-offset_right = 1089.0
-offset_bottom = 717.0
-theme_override_font_sizes/font_size = 18
-text = "Aguardando Login..."
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
 visible = false
@@ -392,7 +458,8 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
 [connection signal="pressed" from="BotaoCelular" to="." method="_on_botao_celular_pressed"]
+[connection signal="text_submitted" from="PopupPC/MonitorUI/TelaLogin/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/EntrarPC" to="." method="_on_entrar_pc_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
-[connection signal="text_submitted" from="PopupPC/MonitorUI/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
-[connection signal="pressed" from="PopupPC/MonitorUI/EntrarPC" to="." method="_on_entrar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]

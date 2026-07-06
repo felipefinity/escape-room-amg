@@ -3,8 +3,10 @@ extends Control
 @onready var input_pin = $PopupCelular/CelularUI/LineEdit
 @onready var teclado = $PopupCelular/CelularUI/GridContainer
 @onready var mensagem_pin = $PopupCelular/CelularUI/MensagemPIN
-@onready var input_pc = $PopupPC/MonitorUI/SenhaPC
-@onready var mensagem_pc = $PopupPC/MonitorUI/MensagemPC
+@onready var input_pc = $PopupPC/MonitorUI/TelaLogin/SenhaPC
+@onready var mensagem_pc = $PopupPC/MonitorUI/TelaLogin/MensagemPC
+@onready var tela_login = $PopupPC/MonitorUI/TelaLogin
+@onready var tela_desktop = $PopupPC/MonitorUI/TelaDesktop
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -70,7 +72,12 @@ func _on_entrar_pc_pressed() -> void:
 		mensagem_pc.text = "ACESSO CONCEDIDO"
 		mensagem_pc.modulate = Color.GREEN
 		
-		# (O próximo passo será esconder esta tela e mostrar o Desktop)
+		# Espera 1 segundinho pro jogador ler que acertou
+		await get_tree().create_timer(1.5).timeout 
+		
+		# Mágica da transição: Esconde o login, mostra o desktop
+		tela_login.hide()
+		tela_desktop.show()
 		
 	else:
 		# Feedback de Erro
@@ -86,3 +93,8 @@ func _on_entrar_pc_pressed() -> void:
 
 func _on_senha_pc_text_submitted(new_text: String) -> void:
 	_on_entrar_pc_pressed()
+
+
+func _on_botao_olho_pressed():
+	# Inverte o estado atual: se está secreto, revela; se está revelado, oculta.
+	input_pc.secret = not input_pc.secret
