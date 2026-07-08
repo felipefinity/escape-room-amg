@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfe8xx8ah75v0"
-path="res://.godot/imported/Gemini_Generated_Image_r0s35lr0s35lr0s3.png-73afb1931e1c398a96743169449191f9.ctex"
+uid="uid://clv2n1o36dve4"
+path="res://.godot/imported/Windows_Notepad_icon.png-bac268a05ac44df717fcf2595d747ad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gemini_Generated_Image_r0s35lr0s35lr0s3.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_r0s35lr0s35lr0s3.png-73afb1931e1c398a96743169449191f9.ctex"]
+source_file="res://Windows_Notepad_icon.png"
+dest_files=["res://.godot/imported/Windows_Notepad_icon.png-bac268a05ac44df717fcf2595d747ad8.ctex"]
 
 [params]
 

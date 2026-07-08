@@ -5,8 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cae5e7koph4fb" path="res://user.webp" id="2_6q6if"]
 [ext_resource type="Texture2D" uid="uid://bytxwjoxydkqn" path="res://notbook.png" id="2_yukba"]
 [ext_resource type="Texture2D" uid="uid://dck6rc7kpgvdk" path="res://fundophone.jpg" id="5_dklfc"]
-[ext_resource type="Texture2D" uid="uid://k7sq6odoayc0" path="res://amg-Logo1.PNG" id="5_sgto0"]
+[ext_resource type="Texture2D" uid="uid://o7r28ku2q08h" path="res://cmd.png" id="5_ho6ja"]
+[ext_resource type="Texture2D" uid="uid://b5eb1tc0otv5h" path="res://AMG-Brasil-White.png" id="5_sgto0"]
+[ext_resource type="Texture2D" uid="uid://d4muy573qfi4x" path="res://txt.png" id="5_ujso8"]
 [ext_resource type="Texture2D" uid="uid://b323ym0332xt0" path="res://iphone6.png" id="6_sgto0"]
+[ext_resource type="Texture2D" uid="uid://dn13x536f6kp2" path="res://protheusLogo.webp" id="8_y5et8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -205,33 +208,84 @@ offset_top = 296.0
 offset_right = 1601.0
 offset_bottom = 895.0
 
-[node name="BotaoLogs" type="Button" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=678573200]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 20.0
-offset_right = 116.0
-offset_bottom = 87.0
-text = "Logs
-"
-
-[node name="BotaoTerminal" type="Button" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1970446826]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 102.0
-offset_right = 116.0
-offset_bottom = 169.0
-text = "Terminal
-
-"
-
 [node name="LogoAMG" type="TextureRect" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1647441637]
 layout_mode = 0
-offset_left = 486.0
-offset_top = 218.0
-offset_right = 879.0
-offset_bottom = 387.0
+offset_left = 424.0
+offset_top = 219.0
+offset_right = 943.0
+offset_bottom = 402.0
 texture = ExtResource("5_sgto0")
 expand_mode = 1
+
+[node name="TerminalButton" type="TextureButton" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1558988464]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 135.0
+offset_right = 116.0
+offset_bottom = 208.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_ho6ja")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LogsButton" type="TextureButton" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1602831415]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 18.0
+offset_right = 118.0
+offset_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_ujso8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ProtheusButton" type="TextureButton" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1570789184]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 252.0
+offset_right = 108.0
+offset_bottom = 320.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_y5et8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ProtheusLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=899496253]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 322.0
+offset_right = 111.0
+offset_bottom = 359.0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "PROTHEUS
+OFICIAL"
+horizontal_alignment = 1
+
+[node name="TerminalLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=51209289]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 195.0
+offset_right = 104.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 12
+text = "Terminal"
+
+[node name="TerminalLabel2" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=541163597]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 99.0
+offset_right = 105.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 12
+text = "Logs.txt"
+
+[node name="AlertaProtheus" type="AcceptDialog" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1562777230]
+oversampling_override = 1.0
+title = "Aviso"
+position = Vector2i(750, 400)
+size = Vector2i(482, 105)
+dialog_text = "Você precisa escapar primeiro para poder voltar a trabalhar!"
 
 [node name="BotaoFecharPC" type="Button" parent="PopupPC/MonitorUI" unique_id=1040764459]
 layout_mode = 0
@@ -461,5 +515,6 @@ vertical_alignment = 1
 [connection signal="text_submitted" from="PopupPC/MonitorUI/TelaLogin/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/EntrarPC" to="." method="_on_entrar_pc_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]

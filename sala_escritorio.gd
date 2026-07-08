@@ -7,6 +7,7 @@ extends Control
 @onready var mensagem_pc = $PopupPC/MonitorUI/TelaLogin/MensagemPC
 @onready var tela_login = $PopupPC/MonitorUI/TelaLogin
 @onready var tela_desktop = $PopupPC/MonitorUI/TelaDesktop
+@onready var alerta_protheus = $PopupPC/MonitorUI/TelaDesktop/AlertaProtheus
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -94,7 +95,9 @@ func _on_entrar_pc_pressed() -> void:
 func _on_senha_pc_text_submitted(new_text: String) -> void:
 	_on_entrar_pc_pressed()
 
-
 func _on_botao_olho_pressed():
 	# Inverte o estado atual: se está secreto, revela; se está revelado, oculta.
 	input_pc.secret = not input_pc.secret
+
+func _on_protheus_button_pressed():
+	alerta_protheus.popup_centered()
