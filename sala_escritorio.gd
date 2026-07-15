@@ -1,5 +1,7 @@
 extends Control
 
+@onready var label_relogio = $LabelRelogio
+@onready var timer_jogo = $TimerJogo
 @onready var input_pin = $PopupCelular/CelularUI/LineEdit
 @onready var teclado = $PopupCelular/CelularUI/GridContainer
 @onready var mensagem_pin = $PopupCelular/CelularUI/MensagemPIN
@@ -104,3 +106,14 @@ func _on_protheus_button_pressed():
 	
 func _on_sair_aviso_pressed():
 	alerta_protheus.hide()
+	
+func _process(delta):
+	# Pega o tempo que falta no timer e converte pra número inteiro (corta os milissegundos)
+	var tempo_restante = int(timer_jogo.time_left)
+	
+	# Matemática básica para extrair os minutos e os segundos
+	var minutos = tempo_restante / 60
+	var segundos = tempo_restante % 60
+	
+	# Formata a string para sempre ter 2 dígitos. Ex: em vez de "5:9", fica "05:09"
+	label_relogio.text = "%02d:%02d" % [minutos, segundos]
