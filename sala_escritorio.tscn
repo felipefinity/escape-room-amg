@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d4muy573qfi4x" path="res://txt.png" id="5_ujso8"]
 [ext_resource type="Texture2D" uid="uid://b323ym0332xt0" path="res://iphone6.png" id="6_sgto0"]
 [ext_resource type="Texture2D" uid="uid://dn13x536f6kp2" path="res://protheusLogo.webp" id="8_y5et8"]
+[ext_resource type="Texture2D" uid="uid://cqg032xnqni2f" path="res://alerta.png" id="9_qinw8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -134,7 +135,6 @@ texture = ExtResource("2_yukba")
 expand_mode = 1
 
 [node name="TelaLogin" type="Control" parent="PopupPC/MonitorUI" unique_id=1838292297]
-visible = false
 anchors_preset = 0
 offset_left = 257.0
 offset_top = 296.0
@@ -202,6 +202,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
 text = "👁️"
 
 [node name="TelaDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=1743420263]
+visible = false
 anchors_preset = 0
 offset_left = 254.0
 offset_top = 296.0
@@ -271,7 +272,7 @@ offset_bottom = 218.0
 theme_override_font_sizes/font_size = 12
 text = "Terminal"
 
-[node name="TerminalLabel2" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=541163597]
+[node name="LogsLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=541163597]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 99.0
@@ -280,12 +281,64 @@ offset_bottom = 122.0
 theme_override_font_sizes/font_size = 12
 text = "Logs.txt"
 
-[node name="AlertaProtheus" type="AcceptDialog" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1562777230]
-oversampling_override = 1.0
-title = "Aviso"
-position = Vector2i(750, 400)
-size = Vector2i(482, 105)
-dialog_text = "Você precisa escapar primeiro para poder voltar a trabalhar!"
+[node name="AlertaProtheus" type="Control" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1813761717]
+visible = false
+anchors_preset = 0
+offset_left = 499.0
+offset_top = 217.0
+offset_right = 899.0
+offset_bottom = 397.0
+
+[node name="FundoAlert" type="ColorRect" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=1269441993]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 180.0
+
+[node name="BarraTitulo" type="ColorRect" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=910101298]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 400.0
+offset_bottom = 29.0
+color = Color(0, 0, 1, 1)
+
+[node name="Aviso" type="Label" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=216923406]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 1.0
+offset_right = 223.0
+offset_bottom = 24.0
+text = "Aviso"
+
+[node name="MensagemAviso" type="Label" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=345438921]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 104.0
+offset_right = 436.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Você precisa escapar primeiro para poder voltar a trabalhar!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=1477887803]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 37.0
+offset_right = 231.0
+offset_bottom = 99.0
+texture = ExtResource("9_qinw8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SairAviso" type="Button" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=429258588]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 133.0
+offset_right = 221.0
+offset_bottom = 164.0
+theme_override_font_sizes/font_size = 14
+text = "Ok"
 
 [node name="BotaoFecharPC" type="Button" parent="PopupPC/MonitorUI" unique_id=1040764459]
 layout_mode = 0
@@ -516,5 +569,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/EntrarPC" to="." method="_on_entrar_pc_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]

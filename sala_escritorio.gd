@@ -100,4 +100,7 @@ func _on_botao_olho_pressed():
 	input_pc.secret = not input_pc.secret
 
 func _on_protheus_button_pressed():
-	alerta_protheus.popup_centered()
+	alerta_protheus.show()
+	
+func _on_sair_aviso_pressed():
+	alerta_protheus.hide()
