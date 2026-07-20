@@ -10,6 +10,7 @@ extends Control
 @onready var tela_login = $PopupPC/MonitorUI/TelaLogin
 @onready var tela_desktop = $PopupPC/MonitorUI/TelaDesktop
 @onready var alerta_protheus = $PopupPC/MonitorUI/TelaDesktop/AlertaProtheus
+@onready var tela_game_over = $TelaGameOver
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -117,3 +118,24 @@ func _process(delta):
 	
 	# Formata a string para sempre ter 2 dígitos. Ex: em vez de "5:9", fica "05:09"
 	label_relogio.text = "%02d:%02d" % [minutos, segundos]
+
+
+func _on_timer_jogo_timeout():
+	# Mostra a tela de derrota por cima de tudo
+	tela_game_over.show()
+	
+	#Trava o resto do jogo para a pessoa não continuar clicando nas coisas por trás
+	get_tree().paused = true
+
+
+func _on_reiniciar_escape_room_pressed():
+	# Se você pausou o jogo no Game Over, precisa despausar antes de recarregar
+	get_tree().paused = false
+	
+	# Recarrega a cena inteira do zero!
+	get_tree().change_scene_to_file("res://sala_principal.tscn")
+
+
+func _on_sair_game_pressed():
+	# Fecha o aplicativo/jogo instantaneamente
+	get_tree().quit()

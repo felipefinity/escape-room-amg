@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b323ym0332xt0" path="res://iphone6.png" id="6_sgto0"]
 [ext_resource type="Texture2D" uid="uid://dn13x536f6kp2" path="res://protheusLogo.webp" id="8_y5et8"]
 [ext_resource type="Texture2D" uid="uid://cqg032xnqni2f" path="res://alerta.png" id="9_qinw8"]
+[ext_resource type="Texture2D" uid="uid://4rnriitvituc" path="res://outlook.webp" id="10_i6onq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -68,6 +69,9 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6onq"]
+bg_color = Color(0, 1, 0, 1)
+
 [node name="SalaEscritorio" type="Control" unique_id=2127862707]
 layout_mode = 3
 anchors_preset = 15
@@ -100,12 +104,12 @@ offset_bottom = 209.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_d227g")
 theme_override_font_sizes/font_size = 80
-text = "30:00"
+text = "20:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimerJogo" type="Timer" parent="." unique_id=335839946]
-wait_time = 1800.0
+wait_time = 1200.0
 one_shot = true
 autostart = true
 
@@ -262,10 +266,10 @@ stretch_mode = 4
 
 [node name="ProtheusButton" type="TextureButton" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1570789184]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 252.0
-offset_right = 108.0
-offset_bottom = 320.0
+offset_left = 44.0
+offset_top = 236.0
+offset_right = 106.0
+offset_bottom = 304.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_y5et8")
 ignore_texture_size = true
@@ -273,23 +277,23 @@ stretch_mode = 4
 
 [node name="ProtheusLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=899496253]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 322.0
-offset_right = 111.0
-offset_bottom = 359.0
+offset_left = 42.0
+offset_top = 305.0
+offset_right = 115.0
+offset_bottom = 345.0
 theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "PROTHEUS
 OFICIAL"
 horizontal_alignment = 1
 
 [node name="TerminalLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=51209289]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 195.0
-offset_right = 104.0
-offset_bottom = 218.0
-theme_override_font_sizes/font_size = 12
+offset_left = 49.0
+offset_top = 197.0
+offset_right = 110.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 14
 text = "Terminal"
 
 [node name="LogsLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=541163597]
@@ -298,8 +302,28 @@ offset_left = 53.0
 offset_top = 99.0
 offset_right = 105.0
 offset_bottom = 122.0
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Logs.txt"
+
+[node name="EmailLabel" type="Label" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1413985490]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 434.0
+offset_right = 104.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 14
+text = "Outlook"
+
+[node name="EmailButton" type="TextureButton" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=2038461717]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 367.0
+offset_right = 107.0
+offset_bottom = 435.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_i6onq")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="AlertaProtheus" type="Control" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1813761717]
 visible = false
@@ -583,6 +607,76 @@ text = "Aguardando PIN..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TelaGameOver" type="Control" parent="." unique_id=1666000997]
+process_mode = 3
+visible = false
+anchors_preset = 0
+offset_left = 63.0
+offset_top = 115.0
+offset_right = 1989.0
+offset_bottom = 1193.0
+
+[node name="ColorRect" type="ColorRect" parent="TelaGameOver" unique_id=638748167]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -13.0
+offset_right = 1936.0
+offset_bottom = 1070.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="TelaGameOver" unique_id=1496205712]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 300.0
+offset_right = 1414.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 100
+text = "TEMPO ESGOTADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TelaGameOver" unique_id=315896490]
+layout_mode = 0
+offset_left = -129.0
+offset_top = 417.0
+offset_right = 1989.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 50
+text = "Os hackers roubaram os dados da empresa."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReiniciarEscapeRoom" type="Button" parent="TelaGameOver" unique_id=634700669]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 604.0
+offset_right = 898.0
+offset_bottom = 716.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
+text = "Reiniciar EscapeRoom"
+
+[node name="SairGame" type="Button" parent="TelaGameOver" unique_id=1718839527]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 602.0
+offset_right = 1529.0
+offset_bottom = 714.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
+text = "Sair do Jogo"
+
+[connection signal="timeout" from="TimerJogo" to="." method="_on_timer_jogo_timeout"]
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
 [connection signal="pressed" from="BotaoCelular" to="." method="_on_botao_celular_pressed"]
 [connection signal="text_submitted" from="PopupPC/MonitorUI/TelaLogin/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
@@ -592,3 +686,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
+[connection signal="pressed" from="TelaGameOver/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
+[connection signal="pressed" from="TelaGameOver/SairGame" to="." method="_on_sair_game_pressed"]
