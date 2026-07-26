@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dn13x536f6kp2" path="res://protheusLogo.webp" id="8_y5et8"]
 [ext_resource type="Texture2D" uid="uid://cqg032xnqni2f" path="res://alerta.png" id="9_qinw8"]
 [ext_resource type="Texture2D" uid="uid://4rnriitvituc" path="res://outlook.webp" id="10_i6onq"]
+[ext_resource type="Texture2D" uid="uid://beclx68gx1g6l" path="res://IMessage_logo.svg" id="14_g6rxr"]
+[ext_resource type="Texture2D" uid="uid://dtercso1ccdcn" path="res://galeriaIphone.png" id="15_ul3bx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -397,7 +399,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
-visible = false
 layout_mode = 0
 offset_left = 65.0
 offset_top = 110.0
@@ -407,9 +408,9 @@ color = Color(0, 0, 0, 0.5882353)
 
 [node name="FundoCelular" type="TextureRect" parent="PopupCelular" unique_id=910940579]
 layout_mode = 0
-offset_left = 714.0
-offset_top = 146.0
-offset_right = 1266.0
+offset_left = 734.0
+offset_top = 165.0
+offset_right = 1257.0
 offset_bottom = 890.0
 texture = ExtResource("5_dklfc")
 expand_mode = 1
@@ -423,12 +424,31 @@ offset_bottom = 1168.0
 texture = ExtResource("6_sgto0")
 expand_mode = 1
 
-[node name="LineEdit" type="LineEdit" parent="PopupCelular/CelularUI" unique_id=2083258369]
+[node name="BotaoFecharCel" type="Button" parent="PopupCelular/CelularUI" unique_id=1911492446]
 layout_mode = 0
-offset_left = 647.0
-offset_top = 283.0
-offset_right = 980.0
-offset_bottom = 366.0
+offset_left = 1576.0
+offset_top = 108.0
+offset_right = 1661.0
+offset_bottom = 167.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
+text = "X"
+
+[node name="TelaLoginCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=1162432653]
+anchors_preset = 0
+offset_left = -183.0
+offset_top = 81.0
+offset_right = -143.0
+offset_bottom = 121.0
+
+[node name="LineEdit" type="LineEdit" parent="PopupCelular/CelularUI/TelaLoginCelular" unique_id=2083258369]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 231.0
+offset_right = 1161.0
+offset_bottom = 314.0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
@@ -444,29 +464,17 @@ max_length = 4
 editable = false
 secret = true
 
-[node name="BotaoFecharCel" type="Button" parent="PopupCelular/CelularUI" unique_id=1911492446]
+[node name="GridContainer" type="GridContainer" parent="PopupCelular/CelularUI/TelaLoginCelular" unique_id=2006729914]
 layout_mode = 0
-offset_left = 1576.0
-offset_top = 108.0
-offset_right = 1661.0
-offset_bottom = 167.0
-mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_dklfc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
-text = "X"
-
-[node name="GridContainer" type="GridContainer" parent="PopupCelular/CelularUI" unique_id=2006729914]
-layout_mode = 0
-offset_left = 666.0
-offset_top = 442.0
-offset_right = 965.0
-offset_bottom = 882.0
+offset_left = 841.0
+offset_top = 380.0
+offset_right = 1140.0
+offset_bottom = 820.0
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 15
 columns = 3
 
-[node name="1" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=8009001]
+[node name="1" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=8009001]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -478,7 +486,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "1"
 
-[node name="2" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=273041014]
+[node name="2" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=273041014]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -490,7 +498,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "2"
 
-[node name="3" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=161407241]
+[node name="3" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=161407241]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -502,7 +510,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "3"
 
-[node name="4" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=489223341]
+[node name="4" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=489223341]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -514,7 +522,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "4"
 
-[node name="5" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=499828405]
+[node name="5" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=499828405]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -526,7 +534,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "5"
 
-[node name="6" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1935675360]
+[node name="6" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=1935675360]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -538,7 +546,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "6"
 
-[node name="7" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1397957443]
+[node name="7" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=1397957443]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -550,7 +558,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "7"
 
-[node name="8" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=134241797]
+[node name="8" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=134241797]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -562,7 +570,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "8"
 
-[node name="9" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=820092418]
+[node name="9" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=820092418]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -574,12 +582,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "9"
 
-[node name="espaco-vazio" type="Control" parent="PopupCelular/CelularUI/GridContainer" unique_id=2007456805]
+[node name="espaco-vazio" type="Control" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=2007456805]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="0" type="Button" parent="PopupCelular/CelularUI/GridContainer" unique_id=1218376688]
+[node name="0" type="Button" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=1218376688]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -591,21 +599,49 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
 text = "0"
 
-[node name="espaco-vazio1" type="Control" parent="PopupCelular/CelularUI/GridContainer" unique_id=981841401]
+[node name="espaco-vazio1" type="Control" parent="PopupCelular/CelularUI/TelaLoginCelular/GridContainer" unique_id=981841401]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MensagemPIN" type="Label" parent="PopupCelular/CelularUI" unique_id=358149750]
+[node name="MensagemPIN" type="Label" parent="PopupCelular/CelularUI/TelaLoginCelular" unique_id=358149750]
 layout_mode = 0
-offset_left = 705.0
-offset_top = 378.0
-offset_right = 926.0
-offset_bottom = 406.0
+offset_left = 875.0
+offset_top = 323.0
+offset_right = 1096.0
+offset_bottom = 351.0
 theme_override_font_sizes/font_size = 20
 text = "Aguardando PIN..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TelaHomeCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=133857312]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AppMensagens" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=875311524]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 354.0
+offset_right = 677.0
+offset_bottom = 443.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_g6rxr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="AppGaleria" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=2140869003]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 353.0
+offset_right = 811.0
+offset_bottom = 442.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("15_ul3bx")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="TelaGameOver" type="Control" parent="." unique_id=1666000997]
 process_mode = 3

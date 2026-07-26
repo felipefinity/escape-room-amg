@@ -1,16 +1,28 @@
 extends Control
 
+# Variaveis do game
+@onready var tela_game_over = $TelaGameOver
+
+# Variaveis de tempo
 @onready var label_relogio = $LabelRelogio
 @onready var timer_jogo = $TimerJogo
-@onready var input_pin = $PopupCelular/CelularUI/LineEdit
-@onready var teclado = $PopupCelular/CelularUI/GridContainer
-@onready var mensagem_pin = $PopupCelular/CelularUI/MensagemPIN
+
+# Variaveis PC
 @onready var input_pc = $PopupPC/MonitorUI/TelaLogin/SenhaPC
 @onready var mensagem_pc = $PopupPC/MonitorUI/TelaLogin/MensagemPC
 @onready var tela_login = $PopupPC/MonitorUI/TelaLogin
 @onready var tela_desktop = $PopupPC/MonitorUI/TelaDesktop
 @onready var alerta_protheus = $PopupPC/MonitorUI/TelaDesktop/AlertaProtheus
-@onready var tela_game_over = $TelaGameOver
+
+# Variaveis Celular
+
+@onready var tela_login_celular = $PopupCelular/CelularUI/TelaLoginCelular
+@onready var tela_home_celular = $PopupCelular/CelularUI/TelaHomeCelular
+@onready var app_mensagens = $PopupCelular/CelularUI/TelaHomeCelular/AppMensagens
+
+@onready var input_pin = $PopupCelular/CelularUI/TelaLoginCelular/LineEdit
+@onready var teclado = $PopupCelular/CelularUI/TelaLoginCelular/GridContainer
+@onready var mensagem_pin = $PopupCelular/CelularUI/TelaLoginCelular/MensagemPIN
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -51,6 +63,11 @@ func validar_pin():
 		# Feedback de Sucesso
 		mensagem_pin.text = "DESBLOQUEADO"
 		mensagem_pin.modulate = Color.GREEN # Muda a cor do texto para verde
+		
+		await get_tree().create_timer(1.5).timeout
+		
+		tela_login_celular.hide()
+		tela_home_celular.show()
 		
 		# Opcional: Aqui também colocaremos um delay pequeno antes de 
 		# sumir com essa tela e mostrar a tela dos apps/dicas do celular
