@@ -23,6 +23,7 @@ extends Control
 @onready var input_pin = $PopupCelular/CelularUI/TelaLoginCelular/LineEdit
 @onready var teclado = $PopupCelular/CelularUI/TelaLoginCelular/GridContainer
 @onready var mensagem_pin = $PopupCelular/CelularUI/TelaLoginCelular/MensagemPIN
+@onready var label_hora_celular = $PopupCelular/CelularUI/StatusCelular/LabelHoraCelular
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -135,6 +136,15 @@ func _process(delta):
 	
 	# Formata a string para sempre ter 2 dígitos. Ex: em vez de "5:9", fica "05:09"
 	label_relogio.text = "%02d:%02d" % [minutos, segundos]
+	
+	# 1. Pega a hora exata do Windows/Mac/Linux do usuário
+	var tempo_real = Time.get_time_dict_from_system()
+	
+	# 2. Formata para colocar o zero na frente (ex: 09:05 em vez de 9:5)
+	var hora_formatada = "%02d:%02d" % [tempo_real.hour, tempo_real.minute]
+	
+	# 3. Atualiza o relógio do Celular
+	label_hora_celular.text = hora_formatada
 
 
 func _on_timer_jogo_timeout():
