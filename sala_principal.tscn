@@ -1,23 +1,31 @@
 [gd_scene format=3 uid="uid://cfkwc6wb1sueg"]
 
 [ext_resource type="Script" uid="uid://bhx1kl3ltn2o6" path="res://sala_principal.gd" id="1_kv3fb"]
-[ext_resource type="Texture2D" uid="uid://c4j7y6pkqrkmk" path="res://escape1.png" id="2_ifxji"]
-[ext_resource type="FontFile" uid="uid://ctft8epvuuu7i" path="res://PixelifySans-Regular.ttf" id="3_4t2ck"]
+[ext_resource type="Texture2D" uid="uid://6e7nud74mgu5" path="res://Página inicial.png" id="2_ifxji"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifxji"]
-bg_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+bg_color = Color(0.050980393, 0.050980393, 0.050980393, 0)
 border_color = Color(0, 1, 0.25490198, 1)
 border_blend = true
-shadow_color = Color(0, 1, 0.25490198, 1)
+shadow_color = Color(0, 1, 0.25490198, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t2ck"]
-bg_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+bg_color = Color(0.050980393, 0.050980393, 0.050980393, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0, 1, 0.25490198, 1)
+border_color = Color(0, 1, 0.25490198, 0)
 border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urtgv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_523ud"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6ev4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MenuInicial" type="Control" unique_id=1032853806]
 layout_mode = 3
@@ -30,19 +38,19 @@ script = ExtResource("1_kv3fb")
 
 [node name="Fundo" type="TextureRect" parent="." unique_id=1267677162]
 layout_mode = 0
-offset_left = -164.0
-offset_top = -12.0
-offset_right = 2140.0
-offset_bottom = 1162.0
+offset_left = -1.0
+offset_right = 1922.0
+offset_bottom = 1078.0
 texture = ExtResource("2_ifxji")
 expand_mode = 1
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1347471207]
 layout_mode = 0
-offset_left = 753.0
-offset_top = 523.0
-offset_right = 1233.0
-offset_bottom = 598.0
+offset_left = 572.0
+offset_top = 551.0
+offset_right = 1386.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_ifxji")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4t2ck")
 placeholder_text = "Nome da Equipe"
@@ -50,31 +58,21 @@ alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=4248506]
 layout_mode = 0
-offset_left = 876.0
-offset_top = 644.0
-offset_right = 1126.0
-offset_bottom = 737.0
-text = "Iniciar Jogo"
-
-[node name="Titulo" type="Label" parent="." unique_id=2145482789]
-layout_mode = 0
-offset_left = 684.0
-offset_top = 397.0
-offset_right = 1308.0
-offset_bottom = 517.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("3_4t2ck")
-theme_override_font_sizes/font_size = 100
-text = "ESCAPE ROOM"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 708.0
+offset_top = 751.0
+offset_right = 1219.0
+offset_bottom = 899.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_urtgv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_523ud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m6ev4")
 
 [node name="AvisoErro" type="Label" parent="." unique_id=134088667]
 layout_mode = 0
-offset_left = 768.0
-offset_top = 598.0
-offset_right = 1223.0
-offset_bottom = 632.0
+offset_left = 761.0
+offset_top = 650.0
+offset_right = 1216.0
+offset_bottom = 684.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1

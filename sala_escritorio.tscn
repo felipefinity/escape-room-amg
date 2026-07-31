@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://c6db46vtrp3kh" path="res://calendario.png" id="22_w7dw4"]
 [ext_resource type="Texture2D" uid="uid://bme42836df6fn" path="res://camera.webp" id="24_so02b"]
 [ext_resource type="Texture2D" uid="uid://ccxfe5t3vndlq" path="res://Phone_iOS.png" id="25_hk411"]
+[ext_resource type="Texture2D" uid="uid://befcm6fwtfniu" path="res://Derrota.png" id="26_4wbuj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -82,7 +83,10 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6onq"]
-bg_color = Color(0, 1, 0, 1)
+bg_color = Color(0, 1, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdpbm"]
+bg_color = Color(0, 1, 0, 0)
 
 [node name="SalaEscritorio" type="Control" unique_id=2127862707]
 layout_mode = 3
@@ -880,42 +884,22 @@ offset_top = 115.0
 offset_right = 1989.0
 offset_bottom = 1193.0
 
-[node name="ColorRect" type="ColorRect" parent="TelaGameOver" unique_id=638748167]
+[node name="FundoGameOver" type="TextureRect" parent="TelaGameOver" unique_id=851294094]
 layout_mode = 0
-offset_left = -3.0
-offset_top = -13.0
-offset_right = 1936.0
-offset_bottom = 1070.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="TelaGameOver" unique_id=1496205712]
-layout_mode = 0
-offset_left = 506.0
-offset_top = 300.0
-offset_right = 1414.0
-offset_bottom = 437.0
-theme_override_font_sizes/font_size = 100
-text = "TEMPO ESGOTADO"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="TelaGameOver" unique_id=315896490]
-layout_mode = 0
-offset_left = -129.0
-offset_top = 417.0
-offset_right = 1989.0
-offset_bottom = 554.0
-theme_override_font_sizes/font_size = 50
-text = "Os hackers roubaram os dados da empresa."
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_top = -4.0
+offset_right = 1942.0
+offset_bottom = 1086.0
+texture = ExtResource("26_4wbuj")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="ReiniciarEscapeRoom" type="Button" parent="TelaGameOver" unique_id=634700669]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 604.0
-offset_right = 898.0
-offset_bottom = 716.0
+offset_left = 370.0
+offset_top = 643.0
+offset_right = 882.0
+offset_bottom = 867.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6onq")
@@ -923,22 +907,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
-text = "Reiniciar EscapeRoom"
 
 [node name="SairGame" type="Button" parent="TelaGameOver" unique_id=1718839527]
 layout_mode = 0
-offset_left = 991.0
-offset_top = 602.0
-offset_right = 1529.0
-offset_bottom = 714.0
+offset_left = 983.0
+offset_top = 636.0
+offset_right = 1505.0
+offset_bottom = 872.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jdpbm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
-text = "Sair do Jogo"
 
 [connection signal="timeout" from="TimerJogo" to="." method="_on_timer_jogo_timeout"]
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
