@@ -14,6 +14,10 @@ config/name="Escape Room AMG"
 run/main_scene="uid://cfkwc6wb1sueg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[autoload]
+
+Global="*uid://dihhc46hy71ga"
+
 [display]
 
 window/size/viewport_width=1920

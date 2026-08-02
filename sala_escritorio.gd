@@ -3,6 +3,10 @@ extends Control
 # Variaveis do game
 @onready var tela_game_over = $TelaGameOver
 
+@onready var tela_vitoria = $TelaVitoria
+@onready var label_nome_time = $TelaVitoria/LabelNomeTime
+@onready var label_tempo_vitoria = $TelaVitoria/LabelTempoVitoria
+
 # Variaveis de tempo
 @onready var label_relogio = $LabelRelogio
 @onready var timer_jogo = $TimerJogo
@@ -15,7 +19,6 @@ extends Control
 @onready var alerta_protheus = $PopupPC/MonitorUI/TelaDesktop/AlertaProtheus
 
 # Variaveis Celular
-
 @onready var tela_login_celular = $PopupCelular/CelularUI/TelaLoginCelular
 @onready var tela_home_celular = $PopupCelular/CelularUI/TelaHomeCelular
 @onready var app_mensagens = $PopupCelular/CelularUI/TelaHomeCelular/AppMensagens
@@ -148,6 +151,9 @@ func _process(delta):
 
 
 func _on_timer_jogo_timeout():
+	
+	Global.salvar_log_partida("PERDEU", "20:00")
+	
 	# Mostra a tela de derrota por cima de tudo
 	tela_game_over.show()
 	
@@ -156,13 +162,42 @@ func _on_timer_jogo_timeout():
 
 
 func _on_reiniciar_escape_room_pressed():
-	# Se você pausou o jogo no Game Over, precisa despausar antes de recarregar
 	get_tree().paused = false
 	
-	# Recarrega a cena inteira do zero!
+	# Limpa o nome para a próxima equipe não herdar (útil para ambas as telas)
+	Global.nome_equipe = "" 
+	
+	# Volta para a tela inicial
 	get_tree().change_scene_to_file("res://sala_principal.tscn")
 
 
 func _on_sair_game_pressed():
 	# Fecha o aplicativo/jogo instantaneamente
 	get_tree().quit()
+	
+func vencer_jogo():
+	# 1. Pega os valores ANTES de parar o cronômetro para evitar que venha zerado
+	var tempo_total = timer_jogo.wait_time # Os 20 minutos originais (1200)
+	var tempo_restante = timer_jogo.time_left # O que sobrou agora
+	
+	# 2. Agora sim, para o cronômetro
+	timer_jogo.stop()
+	
+	# 3. Calcula o tempo exato que a equipe levou (Tempo Total - Tempo Restante)
+	var tempo_gasto = int(tempo_total - tempo_restante)
+	
+	# Matemática para minutos e segundos
+	var minutos = tempo_gasto / 60
+	var segundos = tempo_gasto % 60
+	var tempo_formatado = "%02d:%02d" % [minutos, segundos]
+	
+	# 4. Atualiza os textos na tela de vitória
+	label_nome_time.text = "Equipe: " + Global.nome_equipe
+	label_tempo_vitoria.text = "Tempo de Escape: " + tempo_formatado
+	
+	# SALVA NO EXCEL!
+	Global.salvar_log_partida("VENCEU", tempo_formatado)
+	
+	# 5. Mostra a tela de vitória e pausa o jogo
+	tela_vitoria.show()
+	get_tree().paused = true

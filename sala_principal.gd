@@ -1,6 +1,5 @@
 extends Control
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,8 +32,8 @@ func _on_button_pressed():
 	# Se passou nas validações, limpa o erro (caso tivesse algum)
 	aviso_erro.text = ""
 	
-	# --- AQUI ENTRARÁ O CÓDIGO DE SALVAR O NOME GLOBALMENTE ---
-	print("Time validado: ", nome_do_time)
+	Global.nome_equipe = nome_do_time
+	print("Time validado e salvo no Global: ", Global.nome_equipe)
 	
 	# Muda para a tela do escritório
 	get_tree().change_scene_to_file("res://sala_escritorio.tscn")

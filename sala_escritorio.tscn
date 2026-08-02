@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bme42836df6fn" path="res://camera.webp" id="24_so02b"]
 [ext_resource type="Texture2D" uid="uid://ccxfe5t3vndlq" path="res://Phone_iOS.png" id="25_hk411"]
 [ext_resource type="Texture2D" uid="uid://befcm6fwtfniu" path="res://Derrota.png" id="26_4wbuj"]
+[ext_resource type="Texture2D" uid="uid://bc2w1mohvvsro" path="res://Vitória.png" id="27_jdpbm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -923,15 +924,88 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
 
+[node name="TelaVitoria" type="Control" parent="." unique_id=1239197122]
+process_mode = 3
+visible = false
+anchors_preset = 0
+offset_left = 63.0
+offset_top = 115.0
+offset_right = 1989.0
+offset_bottom = 1193.0
+
+[node name="FundoVitoria" type="TextureRect" parent="TelaVitoria" unique_id=245325044]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 1942.0
+offset_bottom = 1086.0
+texture = ExtResource("27_jdpbm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ReiniciarEscapeRoom" type="Button" parent="TelaVitoria" unique_id=1259288360]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 703.0
+offset_right = 893.0
+offset_bottom = 944.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
+
+[node name="SairGame" type="Button" parent="TelaVitoria" unique_id=1627498941]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 707.0
+offset_right = 1510.0
+offset_bottom = 939.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jdpbm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i6onq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
+
+[node name="LabelNomeTime" type="Label" parent="TelaVitoria" unique_id=1887270848]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 488.0
+offset_right = 879.0
+offset_bottom = 571.0
+theme_override_font_sizes/font_size = 60
+text = "TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTempoVitoria" type="Label" parent="TelaVitoria" unique_id=1139377572]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 589.0
+offset_right = 817.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 60
+text = "TEMPO"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [connection signal="timeout" from="TimerJogo" to="." method="_on_timer_jogo_timeout"]
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
 [connection signal="pressed" from="BotaoCelular" to="." method="_on_botao_celular_pressed"]
 [connection signal="text_submitted" from="PopupPC/MonitorUI/TelaLogin/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/EntrarPC" to="." method="_on_entrar_pc_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/TerminalButton" to="." method="vencer_jogo"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="TelaGameOver/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
 [connection signal="pressed" from="TelaGameOver/SairGame" to="." method="_on_sair_game_pressed"]
+[connection signal="pressed" from="TelaVitoria/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
+[connection signal="pressed" from="TelaVitoria/SairGame" to="." method="_on_sair_game_pressed"]
