@@ -30,6 +30,7 @@ extends Control
 
 # APPS Celular
 @onready var appNoticias = $PopupCelular/CelularUI/TelaNoticias
+@onready var appNotas = $PopupCelular/CelularUI/TelaNotas
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -205,12 +206,15 @@ func vencer_jogo():
 	tela_vitoria.show()
 	get_tree().paused = true
 
-
-func _on_app_noticias_pressed():
-	appNoticias.show()
-	
-
 # Função universal para fechar qualquer app e voltar para a Home
 func _on_botao_home_universal_pressed():
 	# Esconde as telas dos aplicativos
 	appNoticias.hide()
+	appNotas.hide()
+
+
+func _on_app_notas_pressed():
+	appNotas.show()
+	
+func _on_app_noticias_pressed():
+	appNoticias.show()
