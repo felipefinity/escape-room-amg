@@ -28,6 +28,9 @@ extends Control
 @onready var mensagem_pin = $PopupCelular/CelularUI/TelaLoginCelular/MensagemPIN
 @onready var label_hora_celular = $PopupCelular/CelularUI/StatusCelular/LabelHoraCelular
 
+# APPS Celular
+@onready var appNoticias = $PopupCelular/CelularUI/TelaNoticias
+
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
 	$PopupPC.hide()
@@ -201,3 +204,13 @@ func vencer_jogo():
 	# 5. Mostra a tela de vitória e pausa o jogo
 	tela_vitoria.show()
 	get_tree().paused = true
+
+
+func _on_app_noticias_pressed():
+	appNoticias.show()
+	
+
+# Função universal para fechar qualquer app e voltar para a Home
+func _on_botao_home_universal_pressed():
+	# Esconde as telas dos aplicativos
+	appNoticias.hide()

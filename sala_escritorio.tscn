@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ccxoi2ii4eddt" path="res://bateria.svg" id="15_y1xlt"]
 [ext_resource type="Texture2D" uid="uid://ct8h6vsclnewq" path="res://noticias.webp" id="18_4wbuj"]
 [ext_resource type="Texture2D" uid="uid://8qey76d7q3o5" path="res://Notas.webp" id="19_jdpbm"]
+[ext_resource type="Texture2D" uid="uid://xnm4damgjevy" path="res://phishing2.webp" id="20_5tf8h"]
 [ext_resource type="Texture2D" uid="uid://chjb7f55o54hi" path="res://email-Iphone.webp" id="20_qtm35"]
 [ext_resource type="Texture2D" uid="uid://c6db46vtrp3kh" path="res://calendario.png" id="22_w7dw4"]
 [ext_resource type="Texture2D" uid="uid://ccxfe5t3vndlq" path="res://Phone_iOS.png" id="25_hk411"]
@@ -79,6 +80,16 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wbuj"]
+bg_color = Color(0, 0.3529412, 0.61960787, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tf8h"]
+bg_color = Color(0, 0.3529412, 0.61960787, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6onq"]
 bg_color = Color(0, 1, 0, 0)
@@ -428,9 +439,9 @@ expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="PopupCelular" unique_id=1751172209]
 layout_mode = 0
-offset_left = 727.0
+offset_left = 756.0
 offset_top = 170.0
-offset_right = 1270.0
+offset_right = 1340.0
 offset_bottom = 901.0
 color = Color(0, 0.3529412, 0.61960787, 1)
 
@@ -438,7 +449,7 @@ color = Color(0, 0.3529412, 0.61960787, 1)
 layout_mode = 0
 offset_left = 183.0
 offset_top = -81.0
-offset_right = 1787.0
+offset_right = 1881.0
 offset_bottom = 1168.0
 texture = ExtResource("6_sgto0")
 expand_mode = 1
@@ -456,7 +467,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
 
 [node name="TelaLoginCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=1162432653]
-visible = false
 anchors_preset = 0
 offset_left = -180.0
 offset_top = 106.0
@@ -467,7 +477,7 @@ offset_bottom = 146.0
 layout_mode = 0
 offset_left = 831.0
 offset_top = 202.0
-offset_right = 1164.0
+offset_right = 1251.0
 offset_bottom = 285.0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -486,11 +496,11 @@ secret = true
 
 [node name="GridContainer" type="GridContainer" parent="PopupCelular/CelularUI/TelaLoginCelular" unique_id=2006729914]
 layout_mode = 0
-offset_left = 846.0
-offset_top = 348.0
-offset_right = 1145.0
-offset_bottom = 788.0
-theme_override_constants/h_separation = 5
+offset_left = 857.0
+offset_top = 352.0
+offset_right = 1214.0
+offset_bottom = 792.0
+theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
 columns = 3
 
@@ -626,26 +636,27 @@ size_flags_vertical = 3
 
 [node name="MensagemPIN" type="Label" parent="PopupCelular/CelularUI/TelaLoginCelular" unique_id=358149750]
 layout_mode = 0
-offset_left = 884.0
-offset_top = 290.0
-offset_right = 1105.0
-offset_bottom = 318.0
+offset_left = 929.0
+offset_top = 295.0
+offset_right = 1150.0
+offset_bottom = 323.0
 theme_override_font_sizes/font_size = 20
 text = "Aguardando PIN..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TelaHomeCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=133857312]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="GradeApps" type="GridContainer" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=1967620873]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 326.0
-offset_right = 1038.0
-offset_bottom = 917.0
+offset_left = 638.0
+offset_top = 320.0
+offset_right = 1080.0
+offset_bottom = 915.0
 theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 80
 columns = 3
@@ -661,7 +672,7 @@ stretch_mode = 4
 [node name="AppNoticias" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=1583085513]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-disabled = true
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("18_4wbuj")
 ignore_texture_size = true
 stretch_mode = 4
@@ -685,7 +696,7 @@ stretch_mode = 4
 [node name="AppCalendario" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=461379823]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-disabled = true
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("22_w7dw4")
 ignore_texture_size = true
 stretch_mode = 4
@@ -701,46 +712,46 @@ stretch_mode = 4
 [node name="Phone" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=351698373]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-disabled = true
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("25_hk411")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=41797971]
 layout_mode = 0
-offset_left = 590.0
-offset_top = 412.0
-offset_right = 678.0
-offset_bottom = 435.0
+offset_left = 636.0
+offset_top = 411.0
+offset_right = 724.0
+offset_bottom = 434.0
 text = "Mensagens"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=122685930]
 layout_mode = 0
-offset_left = 590.0
-offset_top = 730.0
-offset_right = 678.0
-offset_bottom = 753.0
+offset_left = 635.0
+offset_top = 732.0
+offset_right = 723.0
+offset_bottom = 755.0
 text = "Telefone"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=620412698]
 layout_mode = 0
-offset_left = 949.0
-offset_top = 574.0
-offset_right = 1037.0
-offset_bottom = 597.0
+offset_left = 994.0
+offset_top = 575.0
+offset_right = 1082.0
+offset_bottom = 598.0
 text = "Fotos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=659392134]
 layout_mode = 0
-offset_left = 774.0
+offset_left = 816.0
 offset_top = 571.0
-offset_right = 862.0
+offset_right = 904.0
 offset_bottom = 594.0
 text = "Calendário"
 horizontal_alignment = 1
@@ -748,30 +759,30 @@ vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=1471652435]
 layout_mode = 0
-offset_left = 591.0
-offset_top = 574.0
-offset_right = 679.0
-offset_bottom = 597.0
+offset_left = 633.0
+offset_top = 573.0
+offset_right = 721.0
+offset_bottom = 596.0
 text = "E-mail"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=478049621]
 layout_mode = 0
-offset_left = 951.0
-offset_top = 415.0
-offset_right = 1039.0
-offset_bottom = 438.0
+offset_left = 993.0
+offset_top = 414.0
+offset_right = 1081.0
+offset_bottom = 437.0
 text = "Notas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=158036055]
 layout_mode = 0
-offset_left = 772.0
-offset_top = 414.0
-offset_right = 860.0
-offset_bottom = 437.0
+offset_left = 816.0
+offset_top = 412.0
+offset_right = 904.0
+offset_bottom = 435.0
 text = "Notícias"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -782,16 +793,71 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TelaNoticias" type="Control" parent="PopupCelular/CelularUI" unique_id=973325814]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaNoticias" unique_id=2067878308]
 layout_mode = 0
-offset_left = 551.0
-offset_top = 251.0
-offset_right = 1076.0
-offset_bottom = 972.0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaNoticias" unique_id=398341472]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 293.0
+offset_right = 1128.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tentativas de phishing crescem 617%
+ no Brasil: entenda o impacto."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PopupCelular/CelularUI/TelaNoticias" unique_id=2040449051]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 391.0
+offset_right = 1138.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Se antes o phishing já era um problema, hoje ele se tornou uma
+verdadeira epidemia digital, principalmente para empresas 
+brasileiras.
+Um levantamento recente da Kaspersky revelou um dado alarmante:
+o número de tentativas de phishing cresceu mais de 617% no Brasil 
+em apenas 12 meses. 
+Estamos falando de mais de 134 milhões de tentativas de golpe,
+muitas delas direcionadas a empresas como a sua.
+O relatório aponta dois fatores decisivos: a retomada econômica após 
+os anos mais duros da pandemia e o avanço da Inteligência Artificial. "
+
+[node name="ImgNews" type="TextureRect" parent="PopupCelular/CelularUI/TelaNoticias" unique_id=1340645392]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 664.0
+offset_right = 1003.0
+offset_bottom = 881.0
+texture = ExtResource("20_5tf8h")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Home" type="Button" parent="PopupCelular/CelularUI/TelaNoticias" unique_id=1031904952]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 879.0
+offset_right = 955.0
+offset_bottom = 950.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wbuj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5tf8h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tf8h")
+text = "Voltar para Tela Inicial"
 
 [node name="TelaTelefone" type="Control" parent="PopupCelular/CelularUI" unique_id=562989990]
 anchors_preset = 0
@@ -802,42 +868,42 @@ offset_bottom = 53.0
 
 [node name="StatusCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=1444327448]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 100.0
+offset_bottom = 112.0
 
 [node name="LabelHoraCelular" type="Label" parent="PopupCelular/CelularUI/StatusCelular" unique_id=648070898]
 layout_mode = 0
-offset_left = 572.0
-offset_top = 260.0
-offset_right = 619.0
-offset_bottom = 286.0
+offset_left = 605.0
+offset_top = 254.0
+offset_right = 657.0
+offset_bottom = 282.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "00:00"
 
 [node name="Sinal" type="TextureRect" parent="PopupCelular/CelularUI/StatusCelular" unique_id=573415917]
 layout_mode = 0
-offset_left = 947.0
+offset_left = 992.0
 offset_top = 262.0
-offset_right = 982.0
+offset_right = 1027.0
 offset_bottom = 280.0
 texture = ExtResource("13_s7n27")
 expand_mode = 1
 
 [node name="Wifi" type="TextureRect" parent="PopupCelular/CelularUI/StatusCelular" unique_id=1498360611]
 layout_mode = 0
-offset_left = 994.0
-offset_top = 261.0
-offset_right = 1020.0
-offset_bottom = 282.0
+offset_left = 1047.0
+offset_top = 263.0
+offset_right = 1073.0
+offset_bottom = 284.0
 texture = ExtResource("14_7cdh1")
 expand_mode = 1
 
 [node name="Bateria" type="TextureRect" parent="PopupCelular/CelularUI/StatusCelular" unique_id=1027513343]
 layout_mode = 0
-offset_left = 1028.0
+offset_left = 1085.0
 offset_top = 255.0
-offset_right = 1063.0
+offset_right = 1120.0
 offset_bottom = 289.0
 texture = ExtResource("15_y1xlt")
 expand_mode = 1
@@ -971,6 +1037,8 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="TelaGameOver/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
 [connection signal="pressed" from="TelaGameOver/SairGame" to="." method="_on_sair_game_pressed"]
 [connection signal="pressed" from="TelaVitoria/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
