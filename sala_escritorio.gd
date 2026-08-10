@@ -31,6 +31,7 @@ extends Control
 # APPS Celular
 @onready var appNoticias = $PopupCelular/CelularUI/TelaNoticias
 @onready var appNotas = $PopupCelular/CelularUI/TelaNotas
+@onready var appCalendario = $PopupCelular/CelularUI/TelaCalendario
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -211,6 +212,7 @@ func _on_botao_home_universal_pressed():
 	# Esconde as telas dos aplicativos
 	appNoticias.hide()
 	appNotas.hide()
+	appCalendario.hide()
 
 
 func _on_app_notas_pressed():
@@ -218,3 +220,7 @@ func _on_app_notas_pressed():
 	
 func _on_app_noticias_pressed():
 	appNoticias.show()
+
+
+func _on_app_calendario_pressed():
+	appCalendario.show()

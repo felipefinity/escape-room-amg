@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://8qey76d7q3o5" path="res://Notas.webp" id="19_jdpbm"]
 [ext_resource type="Texture2D" uid="uid://xnm4damgjevy" path="res://phishing2.webp" id="20_5tf8h"]
 [ext_resource type="Texture2D" uid="uid://chjb7f55o54hi" path="res://email-Iphone.webp" id="20_qtm35"]
+[ext_resource type="Texture2D" uid="uid://ut4gqve0s861" path="res://appdatas.jpg" id="21_jdpbm"]
+[ext_resource type="Texture2D" uid="uid://gmhre321v3bk" path="res://ciber.jpg" id="22_qtm35"]
 [ext_resource type="Texture2D" uid="uid://c6db46vtrp3kh" path="res://calendario.png" id="22_w7dw4"]
 [ext_resource type="Texture2D" uid="uid://ccxfe5t3vndlq" path="res://Phone_iOS.png" id="25_hk411"]
 [ext_resource type="Texture2D" uid="uid://befcm6fwtfniu" path="res://Derrota.png" id="26_4wbuj"]
@@ -870,6 +872,62 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5tf8h")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tf8h")
 text = "Voltar para Tela Inicial"
 
+[node name="TelaCalendario" type="Control" parent="PopupCelular/CelularUI" unique_id=1830750364]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaCalendario" unique_id=202013803]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+color = Color(0.9882353, 0.9882353, 0.99607843, 1)
+
+[node name="ImgCalender" type="TextureRect" parent="PopupCelular/CelularUI/TelaCalendario" unique_id=1376693934]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 344.0
+offset_right = 1134.0
+offset_bottom = 775.0
+texture = ExtResource("21_jdpbm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ImgCiber" type="TextureRect" parent="PopupCelular/CelularUI/TelaCalendario" unique_id=654462940]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 754.0
+offset_right = 1123.0
+offset_bottom = 874.0
+texture = ExtResource("22_qtm35")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Home" type="Button" parent="PopupCelular/CelularUI/TelaCalendario" unique_id=949361805]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 886.0
+offset_right = 970.0
+offset_bottom = 946.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wbuj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5tf8h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tf8h")
+text = "Voltar para Tela Inicial"
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaCalendario" unique_id=1424968913]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 285.0
+offset_right = 914.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Outubro"
+
 [node name="TelaNotas" type="Control" parent="PopupCelular/CelularUI" unique_id=307283919]
 visible = false
 anchors_preset = 0
@@ -1196,7 +1254,9 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppCalendario" to="." method="_on_app_calendario_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaCalendario/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNotas/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="TelaGameOver/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
 [connection signal="pressed" from="TelaGameOver/SairGame" to="." method="_on_sair_game_pressed"]
