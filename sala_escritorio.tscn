@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ut4gqve0s861" path="res://appdatas.jpg" id="21_jdpbm"]
 [ext_resource type="Texture2D" uid="uid://gmhre321v3bk" path="res://ciber.jpg" id="22_qtm35"]
 [ext_resource type="Texture2D" uid="uid://c6db46vtrp3kh" path="res://calendario.png" id="22_w7dw4"]
+[ext_resource type="Texture2D" uid="uid://b1v2rqbx48wke" path="res://fundoCel.jpeg" id="23_qtm35"]
 [ext_resource type="Texture2D" uid="uid://ccxfe5t3vndlq" path="res://Phone_iOS.png" id="25_hk411"]
 [ext_resource type="Texture2D" uid="uid://befcm6fwtfniu" path="res://Derrota.png" id="26_4wbuj"]
 [ext_resource type="Texture2D" uid="uid://bc2w1mohvvsro" path="res://Vitória.png" id="27_jdpbm"]
@@ -473,6 +474,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
 
 [node name="TelaLoginCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=1162432653]
+visible = false
 anchors_preset = 0
 offset_left = -180.0
 offset_top = 106.0
@@ -652,7 +654,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TelaHomeCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=133857312]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -928,6 +929,103 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Outubro"
 
+[node name="TelaFotos" type="Control" parent="PopupCelular/CelularUI" unique_id=1865843786]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fundo" type="ColorRect" parent="PopupCelular/CelularUI/TelaFotos" unique_id=1116375945]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 249.0
+offset_right = 1137.0
+offset_bottom = 976.0
+
+[node name="Home" type="Button" parent="PopupCelular/CelularUI/TelaFotos" unique_id=974479012]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 884.0
+offset_right = 974.0
+offset_bottom = 944.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wbuj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5tf8h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tf8h")
+text = "Voltar para Tela Inicial"
+
+[node name="GradeFotos" type="GridContainer" parent="PopupCelular/CelularUI/TelaFotos" unique_id=652230896]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 306.0
+offset_right = 1124.0
+offset_bottom = 862.0
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="Miniatura1" type="TextureButton" parent="PopupCelular/CelularUI/TelaFotos/GradeFotos" unique_id=893484212]
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 2
+texture_normal = ExtResource("23_qtm35")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Miniatura2" type="TextureButton" parent="PopupCelular/CelularUI/TelaFotos/GradeFotos" unique_id=1939407481]
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 2
+texture_normal = ExtResource("23_qtm35")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Miniatura3" type="TextureButton" parent="PopupCelular/CelularUI/TelaFotos/GradeFotos" unique_id=1408419462]
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 2
+texture_normal = ExtResource("23_qtm35")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Miniatura4" type="TextureButton" parent="PopupCelular/CelularUI/TelaFotos/GradeFotos" unique_id=794665229]
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 2
+texture_normal = ExtResource("23_qtm35")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Miniatura5" type="TextureButton" parent="PopupCelular/CelularUI/TelaFotos/GradeFotos" unique_id=4603397]
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 2
+texture_normal = ExtResource("23_qtm35")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Miniatura6" type="TextureButton" parent="PopupCelular/CelularUI/TelaFotos/GradeFotos" unique_id=1954635323]
+custom_minimum_size = Vector2(160, 250)
+layout_mode = 2
+texture_normal = ExtResource("23_qtm35")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="TelaAmpliada" type="ColorRect" parent="PopupCelular/CelularUI/TelaFotos" unique_id=1237867935]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 249.0
+offset_right = 1141.0
+offset_bottom = 976.0
+color = Color(0, 0, 0, 1)
+
+[node name="FotoGigante" type="TextureRect" parent="PopupCelular/CelularUI/TelaFotos/TelaAmpliada" unique_id=1810800003]
+layout_mode = 0
+offset_right = 549.0
+offset_bottom = 747.0
+
+[node name="Button" type="Button" parent="PopupCelular/CelularUI/TelaFotos/TelaAmpliada" unique_id=2110597465]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 2.0
+offset_right = 556.0
+offset_bottom = 47.0
+text = "X"
+
 [node name="TelaNotas" type="Control" parent="PopupCelular/CelularUI" unique_id=307283919]
 visible = false
 anchors_preset = 0
@@ -1082,6 +1180,7 @@ text = "Ovos                                                                    
 layout_mode = 2
 
 [node name="StatusCelular" type="Control" parent="PopupCelular/CelularUI" unique_id=1444327448]
+visible = false
 anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 112.0
@@ -1257,6 +1356,7 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppCalendario" to="." method="_on_app_calendario_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaCalendario/Home" to="." method="_on_botao_home_universal_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaFotos/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNotas/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="TelaGameOver/ReiniciarEscapeRoom" to="." method="_on_reiniciar_escape_room_pressed"]
 [connection signal="pressed" from="TelaGameOver/SairGame" to="." method="_on_sair_game_pressed"]
