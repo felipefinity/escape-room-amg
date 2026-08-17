@@ -32,6 +32,12 @@ extends Control
 @onready var appNoticias = $PopupCelular/CelularUI/TelaNoticias
 @onready var appNotas = $PopupCelular/CelularUI/TelaNotas
 @onready var appCalendario = $PopupCelular/CelularUI/TelaCalendario
+@onready var appFotos = $PopupCelular/CelularUI/TelaFotos
+
+# App Fotos
+
+@onready var tela_ampliada = $PopupCelular/CelularUI/TelaFotos/TelaAmpliada
+@onready var foto_gigante = $PopupCelular/CelularUI/TelaFotos/TelaAmpliada/FotoGigante
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -213,6 +219,7 @@ func _on_botao_home_universal_pressed():
 	appNoticias.hide()
 	appNotas.hide()
 	appCalendario.hide()
+	appFotos.hide()
 
 
 func _on_app_notas_pressed():
@@ -221,6 +228,43 @@ func _on_app_notas_pressed():
 func _on_app_noticias_pressed():
 	appNoticias.show()
 
-
 func _on_app_calendario_pressed():
 	appCalendario.show()
+	
+func _on_app_galeria_pressed():
+	appFotos.show()
+
+func _on_botao_fechar_x_pressed():
+	# Apenas esconde a tela de ampliação, voltando para a galeria
+	tela_ampliada.hide()
+
+func _on_miniatura_1_pressed():
+	# 1. Carrega a imagem da pista para dentro do quadro gigante
+	foto_gigante.texture = preload("res://appfotos1.jpg")
+
+#   2. Mostra a tela ampliada por cima de tudo
+	tela_ampliada.show()
+
+
+func _on_miniatura_2_pressed():
+	foto_gigante.texture = preload("res://appfotos2.jpg")
+	tela_ampliada.show()
+
+func _on_miniatura_3_pressed():
+	foto_gigante.texture = preload("res://appfotos3.jpg")
+	tela_ampliada.show()
+
+
+func _on_miniatura_4_pressed():
+	foto_gigante.texture = preload("res://appfotos4.jpg")
+	tela_ampliada.show()
+
+
+func _on_miniatura_5_pressed():
+	foto_gigante.texture = preload("res://appfotos5.jpg")
+	tela_ampliada.show()
+
+
+func _on_miniatura_6_pressed():
+	foto_gigante.texture = preload("res://appfotos6.jpg")
+	tela_ampliada.show()
