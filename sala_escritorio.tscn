@@ -808,11 +808,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TelaMensagens" type="Control" parent="PopupCelular/CelularUI" unique_id=1183385586]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TelaTelefone" type="Control" parent="PopupCelular/CelularUI" unique_id=562989990]
+visible = false
 anchors_preset = 0
 offset_left = -60.0
 offset_top = 13.0
@@ -942,6 +944,79 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Outubro"
 
+[node name="TelaEmail" type="Control" parent="PopupCelular/CelularUI" unique_id=90723551]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaEmail" unique_id=1851113249]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+color = Color(0.9882353, 0.9882353, 0.99607843, 1)
+
+[node name="Home" type="Button" parent="PopupCelular/CelularUI/TelaEmail" unique_id=1833604724]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 769.0
+offset_right = 970.0
+offset_bottom = 829.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wbuj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5tf8h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5tf8h")
+text = "Voltar para Tela Inicial"
+
+[node name="ImgOutlook" type="TextureRect" parent="PopupCelular/CelularUI/TelaEmail" unique_id=127558702]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 333.0
+offset_right = 891.0
+offset_bottom = 432.0
+texture = ExtResource("10_i6onq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaEmail" unique_id=2006971515]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 432.0
+offset_right = 901.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0.44705883, 0.7764706, 1)
+theme_override_font_sizes/font_size = 45
+text = "504"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PopupCelular/CelularUI/TelaEmail" unique_id=1833020871]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 533.0
+offset_right = 1090.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0, 0.44705883, 0.7764706, 1)
+theme_override_font_sizes/font_size = 45
+text = "Erro de sincronismo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="PopupCelular/CelularUI/TelaEmail" unique_id=1017687]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 644.0
+offset_right = 1256.0
+offset_bottom = 715.0
+theme_override_colors/font_color = Color(0, 0.44705883, 0.7764706, 1)
+theme_override_font_sizes/font_size = 24
+text = "Acesse o outlook pelo notbook para 
+ter acesso completo aos emails"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TelaFotos" type="Control" parent="PopupCelular/CelularUI" unique_id=1865843786]
 visible = false
 anchors_preset = 0
@@ -1042,15 +1117,15 @@ expand_mode = 1
 
 [node name="Button" type="Button" parent="PopupCelular/CelularUI/TelaFotos/TelaAmpliada" unique_id=2110597465]
 layout_mode = 0
-offset_left = 445.0
-offset_top = -58.0
-offset_right = 543.0
-offset_bottom = -13.0
+offset_left = 374.0
+offset_top = -60.0
+offset_right = 537.0
+offset_bottom = -15.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_qtm35")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qtm35")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qtm35")
-text = "X"
+text = "Fechar imagem"
 
 [node name="TelaNotas" type="Control" parent="PopupCelular/CelularUI" unique_id=307283919]
 visible = false
@@ -1110,7 +1185,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Pão de queijo                                                                    1KG"
+text = "Pão de queijo                                                                    1kg"
 
 [node name="HSeparator2" type="HSeparator" parent="PopupCelular/CelularUI/TelaNotas/VBoxContainer" unique_id=396830634]
 layout_mode = 2
@@ -1378,10 +1453,12 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppEmail" to="." method="_on_app_email_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppCalendario" to="." method="_on_app_calendario_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppGaleria" to="." method="_on_app_galeria_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaCalendario/Home" to="." method="_on_botao_home_universal_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaEmail/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaFotos/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaFotos/GradeFotos/Miniatura1" to="." method="_on_miniatura_1_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaFotos/GradeFotos/Miniatura2" to="." method="_on_miniatura_2_pressed"]

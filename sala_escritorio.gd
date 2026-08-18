@@ -33,6 +33,7 @@ extends Control
 @onready var appNotas = $PopupCelular/CelularUI/TelaNotas
 @onready var appCalendario = $PopupCelular/CelularUI/TelaCalendario
 @onready var appFotos = $PopupCelular/CelularUI/TelaFotos
+@onready var appEmail = $PopupCelular/CelularUI/TelaEmail
 
 # App Fotos
 
@@ -220,6 +221,7 @@ func _on_botao_home_universal_pressed():
 	appNotas.hide()
 	appCalendario.hide()
 	appFotos.hide()
+	appEmail.hide()
 
 
 func _on_app_notas_pressed():
@@ -268,3 +270,7 @@ func _on_miniatura_5_pressed():
 func _on_miniatura_6_pressed():
 	foto_gigante.texture = preload("res://appfotos6.jpg")
 	tela_ampliada.show()
+
+
+func _on_app_email_pressed():
+	appEmail.show()
