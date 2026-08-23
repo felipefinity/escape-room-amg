@@ -34,11 +34,18 @@ extends Control
 @onready var appCalendario = $PopupCelular/CelularUI/TelaCalendario
 @onready var appFotos = $PopupCelular/CelularUI/TelaFotos
 @onready var appEmail = $PopupCelular/CelularUI/TelaEmail
+@onready var appMensagens = $PopupCelular/CelularUI/TelaMensagens
 
 # App Fotos
-
 @onready var tela_ampliada = $PopupCelular/CelularUI/TelaFotos/TelaAmpliada
 @onready var foto_gigante = $PopupCelular/CelularUI/TelaFotos/TelaAmpliada/FotoGigante
+
+# App Mensagens
+@onready var TelaChat1 = $PopupCelular/CelularUI/TelaMensagens/TelaChat1
+@onready var TelaChat2 = $PopupCelular/CelularUI/TelaMensagens/TelaChat2
+@onready var TelaChat3 = $PopupCelular/CelularUI/TelaMensagens/TelaChat3
+@onready var TelaChat4 = $PopupCelular/CelularUI/TelaMensagens/TelaChat4
+
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -222,6 +229,7 @@ func _on_botao_home_universal_pressed():
 	appCalendario.hide()
 	appFotos.hide()
 	appEmail.hide()
+	appMensagens.hide()
 
 
 func _on_app_notas_pressed():
@@ -274,3 +282,26 @@ func _on_miniatura_6_pressed():
 
 func _on_app_email_pressed():
 	appEmail.show()
+
+
+func _on_app_mensagens_pressed():
+	appMensagens.show()
+
+
+func _on_voltar_msg_pressed_global():
+	TelaChat1.hide()
+	#TelaChat2.hide()
+	#TelaChat3.hide()
+	#TelaChat4.hide()
+
+func _on_btn_mensagem_1_pressed():
+	TelaChat1.show()
+
+func _on_btn_mensagem_2_pressed():
+	TelaChat2.show()
+
+func _on_btn_mensagem_3_pressed():
+	TelaChat3.show()
+
+func _on_btn_mensagem_4_pressed():
+	TelaChat4.show()
