@@ -38,7 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://bdbr12v0ee37s" path="res://appfotos4.jpg" id="26_5x247"]
 [ext_resource type="Texture2D" uid="uid://dr3nyncbuq20y" path="res://voltar.png" id="26_syamr"]
 [ext_resource type="Texture2D" uid="uid://c55mlcy118njv" path="res://appfotos5.jpg" id="27_1uhmp"]
+[ext_resource type="FontFile" uid="uid://ckmcmy4fnvhf3" path="res://MetalMania-Regular.ttf" id="27_g3n5k"]
 [ext_resource type="Texture2D" uid="uid://bc2w1mohvvsro" path="res://Vitória.png" id="27_jdpbm"]
+[ext_resource type="Texture2D" uid="uid://dxo2h67tv1b3d" path="res://smishing.png" id="28_oiwsq"]
 [ext_resource type="Texture2D" uid="uid://dfnl484octime" path="res://appfotos6.jpg" id="28_qbh3q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
@@ -133,6 +135,13 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3n5k"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtm35"]
 bg_color = Color(0.8564939, 3.657937e-06, 8.663535e-07, 1)
@@ -1216,6 +1225,174 @@ texture_normal = ExtResource("26_syamr")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="TelaChat2" type="Control" parent="PopupCelular/CelularUI/TelaMensagens" unique_id=992414484]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=526827803]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+color = Color(0.98039216, 0.9764706, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=1018522402]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 438.0
+color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+
+[node name="LogoMsg" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=2119716582]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 287.0
+offset_right = 906.0
+offset_bottom = 381.0
+texture = ExtResource("22_qbh3q")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LogoMsg2" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=3867790]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 877.0
+offset_right = 1102.0
+offset_bottom = 966.0
+texture = ExtResource("25_c33m3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TituloMSG" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=1004232522]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 390.0
+offset_right = 893.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "28115"
+
+[node name="Panel" type="Panel" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=650541688]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 466.0
+offset_right = 1121.0
+offset_bottom = 591.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c33m3")
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel" unique_id=88143026]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 481.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DETRAN: O processo de cancelamento da sua CNH segue em
+andamento.
+Clique aqui para regularizar: "
+
+[node name="phishingMsg1" type="LinkButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel" unique_id=806374727]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 342.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0.11764706, 0.5647059, 1, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.5647059, 1, 1)
+text = "http://www.detram.ng.gov.br/habilitacao"
+underline = 1
+
+[node name="VoltarMsg" type="TextureButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=1547357410]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 599.0
+offset_top = 291.0
+offset_right = 671.0
+offset_bottom = 368.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("26_syamr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="AvisoPhishing" type="Control" parent="PopupCelular/CelularUI/TelaMensagens" unique_id=896422709]
+visible = false
+anchors_preset = 0
+offset_left = 587.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing" unique_id=296730823]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 549.0
+offset_bottom = 727.0
+color = Color(0.98039216, 0.19607843, 0.2901961, 1)
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing" unique_id=1519687259]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 51.0
+offset_right = 526.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("27_g3n5k")
+theme_override_font_sizes/font_size = 80
+text = "Você caiu em um"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing" unique_id=1467588751]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 392.0
+offset_right = 347.0
+offset_bottom = 483.0
+theme_override_fonts/font = ExtResource("3_d227g")
+theme_override_font_sizes/font_size = 90
+text = "- 2:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing" unique_id=1948484649]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 277.0
+offset_right = 429.0
+offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("27_g3n5k")
+theme_override_font_sizes/font_size = 80
+text = "Penalidade"
+
+[node name="TextureRect" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing" unique_id=1157493938]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 178.0
+offset_right = 465.0
+offset_bottom = 255.0
+texture = ExtResource("28_oiwsq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BtnSmishing1" type="Button" parent="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing" unique_id=1984820473]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 606.0
+offset_right = 393.0
+offset_bottom = 684.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.98039216, 0.19607843, 0.2901961, 1)
+theme_override_colors/font_hover_color = Color(0.98039216, 0.19607843, 0.2901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_g3n5k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g3n5k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3n5k")
+text = "OK"
+
 [node name="TelaTelefone" type="Control" parent="PopupCelular/CelularUI" unique_id=562989990]
 visible = false
 anchors_preset = 0
@@ -1866,6 +2043,9 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Mensagem3/BtnMensagem3" to="." method="_on_btn_mensagem_3_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Mensagem4/BtnMensagem4" to="." method="_on_btn_mensagem_4_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat1/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel/phishingMsg1" to="." method="phishingMsg1"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat2/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing/BtnSmishing1" to="." method="_fechar_aviso_smishing"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaCalendario/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaEmail/Home" to="." method="_on_botao_home_universal_pressed"]

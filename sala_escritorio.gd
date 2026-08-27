@@ -46,6 +46,9 @@ extends Control
 @onready var TelaChat3 = $PopupCelular/CelularUI/TelaMensagens/TelaChat3
 @onready var TelaChat4 = $PopupCelular/CelularUI/TelaMensagens/TelaChat4
 
+@onready var phishingCelMsg1 = $PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel/phishingMsg1
+@onready var avisoPhisingCel = $PopupCelular/CelularUI/TelaMensagens/AvisoPhishing
+
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -255,7 +258,6 @@ func _on_miniatura_1_pressed():
 #   2. Mostra a tela ampliada por cima de tudo
 	tela_ampliada.show()
 
-
 func _on_miniatura_2_pressed():
 	foto_gigante.texture = preload("res://appfotos2.jpg")
 	tela_ampliada.show()
@@ -264,33 +266,27 @@ func _on_miniatura_3_pressed():
 	foto_gigante.texture = preload("res://appfotos3.jpg")
 	tela_ampliada.show()
 
-
 func _on_miniatura_4_pressed():
 	foto_gigante.texture = preload("res://appfotos4.jpg")
 	tela_ampliada.show()
-
 
 func _on_miniatura_5_pressed():
 	foto_gigante.texture = preload("res://appfotos5.jpg")
 	tela_ampliada.show()
 
-
 func _on_miniatura_6_pressed():
 	foto_gigante.texture = preload("res://appfotos6.jpg")
 	tela_ampliada.show()
 
-
 func _on_app_email_pressed():
 	appEmail.show()
-
 
 func _on_app_mensagens_pressed():
 	appMensagens.show()
 
-
 func _on_voltar_msg_pressed_global():
 	TelaChat1.hide()
-	#TelaChat2.hide()
+	TelaChat2.hide()
 	#TelaChat3.hide()
 	#TelaChat4.hide()
 
@@ -305,3 +301,23 @@ func _on_btn_mensagem_3_pressed():
 
 func _on_btn_mensagem_4_pressed():
 	TelaChat4.show()
+
+func phishingMsg1():
+	phishingCelMsg1.disabled = true
+	avisoPhisingCel.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
+	avisoPhisingCel.show()
+	
+	var tempo_atual = timer_jogo.time_left # Quanto tempo tem agora?
+	var tempo_perdido = 150 # 150 Segundos = 2 min e 30s
+	
+	if tempo_atual > tempo_perdido:
+		# Se tiver mais de 30s, subtrai 30 e recomeça o timer
+		timer_jogo.start(tempo_atual - tempo_perdido)
+	else:
+		# Se tiver menos de 30s, o jogador "morre" (Tempo zera)
+		# Passamos um tempo ínfimo (0.01) para forçar o sinal de timeout imediatamente
+		timer_jogo.start(0.01)
+	
+
+func _fechar_aviso_smishing():
+	avisoPhisingCel.hide()
