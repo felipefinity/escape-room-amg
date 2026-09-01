@@ -721,14 +721,6 @@ theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 80
 columns = 3
 
-[node name="AppMensagens" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=875311524]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("14_g6rxr")
-ignore_texture_size = true
-stretch_mode = 4
-
 [node name="AppNoticias" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=1583085513]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -761,6 +753,14 @@ texture_normal = ExtResource("22_w7dw4")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="AppMensagens" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=875311524]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_g6rxr")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="AppGaleria" type="TextureButton" parent="PopupCelular/CelularUI/TelaHomeCelular/GradeApps" unique_id=2140869003]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -779,10 +779,10 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=41797971]
 layout_mode = 0
-offset_left = 636.0
-offset_top = 411.0
-offset_right = 724.0
-offset_bottom = 434.0
+offset_left = 815.0
+offset_top = 569.0
+offset_right = 903.0
+offset_bottom = 592.0
 text = "Mensagens"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -799,50 +799,50 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=620412698]
 layout_mode = 0
-offset_left = 994.0
-offset_top = 575.0
-offset_right = 1082.0
-offset_bottom = 598.0
+offset_left = 993.0
+offset_top = 570.0
+offset_right = 1081.0
+offset_bottom = 593.0
 text = "Fotos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=659392134]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 571.0
-offset_right = 904.0
-offset_bottom = 594.0
+offset_left = 636.0
+offset_top = 570.0
+offset_right = 724.0
+offset_bottom = 593.0
 text = "Calendário"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=1471652435]
 layout_mode = 0
-offset_left = 633.0
-offset_top = 573.0
-offset_right = 721.0
-offset_bottom = 596.0
+offset_left = 998.0
+offset_top = 410.0
+offset_right = 1086.0
+offset_bottom = 434.0
 text = "E-mail"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=478049621]
 layout_mode = 0
-offset_left = 993.0
-offset_top = 414.0
-offset_right = 1081.0
-offset_bottom = 437.0
+offset_left = 813.0
+offset_top = 409.0
+offset_right = 901.0
+offset_bottom = 432.0
 text = "Notas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="PopupCelular/CelularUI/TelaHomeCelular" unique_id=158036055]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 412.0
-offset_right = 904.0
-offset_bottom = 435.0
+offset_left = 636.0
+offset_top = 406.0
+offset_right = 724.0
+offset_bottom = 429.0
 text = "Notícias"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1049,7 +1049,7 @@ offset_top = 390.0
 offset_right = 782.0
 offset_bottom = 413.0
 theme_override_colors/font_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
-text = "Detectamos atividade suspeita..."
+text = "Detectamos uma tentativa de login..."
 
 [node name="IconSeta" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/Mensagem3" unique_id=1242468807]
 layout_mode = 0
@@ -1115,7 +1115,7 @@ offset_top = 390.0
 offset_right = 782.0
 offset_bottom = 413.0
 theme_override_colors/font_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
-text = "ITAÚ: Agendado para quarta-feira..."
+text = "ITAÚ INFORMA: Acesse..."
 
 [node name="IconSeta" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/Mensagem4" unique_id=295483775]
 layout_mode = 0
@@ -1308,6 +1308,193 @@ text = "http://www.detram.ng.gov.br/habilitacao"
 underline = 1
 
 [node name="VoltarMsg" type="TextureButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat2" unique_id=1547357410]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 599.0
+offset_top = 291.0
+offset_right = 671.0
+offset_bottom = 368.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("26_syamr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TelaChat3" type="Control" parent="PopupCelular/CelularUI/TelaMensagens" unique_id=1312429106]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=1472664416]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+color = Color(0.98039216, 0.9764706, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=742809676]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 438.0
+color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+
+[node name="LogoMsg" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=259725060]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 287.0
+offset_right = 906.0
+offset_bottom = 381.0
+texture = ExtResource("23_c33m3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LogoMsg2" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=1443610341]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 877.0
+offset_right = 1102.0
+offset_bottom = 966.0
+texture = ExtResource("25_c33m3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TituloMSG" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=692224690]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 391.0
+offset_right = 916.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Suporte TI"
+
+[node name="Panel" type="Panel" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=1277455557]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 466.0
+offset_right = 1121.0
+offset_bottom = 654.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c33m3")
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3/Panel" unique_id=919637562]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 509.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "                                ⚠️ ALERTA DE SEGURANÇA ⚠️
+Detectamos uma tentativa de login suspeita e bloqueamos sua 
+estação de trabalho temporariamente.
+Para gerar uma nova senha de acesso e desbloquear seu PC,
+por favor, ligue para a nossa Caixa Postal Automática ramal 
+3550 através do App de telefone."
+
+[node name="VoltarMsg" type="TextureButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=382539841]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 599.0
+offset_top = 291.0
+offset_right = 671.0
+offset_bottom = 368.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("26_syamr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TelaChat4" type="Control" parent="PopupCelular/CelularUI/TelaMensagens" unique_id=482310218]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=720819559]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 976.0
+color = Color(0.98039216, 0.9764706, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=720377547]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 255.0
+offset_right = 1135.0
+offset_bottom = 438.0
+color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+
+[node name="LogoMsg" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=1654431331]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 287.0
+offset_right = 906.0
+offset_bottom = 381.0
+texture = ExtResource("24_syamr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LogoMsg2" type="TextureRect" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=233099999]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 877.0
+offset_right = 1102.0
+offset_bottom = 966.0
+texture = ExtResource("25_c33m3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TituloMSG" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=547520751]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 392.0
+offset_right = 905.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "7101824"
+
+[node name="Panel" type="Panel" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=1479868238]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 466.0
+offset_right = 1121.0
+offset_bottom = 591.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c33m3")
+
+[node name="Label" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel" unique_id=57280622]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 270.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ITAÚ Informa - Acesse sua conta:"
+
+[node name="Label2" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel" unique_id=809496055]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 30.0
+offset_right = 266.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "para evitar o bloqueio de seu saldo."
+
+[node name="phishingMsg2" type="LinkButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel" unique_id=108106803]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 8.0
+offset_right = 497.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.11764706, 0.5647059, 1, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.5647059, 1, 1)
+text = "http://bit.ly/Contato-Itau-app"
+underline = 1
+
+[node name="VoltarMsg" type="TextureButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat4" unique_id=540954779]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 599.0
@@ -2031,11 +2218,11 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
-[connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppMensagens" to="." method="_on_app_mensagens_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppEmail" to="." method="_on_app_email_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppCalendario" to="." method="_on_app_calendario_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppMensagens" to="." method="_on_app_mensagens_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppGaleria" to="." method="_on_app_galeria_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Mensagem1/BtnMensagem1" to="." method="_on_btn_mensagem_1_pressed"]
@@ -2045,6 +2232,9 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat1/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel/phishingMsg1" to="." method="phishingMsg1"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat2/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat3/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel/phishingMsg2" to="." method="phishingMsg2"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat4/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing/BtnSmishing1" to="." method="_fechar_aviso_smishing"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaCalendario/Home" to="." method="_on_botao_home_universal_pressed"]

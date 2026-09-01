@@ -47,8 +47,8 @@ extends Control
 @onready var TelaChat4 = $PopupCelular/CelularUI/TelaMensagens/TelaChat4
 
 @onready var phishingCelMsg1 = $PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel/phishingMsg1
+@onready var phishingCelMsg2 = $PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel/phishingMsg2
 @onready var avisoPhisingCel = $PopupCelular/CelularUI/TelaMensagens/AvisoPhishing
-
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -287,8 +287,8 @@ func _on_app_mensagens_pressed():
 func _on_voltar_msg_pressed_global():
 	TelaChat1.hide()
 	TelaChat2.hide()
-	#TelaChat3.hide()
-	#TelaChat4.hide()
+	TelaChat3.hide()
+	TelaChat4.hide()
 
 func _on_btn_mensagem_1_pressed():
 	TelaChat1.show()
@@ -304,7 +304,7 @@ func _on_btn_mensagem_4_pressed():
 
 func phishingMsg1():
 	phishingCelMsg1.disabled = true
-	avisoPhisingCel.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
+	phishingCelMsg1.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
 	avisoPhisingCel.show()
 	
 	var tempo_atual = timer_jogo.time_left # Quanto tempo tem agora?
@@ -317,7 +317,23 @@ func phishingMsg1():
 		# Se tiver menos de 30s, o jogador "morre" (Tempo zera)
 		# Passamos um tempo ínfimo (0.01) para forçar o sinal de timeout imediatamente
 		timer_jogo.start(0.01)
+		
+func phishingMsg2():
+	phishingCelMsg2.disabled = true
+	phishingCelMsg2.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
+	avisoPhisingCel.show()
 	
-
+	var tempo_atual = timer_jogo.time_left # Quanto tempo tem agora?
+	var tempo_perdido = 150 # 150 Segundos = 2 min e 30s
+	
+	if tempo_atual > tempo_perdido:
+		# Se tiver mais de 30s, subtrai 30 e recomeça o timer
+		timer_jogo.start(tempo_atual - tempo_perdido)
+	else:
+		# Se tiver menos de 30s, o jogador "morre" (Tempo zera)
+		# Passamos um tempo ínfimo (0.01) para forçar o sinal de timeout imediatamente
+		timer_jogo.start(0.01)
+		
+	
 func _fechar_aviso_smishing():
 	avisoPhisingCel.hide()
