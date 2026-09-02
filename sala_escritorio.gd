@@ -35,6 +35,7 @@ extends Control
 @onready var appFotos = $PopupCelular/CelularUI/TelaFotos
 @onready var appEmail = $PopupCelular/CelularUI/TelaEmail
 @onready var appMensagens = $PopupCelular/CelularUI/TelaMensagens
+@onready var appTelefone = $PopupCelular/CelularUI/TelaTelefone
 
 # App Fotos
 @onready var tela_ampliada = $PopupCelular/CelularUI/TelaFotos/TelaAmpliada
@@ -49,6 +50,14 @@ extends Control
 @onready var phishingCelMsg1 = $PopupCelular/CelularUI/TelaMensagens/TelaChat2/Panel/phishingMsg1
 @onready var phishingCelMsg2 = $PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel/phishingMsg2
 @onready var avisoPhisingCel = $PopupCelular/CelularUI/TelaMensagens/AvisoPhishing
+
+# App Telefone
+@onready var visor_numerico = $PopupCelular/CelularUI/TelaTelefone/VisorNumero
+@onready var audio_senha = $PopupCelular/CelularUI/TelaTelefone/AudioSenha
+@onready var audio_erro = $PopupCelular/CelularUI/TelaTelefone/AudioErro
+
+var numero_digitado = ""
+
 
 func _ready():
 	# Garante que o modal sempre inicie escondido quando a sala carregar
@@ -233,6 +242,7 @@ func _on_botao_home_universal_pressed():
 	appFotos.hide()
 	appEmail.hide()
 	appMensagens.hide()
+	appTelefone.hide()
 
 
 func _on_app_notas_pressed():
@@ -337,3 +347,68 @@ func phishingMsg2():
 	
 func _fechar_aviso_smishing():
 	avisoPhisingCel.hide()
+
+func _on_phone_pressed():
+	appTelefone.show()
+	
+
+# LÓGICA DE DIGITAÇÃO (App telefone)
+func adicionar_numero(digito: String):
+	# Se o visor estiver mostrando texto de erro/chamada, limpa a tela antes de digitar
+	if visor_numerico.text == "Chamando TI..." or visor_numerico.text == "Número Inexistente":
+		numero_digitado = ""
+		visor_numerico.text = ""
+		
+	# Limita a 6 caracteres para o texto não vazar da tela
+	if numero_digitado.length() < 11:
+		numero_digitado += digito
+		visor_numerico.text = numero_digitado
+
+# Conecte o sinal 'pressed()' de cada botão numérico a essas funções
+func _on_btn_1_pressed(): adicionar_numero("1")
+func _on_btn_2_pressed(): adicionar_numero("2")
+func _on_btn_3_pressed(): adicionar_numero("3")
+func _on_btn_4_pressed(): adicionar_numero("4")
+func _on_btn_5_pressed(): adicionar_numero("5")
+func _on_btn_6_pressed(): adicionar_numero("6")
+func _on_btn_7_pressed(): adicionar_numero("7")
+func _on_btn_8_pressed(): adicionar_numero("8")
+func _on_btn_9_pressed(): adicionar_numero("9")
+func _on_btn_0_pressed(): adicionar_numero("0")
+func _on_btn_asterisco_pressed(): adicionar_numero("*")
+func _on_btn_hashtag_pressed(): adicionar_numero("#")
+
+
+# ==========================================
+# CONTROLES INFERIORES
+# ==========================================
+
+func _on_apagar_txt_pressed():
+	# Só apaga se tiver algo escrito e se não for uma mensagem de texto do sistema
+	if numero_digitado.length() > 0 and visor_numerico.text != "Chamando TI..." and visor_numerico.text != "Número Inexistente":
+		# Corta o último caractere da string
+		numero_digitado = numero_digitado.substr(0, numero_digitado.length() - 1)
+		visor_numerico.text = numero_digitado
+
+func _on_ligar_pressed():
+	
+	# PROTEÇÃO: Se qualquer um dos áudios já estiver tocando, o botão não faz nada!
+	if audio_senha.playing or audio_erro.playing:
+		return
+		
+	# Impede de tentar ligar com o visor vazio
+	if numero_digitado == "":
+		return
+		
+	# Verifica se é o ramal da pista!
+	if numero_digitado == "#3550":
+		visor_numerico.text = "Chamando TI..."
+		# Toca o áudio com a senha do PC
+		audio_senha.play()
+	else:
+		visor_numerico.text = "Número Inexistente"
+		# Toca um som de bipe de erro (telefone fora de área)
+		audio_erro.play()
+		
+	# Zera a variável silenciosamente. Assim, quando ele apertar um número de novo, recomeça do zero.
+	numero_digitado = ""

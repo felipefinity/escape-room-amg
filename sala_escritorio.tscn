@@ -42,6 +42,11 @@
 [ext_resource type="Texture2D" uid="uid://bc2w1mohvvsro" path="res://Vitória.png" id="27_jdpbm"]
 [ext_resource type="Texture2D" uid="uid://dxo2h67tv1b3d" path="res://smishing.png" id="28_oiwsq"]
 [ext_resource type="Texture2D" uid="uid://dfnl484octime" path="res://appfotos6.jpg" id="28_qbh3q"]
+[ext_resource type="FontFile" uid="uid://3u01n2bk7qfg" path="res://Roboto-Medium.ttf" id="29_oiwsq"]
+[ext_resource type="Texture2D" uid="uid://bsw10pwci54ft" path="res://telefone.png" id="30_84j3e"]
+[ext_resource type="Texture2D" uid="uid://bkrlcpdy5incd" path="res://deletar.png" id="31_4w0u3"]
+[ext_resource type="AudioStream" uid="uid://bsglnidwq0qrw" path="res://este-numero-que-voce-ligou.mp3" id="32_4w0u3"]
+[ext_resource type="AudioStream" uid="uid://d02v4doc3dt8l" path="res://fahh.mp3" id="32_vexcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -87,7 +92,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
-bg_color = Color(0.6, 0.6, 0.59607846, 0.39215687)
+bg_color = Color(0.6, 0.6, 0.59607846, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -1391,7 +1396,7 @@ Detectamos uma tentativa de login suspeita e bloqueamos sua
 estação de trabalho temporariamente.
 Para gerar uma nova senha de acesso e desbloquear seu PC,
 por favor, ligue para a nossa Caixa Postal Automática ramal 
-3550 através do App de telefone."
+#3550 através do App de telefone."
 
 [node name="VoltarMsg" type="TextureButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=382539841]
 custom_minimum_size = Vector2(50, 50)
@@ -1587,6 +1592,216 @@ offset_left = -60.0
 offset_top = 13.0
 offset_right = -20.0
 offset_bottom = 53.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=203497347]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 240.0
+offset_right = 1195.0
+offset_bottom = 965.0
+color = Color(0.15686275, 0.16470589, 0.21176471, 1)
+
+[node name="VisorNumero" type="Label" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1753171049]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 330.0
+offset_right = 1179.0
+offset_bottom = 413.0
+theme_override_fonts/font = ExtResource("29_oiwsq")
+theme_override_font_sizes/font_size = 55
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TecladoNumerico" type="GridContainer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1819677269]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 469.0
+offset_right = 1184.0
+offset_bottom = 825.0
+theme_override_constants/h_separation = 42
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="1" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=1913271521]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "1"
+
+[node name="2" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=1354036396]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "2"
+
+[node name="3" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=273644352]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "3"
+
+[node name="4" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=1617192982]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "4"
+
+[node name="5" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=257391173]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "5"
+
+[node name="6" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=1041224479]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "6"
+
+[node name="7" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=1782359010]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "7"
+
+[node name="8" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=127420133]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "8"
+
+[node name="9" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=598124544]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "9"
+
+[node name="asterisco" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=268420957]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "*"
+
+[node name="0" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=85880723]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "0"
+
+[node name="hashtag" type="Button" parent="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico" unique_id=1493505222]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujso8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ujso8")
+text = "#"
+
+[node name="ControlesInferiores" type="HBoxContainer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=172147948]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 847.0
+offset_right = 1175.0
+offset_bottom = 947.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="VoltarInicio" type="TextureButton" parent="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores" unique_id=688552600]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("26_syamr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Ligar" type="TextureButton" parent="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores" unique_id=1947892481]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("30_84j3e")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ApagarTxt" type="TextureButton" parent="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores" unique_id=1843831802]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("31_4w0u3")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="AudioSenha" type="AudioStreamPlayer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1283978779]
+stream = ExtResource("32_vexcn")
+
+[node name="AudioErro" type="AudioStreamPlayer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1195828954]
+stream = ExtResource("32_4w0u3")
 
 [node name="TelaNoticias" type="Control" parent="PopupCelular/CelularUI" unique_id=973325814]
 visible = false
@@ -2224,6 +2439,7 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppCalendario" to="." method="_on_app_calendario_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppMensagens" to="." method="_on_app_mensagens_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppGaleria" to="." method="_on_app_galeria_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/Phone" to="." method="_on_phone_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Mensagem1/BtnMensagem1" to="." method="_on_btn_mensagem_1_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/Mensagem2/BtnMensagem2" to="." method="_on_btn_mensagem_2_pressed"]
@@ -2236,6 +2452,21 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat4/Panel/phishingMsg2" to="." method="phishingMsg2"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/TelaChat4/VoltarMsg" to="." method="_on_voltar_msg_pressed_global"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaMensagens/AvisoPhishing/BtnSmishing1" to="." method="_fechar_aviso_smishing"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/3" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/4" to="." method="_on_btn_4_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/5" to="." method="_on_btn_5_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/6" to="." method="_on_btn_6_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/7" to="." method="_on_btn_7_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/8" to="." method="_on_btn_8_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/9" to="." method="_on_btn_9_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/asterisco" to="." method="_on_btn_asterisco_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/0" to="." method="_on_btn_0_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/TecladoNumerico/hashtag" to="." method="_on_btn_hashtag_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores/VoltarInicio" to="." method="_on_botao_home_universal_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores/Ligar" to="." method="_on_ligar_pressed"]
+[connection signal="pressed" from="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores/ApagarTxt" to="." method="_on_apagar_txt_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaNoticias/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaCalendario/Home" to="." method="_on_botao_home_universal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaEmail/Home" to="." method="_on_botao_home_universal_pressed"]
