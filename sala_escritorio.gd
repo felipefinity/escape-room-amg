@@ -123,7 +123,7 @@ func validar_pin():
 func _on_entrar_pc_pressed() -> void:
 	var senha_digitada = input_pc.text
 	
-	if senha_digitada == "Admin@123": # Coloque a sua senha forte aqui
+	if senha_digitada == "CyberSec!26":
 		# Feedback de Sucesso
 		mensagem_pc.text = "ACESSO CONCEDIDO"
 		mensagem_pc.modulate = Color.GREEN
