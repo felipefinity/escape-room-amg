@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dn13x536f6kp2" path="res://protheusLogo.webp" id="8_y5et8"]
 [ext_resource type="Texture2D" uid="uid://cqg032xnqni2f" path="res://alerta.png" id="9_qinw8"]
 [ext_resource type="Texture2D" uid="uid://4rnriitvituc" path="res://outlook.webp" id="10_i6onq"]
+[ext_resource type="Texture2D" uid="uid://bdt87y8ck2ysk" path="res://fundo-emai.png" id="12_e5n60"]
 [ext_resource type="Texture2D" uid="uid://oup5m4r533iv" path="res://sinal-black.svg" id="13_s7n27"]
 [ext_resource type="Texture2D" uid="uid://jcf17r2opp4p" path="res://wifi-black.svg" id="14_7cdh1"]
 [ext_resource type="Texture2D" uid="uid://beclx68gx1g6l" path="res://IMessage_logo.svg" id="14_g6rxr"]
@@ -162,6 +163,29 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ypd3"]
+bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwy6d"]
+bg_color = Color(0, 0.19215687, 0.53333336, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygr3r"]
+bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffw1a"]
+bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcn6r"]
+bg_color = Color(0.95686275, 0.95686275, 0.9490196, 1)
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0)
@@ -1140,6 +1164,206 @@ color = Color(0.88235295, 0.8745098, 0.8666667, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
+
+[node name="MensagemPadrao" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1894697691]
+visible = false
+layout_mode = 2
+
+[node name="Fundo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/MensagemPadrao" unique_id=615203903]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 577.0
+texture = ExtResource("12_e5n60")
+expand_mode = 1
+
+[node name="Email1Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=935239476]
+layout_mode = 2
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=968124007]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/Cabecalho" unique_id=273714244]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5n60")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/Cabecalho/AvatarRedondo" unique_id=2131498291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/Cabecalho" unique_id=1452433147]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 339.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Correios <rastreamento@correio.com.br>"
+
+[node name="panellaranja" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=1737481946]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 46.0
+offset_right = 829.0
+offset_bottom = 134.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ypd3")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panellaranja" unique_id=1250437587]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 20.0
+offset_right = 267.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
+theme_override_font_sizes/font_size = 22
+text = "Correios"
+
+[node name="Label2" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panellaranja" unique_id=1717272693]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 52.0
+offset_right = 409.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
+theme_override_font_sizes/font_size = 14
+text = "📦 Evite transtornos com sua encomenda 🚚"
+
+[node name="panelazul" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=1273642320]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 132.0
+offset_right = 829.0
+offset_bottom = 428.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cwy6d")
+
+[node name="Label" type="RichTextLabel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul" unique_id=1755930662]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 17.0
+offset_right = 287.0
+offset_bottom = 34.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "Olá, [b]usuário.[/b]"
+
+[node name="Label4" type="RichTextLabel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul" unique_id=2031623667]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 213.0
+offset_right = 463.0
+offset_bottom = 236.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b]Evite problemas e regularize sua situação agora no botão abaixo:[/b]"
+
+[node name="Label3" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul" unique_id=1950780687]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 144.0
+offset_right = 465.0
+offset_bottom = 198.0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "Atenção: Caso o pagmento não seja concluído dentro do prazo
+estipulado, sua encomenda poderá ser devolvida ao remetente
+sem a possibilidade de reembolso."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul" unique_id=68492230]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 43.0
+offset_right = 472.0
+offset_bottom = 132.0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "Sua encomenda encontra-se retida pela Receita Federal devido à
+pendência no pagmento de taxas alfandegárias. Se já efetuou o
+pagamento e ainda recebeu este aviso, pode haver um problema
+    no processamento da sua transação, ou não foi realizado o
+pagamento da tarifa de algum item do pacote."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul" unique_id=1485398908]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 247.0
+offset_right = 350.0
+offset_bottom = 281.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_ygr3r")
+text = "Regularizar Pagmento"
+
+[node name="panellaranja2" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=2129154561]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 427.0
+offset_right = 829.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ffw1a")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panellaranja2" unique_id=1896391358]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 8.0
+offset_right = 376.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
+theme_override_font_sizes/font_size = 14
+text = "Última oportunidade de pagamento"
+
+[node name="Label2" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panellaranja2" unique_id=419976341]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 466.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "O prazo para regularização é 05 dias. Após esse limite exceder, podem ser aplicadas taxas
+adicionais e sua encomenda será devolvida ao remetente."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="panelcinza" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=439858295]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 496.0
+offset_right = 829.0
+offset_bottom = 551.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcn6r")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelcinza" unique_id=1753486372]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 12.0
+offset_right = 474.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 10
+text = "Correios 2026 - Todos os direitos reservados.
+Este e-mail foi gerado automaticamente. Por favor, não responda."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
 visible = false
