@@ -13,9 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://cqg032xnqni2f" path="res://alerta.png" id="9_qinw8"]
 [ext_resource type="Texture2D" uid="uid://4rnriitvituc" path="res://outlook.webp" id="10_i6onq"]
 [ext_resource type="Texture2D" uid="uid://bdt87y8ck2ysk" path="res://fundo-emai.png" id="12_e5n60"]
+[ext_resource type="Texture2D" uid="uid://bnju73kloqxkm" path="res://UFRJ.png" id="13_s3egx"]
 [ext_resource type="Texture2D" uid="uid://oup5m4r533iv" path="res://sinal-black.svg" id="13_s7n27"]
 [ext_resource type="Texture2D" uid="uid://jcf17r2opp4p" path="res://wifi-black.svg" id="14_7cdh1"]
+[ext_resource type="Texture2D" uid="uid://dtwd5ymt3ayii" path="res://microsoft2.png" id="14_634pm"]
 [ext_resource type="Texture2D" uid="uid://beclx68gx1g6l" path="res://IMessage_logo.svg" id="14_g6rxr"]
+[ext_resource type="Texture2D" uid="uid://b7hjsmypov5wb" path="res://gta1.png" id="15_08uqu"]
 [ext_resource type="Texture2D" uid="uid://dtercso1ccdcn" path="res://galeriaIphone.png" id="15_ul3bx"]
 [ext_resource type="Texture2D" uid="uid://ccxoi2ii4eddt" path="res://bateria.svg" id="15_y1xlt"]
 [ext_resource type="Texture2D" uid="uid://ct8h6vsclnewq" path="res://noticias.webp" id="18_4wbuj"]
@@ -1177,6 +1180,7 @@ texture = ExtResource("12_e5n60")
 expand_mode = 1
 
 [node name="Email1Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=935239476]
+visible = false
 layout_mode = 2
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=968124007]
@@ -1362,6 +1366,382 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
 text = "Correios 2026 - Todos os direitos reservados.
 Este e-mail foi gerado automaticamente. Por favor, não responda."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Email2Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=277602817]
+visible = false
+layout_mode = 2
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email2Conteudo" unique_id=1504465058]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email2Conteudo/Cabecalho" unique_id=830526047]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 339.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "UFRJ <portal@ufrj.br>"
+
+[node name="AvatarRedondo2" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email2Conteudo/Cabecalho" unique_id=1767918276]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s3egx")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email2Conteudo/Cabecalho/AvatarRedondo2" unique_id=1552644209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "U"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email2Conteudo" unique_id=1733014856]
+layout_mode = 0
+offset_left = 322.0
+offset_right = 806.0
+offset_bottom = 576.0
+texture = ExtResource("13_s3egx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Email3Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=766179728]
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo" unique_id=474776100]
+layout_mode = 0
+offset_right = 1162.0
+offset_bottom = 578.0
+color = Color(0.18431373, 0.18431373, 0.18431373, 1)
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo" unique_id=1657562393]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo/Cabecalho" unique_id=1888130899]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 339.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Microsoft <msa@communication.com>"
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo/Cabecalho" unique_id=1121239512]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_634pm")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo/Cabecalho/AvatarRedondo" unique_id=1672730165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "M"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo" unique_id=385176231]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 24.0
+offset_right = 777.0
+offset_bottom = 567.0
+texture = ExtResource("14_634pm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Email4Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=898284291]
+visible = false
+layout_mode = 2
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email4Conteudo" unique_id=1728660510]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 1162.0
+offset_bottom = 578.0
+texture = ExtResource("15_08uqu")
+expand_mode = 1
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email4Conteudo" unique_id=152234152]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email4Conteudo/Cabecalho" unique_id=50025763]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 304.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Nuuvem<newsletter@nuuvem.com>"
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email4Conteudo/Cabecalho" unique_id=564845082]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_08uqu")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email4Conteudo/Cabecalho/AvatarRedondo" unique_id=558226778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "N"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Email5Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1468080707]
+visible = false
+layout_mode = 2
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=595094646]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 190.0
+offset_right = 851.0
+offset_bottom = 493.0
+expand_mode = 1
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=1586393802]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Cabecalho" unique_id=2076805811]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xwqd6")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Cabecalho/AvatarRedondo" unique_id=422121840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Cabecalho" unique_id=2005476531]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 272.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "FGTS <contato48@caixa.gov.br>"
+
+[node name="Email6Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=66354035]
+visible = false
+layout_mode = 2
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=81547777]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 169.0
+offset_right = 970.0
+offset_bottom = 385.0
+expand_mode = 1
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=899000751]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo/Cabecalho" unique_id=1597749193]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 272.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Segurança da Informação <security@amg-br.com>"
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo/Cabecalho" unique_id=1287781313]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nrt5h")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo/Cabecalho/AvatarRedondo" unique_id=1167736643]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Email7Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=2035073817]
+visible = false
+layout_mode = 2
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo" unique_id=1061424730]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 169.0
+offset_right = 970.0
+offset_bottom = 385.0
+expand_mode = 1
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo" unique_id=787937734]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo/Cabecalho" unique_id=618651825]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 272.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Previdência Empresarial <previdencia@itau.com.br>"
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo/Cabecalho" unique_id=1135510248]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yutck")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo/Cabecalho/AvatarRedondo" unique_id=724651584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Email8Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1955802936]
+visible = false
+layout_mode = 2
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo" unique_id=858292032]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 169.0
+offset_right = 970.0
+offset_bottom = 385.0
+expand_mode = 1
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo" unique_id=398371719]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo/Cabecalho" unique_id=291076556]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 272.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Nubank<todomundo@novidades.nubank.com.br>"
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo/Cabecalho" unique_id=2005858575]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6fva")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo/Cabecalho/AvatarRedondo" unique_id=1361054714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "N"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Email9Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1564776491]
+layout_mode = 2
+
+[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo" unique_id=1661199892]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 169.0
+offset_right = 970.0
+offset_bottom = 385.0
+expand_mode = 1
+
+[node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo" unique_id=1842481101]
+anchors_preset = 0
+offset_right = 333.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo/Cabecalho" unique_id=1219263827]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 17.0
+offset_right = 272.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Marisa <marisa@email.marisaonline.com.br>"
+
+[node name="AvatarRedondo" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo" unique_id=1575317100]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjhkw")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo/AvatarRedondo" unique_id=402641003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "M"
 horizontal_alignment = 1
 vertical_alignment = 1
 
