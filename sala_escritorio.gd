@@ -56,6 +56,22 @@ extends Control
 @onready var audio_senha = $PopupCelular/CelularUI/TelaTelefone/AudioSenha
 @onready var audio_erro = $PopupCelular/CelularUI/TelaTelefone/AudioErro
 
+#Desktop Email
+
+@onready var abrirOutlookDesktop = $PopupPC/MonitorUI/AppEmailDesktop
+
+@onready var msgPadraoEmail = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/MensagemPadrao
+@onready var conteudoEmail1 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo
+@onready var conteudoEmail2 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email2Conteudo
+@onready var conteudoEmail3 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email3Conteudo
+@onready var conteudoEmail4 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email4Conteudo
+@onready var conteudoEmail5 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo
+@onready var conteudoEmail6 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo
+@onready var conteudoEmail7 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo
+@onready var conteudoEmail8 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo
+@onready var conteudoEmail9 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo
+
+
 var numero_digitado = ""
 
 
@@ -412,3 +428,125 @@ func _on_ligar_pressed():
 		
 	# Zera a variável silenciosamente. Assim, quando ele apertar um número de novo, recomeça do zero.
 	numero_digitado = ""
+
+func _on_email_button_pressed() -> void:
+	abrirOutlookDesktop.show()
+	
+func _on_fecharEmail_pressed() -> void:
+	abrirOutlookDesktop.hide()
+
+func _on_button_email_1_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.show()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_2_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.show()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_3_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.show()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_4_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.show()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_5_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.show()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_6_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.show()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_7_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.show()
+	conteudoEmail8.hide()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_8_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.show()
+	conteudoEmail9.hide()
+
+
+func _on_button_email_9_pressed() -> void:
+	msgPadraoEmail.hide()
+	conteudoEmail1.hide()
+	conteudoEmail2.hide()
+	conteudoEmail3.hide()
+	conteudoEmail4.hide()
+	conteudoEmail5.hide()
+	conteudoEmail6.hide()
+	conteudoEmail7.hide()
+	conteudoEmail8.hide()
+	conteudoEmail9.show()

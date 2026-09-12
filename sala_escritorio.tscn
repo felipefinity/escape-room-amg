@@ -21,7 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://b7hjsmypov5wb" path="res://gta1.png" id="15_08uqu"]
 [ext_resource type="Texture2D" uid="uid://dtercso1ccdcn" path="res://galeriaIphone.png" id="15_ul3bx"]
 [ext_resource type="Texture2D" uid="uid://ccxoi2ii4eddt" path="res://bateria.svg" id="15_y1xlt"]
+[ext_resource type="Texture2D" uid="uid://bhrqqpclr341y" path="res://fgts-logo.png" id="16_d6fva"]
+[ext_resource type="Texture2D" uid="uid://dtq75cvb67shx" path="res://itau1.png" id="16_xwqd6"]
+[ext_resource type="Texture2D" uid="uid://c50ekg84vwgdn" path="res://nubank1.png" id="17_nrt5h"]
 [ext_resource type="Texture2D" uid="uid://ct8h6vsclnewq" path="res://noticias.webp" id="18_4wbuj"]
+[ext_resource type="Texture2D" uid="uid://4y62ryi8xv28" path="res://marisa2.png" id="18_yutck"]
 [ext_resource type="Texture2D" uid="uid://8qey76d7q3o5" path="res://Notas.webp" id="19_jdpbm"]
 [ext_resource type="Texture2D" uid="uid://xnm4damgjevy" path="res://phishing2.webp" id="20_5tf8h"]
 [ext_resource type="Texture2D" uid="uid://ylfldebxfv36" path="res://avatar1.png" id="20_450mf"]
@@ -167,6 +171,9 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_178fr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ypd3"]
 bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
 corner_radius_top_left = 12
@@ -182,6 +189,13 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op7db"]
+bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffw1a"]
 bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
 
@@ -189,6 +203,24 @@ bg_color = Color(0.9882353, 0.7529412, 0.023529412, 1)
 bg_color = Color(0.95686275, 0.95686275, 0.9490196, 1)
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0wfd"]
+bg_color = Color(0, 0.3019608, 0.14901961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko440"]
+bg_color = Color(0, 0.3019608, 0.14901961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yutck"]
+content_margin_left = 15.0
+content_margin_right = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0)
@@ -383,10 +415,10 @@ text = "Entrar"
 
 [node name="IconUser" type="TextureRect" parent="PopupPC/MonitorUI/TelaLogin" unique_id=1617406170]
 layout_mode = 0
-offset_left = 431.0
-offset_top = 49.0
-offset_right = 1032.0
-offset_bottom = 345.0
+offset_left = 432.0
+offset_top = 59.0
+offset_right = 1033.0
+offset_bottom = 355.0
 texture = ExtResource("2_6q6if")
 expand_mode = 1
 
@@ -627,6 +659,7 @@ offset_left = 1353.0
 offset_top = 21.0
 offset_right = 1428.0
 offset_bottom = 66.0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vexcn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vexcn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vexcn")
@@ -1153,6 +1186,99 @@ offset_right = 271.0
 offset_bottom = 71.5
 color = Color(0.88235295, 0.8745098, 0.8666667, 1)
 
+[node name="ButtonEmail1" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=569451024]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 63.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail2" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=305209934]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 269.0
+offset_bottom = 127.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail3" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=116055004]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 269.0
+offset_bottom = 191.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail4" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=367826099]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 269.0
+offset_bottom = 252.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail5" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=549095931]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 254.0
+offset_right = 270.0
+offset_bottom = 314.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail6" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=1393200690]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 317.0
+offset_right = 271.0
+offset_bottom = 377.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail7" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=530655332]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 380.0
+offset_right = 270.0
+offset_bottom = 440.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail8" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=1501659550]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 443.0
+offset_right = 270.0
+offset_bottom = 503.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
+[node name="ButtonEmail9" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect" unique_id=1584974183]
+layout_mode = 0
+offset_top = 507.0
+offset_right = 269.0
+offset_bottom = 576.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_178fr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_178fr")
+
 [node name="LinhaDiv" type="VBoxContainer" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela" unique_id=1605696846]
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
@@ -1313,7 +1439,9 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_ygr3r")
-text = "Regularizar Pagmento"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ygr3r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_op7db")
+text = "Regularizar Pagamento"
 
 [node name="panellaranja2" type="Panel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=2129154561]
 layout_mode = 0
@@ -1342,7 +1470,7 @@ offset_bottom = 49.0
 theme_override_colors/font_color = Color(0.023529412, 0.16078432, 0.42745098, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "O prazo para regularização é 05 dias. Após esse limite exceder, podem ser aplicadas taxas
+text = "O prazo para regularização é 05 dias. Após esse limite exeder, podem ser aplicadas taxas
 adicionais e sua encomenda será devolvida ao remetente."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1517,16 +1645,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Email5Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1468080707]
-visible = false
 layout_mode = 2
 
 [node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=595094646]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 190.0
-offset_right = 851.0
-offset_bottom = 493.0
+offset_left = 460.0
+offset_top = -74.0
+offset_right = 696.0
+offset_bottom = 199.0
+texture = ExtResource("16_d6fva")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=1586393802]
 anchors_preset = 0
@@ -1562,17 +1691,59 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "FGTS <contato48@caixa.gov.br>"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=416281257]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 1157.0
+offset_bottom = 391.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Prezado cidadão,
+
+Encontra-se disponível o saque do FGTS. Confira o Calendário FGTS 2026.
+
+No CPF vinculado a este e-mail, consta um saldo no valor de R$7212,35 disponível para saque. Visto que o valor disponível é superior a R$3000,00 o titular deverá dirigir-se a uma agência da Caixa Econômica Federal portando:
+
+- Carteira de Trabalho ou Termo de Rescisão
+- Documento de identificação com foto
+- Extrato completo do FGTS atualizado
+
+Para clientes da Caixa, será possível através do site www.contasinativas.caixa.gov.br solicitar o crédito automático na conta. Caso não seja, na agência, solicite o depósito em um banco de sua preferência ou o saque em espécie.
+
+O extrato que deverá ser levado junto com os outros documentos já citados, encontra-se abaixo. Clique no botão para fazer o download e depois imprimi-lo."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=1772664861]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 474.0
+offset_right = 1135.0
+offset_bottom = 566.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Atenciosamente,
+Caixa Econômica Federal - FGTS
+
+[color=#808080]RTXP7K45IUQBO96LMF1ZS0AVYDNEHGJWC832[/color]"
+
+[node name="Button" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=1457436737]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 416.0
+offset_right = 670.0
+offset_bottom = 472.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_g0wfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0wfd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ko440")
+text = "Extrato FGTS 2026"
+
 [node name="Email6Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=66354035]
 visible = false
 layout_mode = 2
-
-[node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=81547777]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 169.0
-offset_right = 970.0
-offset_bottom = 385.0
-expand_mode = 1
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=899000751]
 anchors_preset = 0
@@ -1608,17 +1779,53 @@ text = "S"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=1746161710]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 2.0
+offset_right = 972.0
+offset_bottom = 575.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yutck")
+bbcode_enabled = true
+text = "[center][color=red][b]⚠️ ALERTA DE INCIDENTE CRÍTICO ⚠️[/b][/color][/center]
+
+[b]Prioridade:[/b] Máxima (Nível 1)
+[b]Ameaça:[/b] Infecção por Ransomware em andamento.
+
+Prezados colaboradores,
+
+Nossos sistemas de defesa detectaram um bloqueio em massa na rede. [b]NÃO DESLIGUEM AS MÁQUINAS.[/b] 
+
+A equipe de Resposta a Incidentes encontrou uma vulnerabilidade no código do invasor: o script malicioso salva temporariamente a chave de criptografia (em formato Base64) no log local antes de travar o sistema.
+
+[color=#005A9E][b]PLANO DE CONTENÇÃO (EXECUTE IMEDIATAMENTE):[/b][/color]
+
+1. Abra o arquivo [b]Logs.txt[/b] na sua Área de Trabalho.
+2. Role até as últimas linhas e localize a chave injetada (geralmente termina com o símbolo [b]=[/b]).
+3. Abra o aplicativo [b]Terminal[/b].
+4. Digite o comando de descriptografia exato abaixo:
+
+[center][b]decode <CHAVE_DE_DESCRIPTOGRAFIA>[/b][/center]
+
+Usem a verdadeira senha revelada pelo Terminal para desarmar a tela de bloqueio do Protheus. 
+Corram, a criptografia total do disco está iminente!
+
+[i]Este é um e-mail automático do Centro de Operações de Segurança da Informação.[/i]"
+
 [node name="Email7Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=2035073817]
 visible = false
 layout_mode = 2
 
 [node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo" unique_id=1061424730]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 169.0
-offset_right = 970.0
-offset_bottom = 385.0
+offset_left = 413.0
+offset_top = 2.0
+offset_right = 733.0
+offset_bottom = 571.0
+texture = ExtResource("16_xwqd6")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email7Conteudo" unique_id=787937734]
 anchors_preset = 0
@@ -1660,11 +1867,12 @@ layout_mode = 2
 
 [node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo" unique_id=858292032]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 169.0
-offset_right = 970.0
-offset_bottom = 385.0
+offset_left = 504.0
+offset_right = 880.0
+offset_bottom = 576.0
+texture = ExtResource("17_nrt5h")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo" unique_id=398371719]
 anchors_preset = 0
@@ -1701,15 +1909,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Email9Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1564776491]
+visible = false
 layout_mode = 2
 
 [node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo" unique_id=1661199892]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 169.0
-offset_right = 970.0
-offset_bottom = 385.0
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 762.0
+offset_bottom = 565.0
+texture = ExtResource("18_yutck")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo" unique_id=1842481101]
 anchors_preset = 0
@@ -3690,8 +3901,19 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/TerminalButton" to="." method="vencer_jogo"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/Cabecalho/Fechar" to="." method="_on_fecharEmail_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail1" to="." method="_on_button_email_1_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail2" to="." method="_on_button_email_2_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail3" to="." method="_on_button_email_3_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail4" to="." method="_on_button_email_4_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail5" to="." method="_on_button_email_5_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail6" to="." method="_on_button_email_6_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail7" to="." method="_on_button_email_7_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail8" to="." method="_on_button_email_8_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail9" to="." method="_on_button_email_9_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]
