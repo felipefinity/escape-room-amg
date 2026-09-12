@@ -71,6 +71,8 @@ extends Control
 @onready var conteudoEmail8 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo
 @onready var conteudoEmail9 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email9Conteudo
 
+@onready var alertaPhishingEmail = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing
+
 
 var numero_digitado = ""
 
@@ -550,3 +552,7 @@ func _on_button_email_9_pressed() -> void:
 	conteudoEmail7.hide()
 	conteudoEmail8.hide()
 	conteudoEmail9.show()
+
+
+func _on_sair_aviso_phishing_pressed() -> void:
+	alertaPhishingEmail.hide()

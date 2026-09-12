@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://xnm4damgjevy" path="res://phishing2.webp" id="20_5tf8h"]
 [ext_resource type="Texture2D" uid="uid://ylfldebxfv36" path="res://avatar1.png" id="20_450mf"]
 [ext_resource type="Texture2D" uid="uid://chjb7f55o54hi" path="res://email-Iphone.webp" id="20_qtm35"]
+[ext_resource type="FontFile" uid="uid://2cks7jqvpl83" path="res://Butcherman-Regular.ttf" id="20_sjhkw"]
+[ext_resource type="Texture2D" uid="uid://bhictbix1tbe7" path="res://phishing3.webp" id="21_1ypd3"]
 [ext_resource type="Texture2D" uid="uid://c8j6fdi1xn8lw" path="res://entrar.png" id="21_5x247"]
 [ext_resource type="Texture2D" uid="uid://ut4gqve0s861" path="res://appdatas.jpg" id="21_jdpbm"]
 [ext_resource type="Texture2D" uid="uid://bii5xndbf5o5r" path="res://avatar2.png" id="22_qbh3q"]
@@ -221,6 +223,13 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yutck"]
 content_margin_left = 15.0
 content_margin_right = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktyca"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0)
@@ -1306,7 +1315,6 @@ texture = ExtResource("12_e5n60")
 expand_mode = 1
 
 [node name="Email1Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=935239476]
-visible = false
 layout_mode = 2
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=968124007]
@@ -1645,6 +1653,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Email5Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1468080707]
+visible = false
 layout_mode = 2
 
 [node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo" unique_id=595094646]
@@ -1955,6 +1964,75 @@ grow_vertical = 2
 text = "M"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AlertaPhishing" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=23908063]
+layout_mode = 2
+
+[node name="Fundo" type="ColorRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=1082404438]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 578.0
+color = Color(0.54509807, 0, 0, 1)
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=2090893233]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 34.0
+offset_right = 1106.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("20_sjhkw")
+theme_override_font_sizes/font_size = 55
+text = "Você caiu em um PHISHING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=1029747461]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 151.0
+offset_right = 1129.0
+offset_bottom = 310.0
+theme_override_fonts/font = ExtResource("20_sjhkw")
+theme_override_font_sizes/font_size = 40
+text = "Você clicou em um link malicioso.
+ Penalidade de tempo aplicada!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=786220001]
+layout_mode = 0
+offset_left = 638.0
+offset_top = 316.0
+offset_right = 860.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("20_sjhkw")
+theme_override_font_sizes/font_size = 55
+text = "- 02:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SairAvisoPhishing" type="Button" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=1166890739]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 427.0
+offset_right = 889.0
+offset_bottom = 514.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.54509807, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_sjhkw")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ktyca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ktyca")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktyca")
+text = "Compreendi"
+
+[node name="TextureRect" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=1131874540]
+layout_mode = 0
+offset_left = 90.0
+offset_top = -13.0
+offset_right = 420.0
+offset_bottom = 578.0
+texture = ExtResource("21_1ypd3")
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
 visible = false
@@ -3914,6 +3992,7 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail7" to="." method="_on_button_email_7_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail8" to="." method="_on_button_email_8_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail9" to="." method="_on_button_email_9_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing/SairAvisoPhishing" to="." method="_on_sair_aviso_phishing_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]
