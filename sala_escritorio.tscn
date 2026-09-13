@@ -388,7 +388,6 @@ texture = ExtResource("2_yukba")
 expand_mode = 1
 
 [node name="TelaLogin" type="Control" parent="PopupPC/MonitorUI" unique_id=1838292297]
-visible = false
 anchors_preset = 0
 offset_left = 257.0
 offset_top = 296.0
@@ -456,6 +455,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
 text = "👁️"
 
 [node name="TelaDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=1743420263]
+visible = false
 anchors_preset = 0
 offset_left = 274.0
 offset_top = 331.0
@@ -1304,7 +1304,6 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="MensagemPadrao" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1894697691]
-visible = false
 layout_mode = 2
 
 [node name="Fundo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/MensagemPadrao" unique_id=615203903]
@@ -1315,6 +1314,7 @@ texture = ExtResource("12_e5n60")
 expand_mode = 1
 
 [node name="Email1Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=935239476]
+visible = false
 layout_mode = 2
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo" unique_id=968124007]
@@ -1876,8 +1876,8 @@ layout_mode = 2
 
 [node name="Conteudo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email8Conteudo" unique_id=858292032]
 layout_mode = 0
-offset_left = 504.0
-offset_right = 880.0
+offset_left = 407.0
+offset_right = 783.0
 offset_bottom = 576.0
 texture = ExtResource("17_nrt5h")
 expand_mode = 1
@@ -2019,6 +2019,9 @@ offset_right = 889.0
 offset_bottom = 514.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.54509807, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.54509807, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.54509807, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.54509807, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_sjhkw")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ktyca")
@@ -3992,6 +3995,8 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail7" to="." method="_on_button_email_7_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail8" to="." method="_on_button_email_8_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail9" to="." method="_on_button_email_9_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul/Button" to="." method="_on_button_phishing1email"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Button" to="." method="_on_button_phishing2email"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing/SairAvisoPhishing" to="." method="_on_sair_aviso_phishing_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]

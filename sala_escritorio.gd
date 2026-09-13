@@ -10,6 +10,7 @@ extends Control
 # Variaveis de tempo
 @onready var label_relogio = $LabelRelogio
 @onready var timer_jogo = $TimerJogo
+var tempo_maximo_sala = 1200.0 # Caso trocar o tempo de game tenho que lembrar de trocar aqui também
 
 # Variaveis PC
 @onready var input_pc = $PopupPC/MonitorUI/TelaLogin/SenhaPC
@@ -73,6 +74,8 @@ extends Control
 
 @onready var alertaPhishingEmail = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing
 
+@onready var btn_phishing_email_1 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul/Button
+@onready var btn_phishing_email_5 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Button
 
 var numero_digitado = ""
 
@@ -225,14 +228,14 @@ func _on_sair_game_pressed():
 	get_tree().quit()
 	
 func vencer_jogo():
-	# 1. Pega os valores ANTES de parar o cronômetro para evitar que venha zerado
-	var tempo_total = timer_jogo.wait_time # Os 20 minutos originais (1200)
-	var tempo_restante = timer_jogo.time_left # O que sobrou agora
+	# 1. Troque o timer_jogo.wait_time pelo valor fixo da sala (20 min = 1200 seg)
+	var tempo_total = tempo_maximo_sala
+	var tempo_restante = timer_jogo.time_left
 	
-	# 2. Agora sim, para o cronômetro
+	# 2. Para o cronômetro
 	timer_jogo.stop()
 	
-	# 3. Calcula o tempo exato que a equipe levou (Tempo Total - Tempo Restante)
+	# 3. Calcula o tempo exato (Tempo fixo - O que sobrou na tela)
 	var tempo_gasto = int(tempo_total - tempo_restante)
 	
 	# Matemática para minutos e segundos
@@ -438,6 +441,7 @@ func _on_fecharEmail_pressed() -> void:
 	abrirOutlookDesktop.hide()
 
 func _on_button_email_1_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.show()
 	conteudoEmail2.hide()
@@ -451,6 +455,7 @@ func _on_button_email_1_pressed() -> void:
 
 
 func _on_button_email_2_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.show()
@@ -464,6 +469,7 @@ func _on_button_email_2_pressed() -> void:
 
 
 func _on_button_email_3_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -477,6 +483,7 @@ func _on_button_email_3_pressed() -> void:
 
 
 func _on_button_email_4_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -490,6 +497,7 @@ func _on_button_email_4_pressed() -> void:
 
 
 func _on_button_email_5_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -503,6 +511,7 @@ func _on_button_email_5_pressed() -> void:
 
 
 func _on_button_email_6_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -516,6 +525,7 @@ func _on_button_email_6_pressed() -> void:
 
 
 func _on_button_email_7_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -529,6 +539,7 @@ func _on_button_email_7_pressed() -> void:
 
 
 func _on_button_email_8_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -542,6 +553,7 @@ func _on_button_email_8_pressed() -> void:
 
 
 func _on_button_email_9_pressed() -> void:
+	alertaPhishingEmail.hide()
 	msgPadraoEmail.hide()
 	conteudoEmail1.hide()
 	conteudoEmail2.hide()
@@ -556,3 +568,39 @@ func _on_button_email_9_pressed() -> void:
 
 func _on_sair_aviso_phishing_pressed() -> void:
 	alertaPhishingEmail.hide()
+
+
+func _on_button_phishing1email() -> void:
+	# 1. Desativa o botão e muda a cor da fonte para cinza
+	btn_phishing_email_1.disabled = true
+	btn_phishing_email_1.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
+	
+	# 2. Exibe o alerta vermelho gigante
+	alertaPhishingEmail.show()
+	
+	# 3. Aplica a penalidade de tempo
+	var tempo_atual = timer_jogo.time_left
+	var tempo_perdido = 150 
+	
+	if tempo_atual > tempo_perdido:
+		timer_jogo.start(tempo_atual - tempo_perdido)
+	else:
+		timer_jogo.start(0.01)
+
+
+func _on_button_phishing2email() -> void:
+	# 1. Desativa o botão e muda a cor da fonte para cinza
+	btn_phishing_email_5.disabled = true
+	btn_phishing_email_5.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
+	
+	# 2. Exibe o alerta vermelho gigante
+	alertaPhishingEmail.show()
+	
+	# 3. Aplica a penalidade de tempo
+	var tempo_atual = timer_jogo.time_left
+	var tempo_perdido = 150 
+	
+	if tempo_atual > tempo_perdido:
+		timer_jogo.start(tempo_atual - tempo_perdido)
+	else:
+		timer_jogo.start(0.01)
