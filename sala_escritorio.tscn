@@ -231,6 +231,16 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qg4g3"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80ygi"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0)
 border_width_left = 2
@@ -388,6 +398,7 @@ texture = ExtResource("2_yukba")
 expand_mode = 1
 
 [node name="TelaLogin" type="Control" parent="PopupPC/MonitorUI" unique_id=1838292297]
+visible = false
 anchors_preset = 0
 offset_left = 257.0
 offset_top = 296.0
@@ -455,7 +466,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
 text = "👁️"
 
 [node name="TelaDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=1743420263]
-visible = false
 anchors_preset = 0
 offset_left = 274.0
 offset_top = 331.0
@@ -626,6 +636,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dklfc")
 text = "X"
 
 [node name="AppEmailDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=276757534]
+visible = false
 anchors_preset = 0
 offset_left = 274.0
 offset_top = 328.0
@@ -1811,7 +1822,7 @@ A equipe de Resposta a Incidentes encontrou uma vulnerabilidade no código do in
 [color=#005A9E][b]PLANO DE CONTENÇÃO (EXECUTE IMEDIATAMENTE):[/b][/color]
 
 1. Abra o arquivo [b]Logs.txt[/b] na sua Área de Trabalho.
-2. Role até as últimas linhas e localize a chave injetada (geralmente termina com o símbolo [b]=[/b]).
+2. Procure a chave injetada (geralmente termina com o símbolo [b]=[/b] ).
 3. Abra o aplicativo [b]Terminal[/b].
 4. Digite o comando de descriptografia exato abaixo:
 
@@ -1966,6 +1977,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AlertaPhishing" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=23908063]
+visible = false
 layout_mode = 2
 
 [node name="Fundo" type="ColorRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing" unique_id=1082404438]
@@ -2036,6 +2048,93 @@ offset_top = -13.0
 offset_right = 420.0
 offset_bottom = 578.0
 texture = ExtResource("21_1ypd3")
+
+[node name="AppLogsDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=616651359]
+anchors_preset = 0
+offset_left = 674.0
+offset_top = 355.0
+offset_right = 1433.0
+offset_bottom = 970.0
+
+[node name="Fundo" type="ColorRect" parent="PopupPC/MonitorUI/AppLogsDesktop" unique_id=1437124766]
+layout_mode = 0
+offset_right = 760.0
+offset_bottom = 615.0
+
+[node name="Header" type="Control" parent="PopupPC/MonitorUI/AppLogsDesktop" unique_id=666682692]
+anchors_preset = 0
+offset_right = 631.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PopupPC/MonitorUI/AppLogsDesktop/Header" unique_id=297044262]
+layout_mode = 0
+offset_right = 759.0
+offset_bottom = 47.0
+color = Color(0, 0.32941177, 0.90588236, 1)
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppLogsDesktop/Header" unique_id=1944310511]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 76.0
+offset_bottom = 33.0
+text = "Logs.txt - Bloco de Notas"
+
+[node name="SairBlocoNotas" type="Button" parent="PopupPC/MonitorUI/AppLogsDesktop/Header" unique_id=1136373666]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 6.0
+offset_right = 750.0
+offset_bottom = 42.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qg4g3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qg4g3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qg4g3")
+text = "X"
+
+[node name="TextEdit" type="TextEdit" parent="PopupPC/MonitorUI/AppLogsDesktop" unique_id=1788749251]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 47.0
+offset_right = 759.0
+offset_bottom = 613.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_80ygi")
+text = "[2026-10-19 08:00:01] INFO: System boot sequence initiated.
+[2026-10-19 08:00:05] INFO: Loading kernel modules... OK.
+[2026-10-19 08:00:12] INFO: Network interfaces initialized. IP: 192.168.1.50
+[2026-10-19 08:01:00] INFO: Starting TOTVS Protheus AppServer...
+[2026-10-19 08:01:05] INFO: Connecting to database DBAccess... SUCCESS.
+[2026-10-19 08:01:15] INFO: Checking license server... VALID.
+[2026-10-19 08:02:30] WARNING: User admin login from 192.168.1.102
+[2026-10-19 08:15:00] INFO: Cyber Security Awareness Week initialization protocols loaded.
+[2026-10-19 08:30:00] INFO: Routine MATA010 executed successfully.
+[2026-10-19 09:00:42] DEBUG: Session token generated: TK-9982-X.
+[2026-10-19 09:15:22] INFO: Routine FINR130 started.
+[2026-10-19 09:15:45] INFO: Report generated in \\spool\\
+[2026-10-19 09:45:10] INFO: Network packet analysis running standard diagnostics.
+[2026-10-19 10:05:00] WARNING: High memory usage detected in AppServer thread 442.
+[2026-10-19 10:20:11] DEBUG: Cache sync completed with backup server 02.
+[2026-10-19 10:30:00] INFO: Routine MATA020 executed successfully.
+[2026-10-19 11:00:00] INFO: Routine FATR040 started.
+[2026-10-19 11:22:33] WARNING: Unauthorized handshake attempt blocked on port 8080.
+[2026-10-19 11:45:00] ERROR: Invalid parameter passed to MATA410.
+[2026-10-19 12:00:00] INFO: System idle. Lunch break routine active.
+[2026-10-19 12:14:02] DEBUG: Temp backup flag toggled for emergency recovery.
+[2026-10-19 12:14:03] MALWARE_TEMP_KEY = VDBUVlNfU2F2ZXI=
+[2026-10-19 13:00:15] INFO: Afternoon session started. All nodes operational.
+[2026-10-19 13:10:00] INFO: Routine MATA030 executed successfully.
+[2026-10-19 13:40:50] INFO: Routine FINR480 executed successfully.
+[2026-10-19 14:10:05] INFO: Firewall policy check passed. Zero anomalies found in main inbound.
+[2026-10-19 14:22:15] CRITICAL ALERT: UNAUTHORIZED ACCESS DETECTED ON PORT 445!
+[2026-10-19 14:22:16] WARNING: Unknown payload injected into memory.
+[2026-10-19 14:22:17] ERROR: Firewall rules overridden.
+[2026-10-19 14:22:18] INFO: Executing encrypt_all.sh...
+[2026-10-19 14:22:19] DEBUG: Encryption failed on main drive. Retrying...
+[2026-10-19 14:22:20] DEBUG: Emergency partition lock engaged.
+[2026-10-19 14:22:21] FATAL: SYSTEM LOCKDOWN INITIATED.
+[2026-10-19 14:25:00] INFO: Diagnostic sweep awaiting manual intervention."
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
 visible = false
@@ -3981,6 +4080,7 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/EntrarPC" to="." method="_on_entrar_pc_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/TerminalButton" to="." method="vencer_jogo"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/LogsButton" to="." method="_on_logs_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/EmailButton" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
@@ -3998,6 +4098,7 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul/Button" to="." method="_on_button_phishing1email"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Button" to="." method="_on_button_phishing2email"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing/SairAvisoPhishing" to="." method="_on_sair_aviso_phishing_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppLogsDesktop/Header/SairBlocoNotas" to="." method="_on_sair_bloco_notas_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]

@@ -77,6 +77,9 @@ var tempo_maximo_sala = 1200.0 # Caso trocar o tempo de game tenho que lembrar d
 @onready var btn_phishing_email_1 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email1Conteudo/panelazul/Button
 @onready var btn_phishing_email_5 = $PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Button
 
+# Desktop Blocos de Notas
+@onready var BlocoNotas = $PopupPC/MonitorUI/AppLogsDesktop
+
 var numero_digitado = ""
 
 
@@ -604,3 +607,9 @@ func _on_button_phishing2email() -> void:
 		timer_jogo.start(tempo_atual - tempo_perdido)
 	else:
 		timer_jogo.start(0.01)
+
+func _on_logs_button_pressed() -> void:
+	BlocoNotas.show()
+
+func _on_sair_bloco_notas_pressed() -> void:
+	BlocoNotas.hide()
