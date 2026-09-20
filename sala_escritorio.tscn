@@ -241,6 +241,25 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80ygi"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bged8"]
+bg_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ypd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qt2wk"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0mqe"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0)
 border_width_left = 2
@@ -398,7 +417,6 @@ texture = ExtResource("2_yukba")
 expand_mode = 1
 
 [node name="TelaLogin" type="Control" parent="PopupPC/MonitorUI" unique_id=1838292297]
-visible = false
 anchors_preset = 0
 offset_left = 257.0
 offset_top = 296.0
@@ -466,6 +484,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ho6ja")
 text = "👁️"
 
 [node name="TelaDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=1743420263]
+visible = false
 anchors_preset = 0
 offset_left = 274.0
 offset_top = 331.0
@@ -2050,6 +2069,7 @@ offset_bottom = 578.0
 texture = ExtResource("21_1ypd3")
 
 [node name="AppLogsDesktop" type="Control" parent="PopupPC/MonitorUI" unique_id=616651359]
+visible = false
 anchors_preset = 0
 offset_left = 674.0
 offset_top = 355.0
@@ -2068,7 +2088,7 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="PopupPC/MonitorUI/AppLogsDesktop/Header" unique_id=297044262]
 layout_mode = 0
-offset_right = 759.0
+offset_right = 762.0
 offset_bottom = 47.0
 color = Color(0, 0.32941177, 0.90588236, 1)
 
@@ -2135,6 +2155,74 @@ text = "[2026-10-19 08:00:01] INFO: System boot sequence initiated.
 [2026-10-19 14:22:20] DEBUG: Emergency partition lock engaged.
 [2026-10-19 14:22:21] FATAL: SYSTEM LOCKDOWN INITIATED.
 [2026-10-19 14:25:00] INFO: Diagnostic sweep awaiting manual intervention."
+
+[node name="AppTerminalDesktop" type="Panel" parent="PopupPC/MonitorUI" unique_id=1863530813]
+visible = false
+layout_mode = 0
+offset_left = 486.0
+offset_top = 400.0
+offset_right = 1573.0
+offset_bottom = 957.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bged8")
+
+[node name="MargemInterna" type="MarginContainer" parent="PopupPC/MonitorUI/AppTerminalDesktop" unique_id=1877303906]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 1083.0
+offset_bottom = 553.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="OrganizadorVertical" type="VBoxContainer" parent="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna" unique_id=1557871319]
+layout_mode = 2
+
+[node name="HistoricoTerminal" type="RichTextLabel" parent="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical" unique_id=450884932]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+bbcode_enabled = true
+scroll_following = true
+
+[node name="LinhaDeComando" type="HBoxContainer" parent="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical" unique_id=2122254410]
+layout_mode = 2
+
+[node name="PromptLabel" type="Label" parent="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando" unique_id=1821311384]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "admin@soc:~$"
+
+[node name="InputTerminal" type="LineEdit" parent="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando" unique_id=1361014458]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ypd3")
+
+[node name="Header" type="Panel" parent="PopupPC/MonitorUI/AppTerminalDesktop" unique_id=115762206]
+layout_mode = 0
+offset_top = -43.0
+offset_right = 1087.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qt2wk")
+
+[node name="Label" type="Label" parent="PopupPC/MonitorUI/AppTerminalDesktop/Header" unique_id=280515833]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 93.0
+offset_bottom = 37.0
+text = "Terminal"
+
+[node name="SairTerminal" type="Button" parent="PopupPC/MonitorUI/AppTerminalDesktop/Header" unique_id=1489201635]
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 6.0
+offset_right = 1077.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0mqe")
+text = "X"
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
 visible = false
@@ -4079,7 +4167,7 @@ vertical_alignment = 2
 [connection signal="text_submitted" from="PopupPC/MonitorUI/TelaLogin/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/EntrarPC" to="." method="_on_entrar_pc_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaLogin/BotaoOlho" to="." method="_on_botao_olho_pressed"]
-[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/TerminalButton" to="." method="vencer_jogo"]
+[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/TerminalButton" to="." method="_on_terminal_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/LogsButton" to="." method="_on_logs_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/EmailButton" to="." method="_on_email_button_pressed"]
@@ -4099,6 +4187,8 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email5Conteudo/Button" to="." method="_on_button_phishing2email"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/AlertaPhishing/SairAvisoPhishing" to="." method="_on_sair_aviso_phishing_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppLogsDesktop/Header/SairBlocoNotas" to="." method="_on_sair_bloco_notas_pressed"]
+[connection signal="text_submitted" from="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando/InputTerminal" to="." method="_on_input_terminal_text_submitted"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppTerminalDesktop/Header/SairTerminal" to="." method="_on_sair_terminal_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]

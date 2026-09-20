@@ -79,6 +79,13 @@ var tempo_maximo_sala = 1200.0 # Caso trocar o tempo de game tenho que lembrar d
 
 # Desktop Blocos de Notas
 @onready var BlocoNotas = $PopupPC/MonitorUI/AppLogsDesktop
+@onready var texto_logs = $PopupPC/MonitorUI/AppLogsDesktop/TextEdit
+var texto_original_logs = "" # Variável vazia que vai guardar o textão
+
+# Desktop Terminal
+@onready var app_terminal_desktop = $PopupPC/MonitorUI/AppTerminalDesktop
+@onready var historico_terminal = $PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/HistoricoTerminal
+@onready var input_terminal = $PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando/InputTerminal
 
 var numero_digitado = ""
 
@@ -94,6 +101,12 @@ func _ready():
 		if filho is Button:
 			# .bind() passa o texto do botão (ex: "1", "2") como argumento para a função
 			filho.pressed.connect(_on_botao_numero_pressed.bind(filho.text))
+	
+	# Salva o texto do log do desktop caso o usuário faça caquinha
+	texto_original_logs = texto_logs.text
+
+	# Boas vindas do terminal
+	historico_terminal.text = "[color=#00FF00]Terminal v1.0.4 - Sistema de Recuperacao de Emergencia\nDigite 'help' para ver os comandos disponiveis.\n\n[/color]"
 
 func _on_botao_pc_pressed():
 	# Torna o modal visível
@@ -613,3 +626,49 @@ func _on_logs_button_pressed() -> void:
 
 func _on_sair_bloco_notas_pressed() -> void:
 	BlocoNotas.hide()
+	# Restaura o texto para o estado original
+	texto_logs.text = texto_original_logs
+	
+	# Zera o histórico do Ctrl+Z para o novo texto
+	texto_logs.clear_undo_history()
+
+func _on_sair_terminal_pressed() -> void:
+	app_terminal_desktop.hide()
+
+func _on_terminal_button_pressed() -> void:
+	app_terminal_desktop.show()
+	input_terminal.call_deferred("grab_focus")
+	
+
+# Quando o jogador aperta ENTER no terminal
+func _on_input_terminal_text_submitted(new_text: String) -> void:
+	var comando = new_text.strip_edges()
+	
+	# Exibe o que o usuário digitou no histórico
+	historico_terminal.text += "[color=#FFFFFF]C:\\> " + comando + "[/color]\n"
+	
+	# Limpa o input imediatamente para a próxima digitação
+	input_terminal.text = ""
+	
+	# Lógica dos comandos
+	if comando == "help":
+		historico_terminal.text += "[color=#FFFF00]Comandos disponiveis:\n - decode <chave_base64>\n - cls (limpa a tela)\n - exit (fecha o terminal)[/color]\n\n"
+		
+	elif comando == "cls":
+		historico_terminal.text = ""
+		
+	elif comando == "exit":
+		app_terminal_desktop.hide()
+		return
+		
+	elif comando.begins_with("decode "):
+		var chave = comando.substr(7).strip_edges()
+		
+		if chave == "VDBUVlNfU2F2ZXI=":
+			historico_terminal.text += "[color=#00FF00]SUCESSO: Hash quebrado com sucesso.[/color]\n"
+			historico_terminal.text += "[color=#00FF00]CHAVE DE DESCRIPTOGRAFIA (AES-256): 4F8A-9B22-C37D[/color]\n\n"
+		else:
+			historico_terminal.text += "[color=#FF0000]ERRO: Chave invalida ou corrompida.[/color]\n\n"
+	else:
+		historico_terminal.text += "[color=#FF0000]Comando desconhecido. Digite 'help'.[/color]\n\n"
+	
