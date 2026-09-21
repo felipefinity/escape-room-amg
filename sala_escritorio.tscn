@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://d4muy573qfi4x" path="res://txt.png" id="5_ujso8"]
 [ext_resource type="Texture2D" uid="uid://b323ym0332xt0" path="res://iphone6.png" id="6_sgto0"]
 [ext_resource type="Texture2D" uid="uid://dn13x536f6kp2" path="res://protheusLogo.webp" id="8_y5et8"]
-[ext_resource type="Texture2D" uid="uid://cqg032xnqni2f" path="res://alerta.png" id="9_qinw8"]
 [ext_resource type="Texture2D" uid="uid://4rnriitvituc" path="res://outlook.webp" id="10_i6onq"]
 [ext_resource type="Texture2D" uid="uid://bdt87y8ck2ysk" path="res://fundo-emai.png" id="12_e5n60"]
 [ext_resource type="Texture2D" uid="uid://bnju73kloqxkm" path="res://UFRJ.png" id="13_s3egx"]
@@ -33,6 +32,7 @@
 [ext_resource type="FontFile" uid="uid://2cks7jqvpl83" path="res://Butcherman-Regular.ttf" id="20_sjhkw"]
 [ext_resource type="Texture2D" uid="uid://bhictbix1tbe7" path="res://phishing3.webp" id="21_1ypd3"]
 [ext_resource type="Texture2D" uid="uid://c8j6fdi1xn8lw" path="res://entrar.png" id="21_5x247"]
+[ext_resource type="Texture2D" uid="uid://cihqeixa3yrii" path="res://cadeado1.png" id="21_cwy6d"]
 [ext_resource type="Texture2D" uid="uid://ut4gqve0s861" path="res://appdatas.jpg" id="21_jdpbm"]
 [ext_resource type="Texture2D" uid="uid://bii5xndbf5o5r" path="res://avatar2.png" id="22_qbh3q"]
 [ext_resource type="Texture2D" uid="uid://gmhre321v3bk" path="res://ciber.jpg" id="22_qtm35"]
@@ -259,6 +259,55 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aip8q"]
+bg_color = Color(0.54509807, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qfri"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlrlx"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5k0l"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eagag"]
+bg_color = Color(0.25490198, 0.4117647, 0.88235295, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.25490198, 0.4117647, 0.88235295, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_611dv"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujso8"]
 bg_color = Color(0.6, 0.6, 0.59607846, 0)
@@ -582,65 +631,6 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_i6onq")
 ignore_texture_size = true
 stretch_mode = 4
-
-[node name="AlertaProtheus" type="Control" parent="PopupPC/MonitorUI/TelaDesktop" unique_id=1813761717]
-visible = false
-anchors_preset = 0
-offset_left = 499.0
-offset_top = 217.0
-offset_right = 899.0
-offset_bottom = 397.0
-
-[node name="FundoAlert" type="ColorRect" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=1269441993]
-layout_mode = 0
-offset_right = 400.0
-offset_bottom = 180.0
-
-[node name="BarraTitulo" type="ColorRect" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=910101298]
-layout_mode = 0
-offset_top = -1.0
-offset_right = 400.0
-offset_bottom = 29.0
-color = Color(0, 0, 1, 1)
-
-[node name="Aviso" type="Label" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=216923406]
-layout_mode = 0
-offset_left = 181.0
-offset_top = 1.0
-offset_right = 223.0
-offset_bottom = 24.0
-text = "Aviso"
-
-[node name="MensagemAviso" type="Label" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=345438921]
-layout_mode = 0
-offset_left = -30.0
-offset_top = 104.0
-offset_right = 436.0
-offset_bottom = 127.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "Você precisa escapar primeiro para poder voltar a trabalhar!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=1477887803]
-layout_mode = 0
-offset_left = 171.0
-offset_top = 37.0
-offset_right = 231.0
-offset_bottom = 99.0
-texture = ExtResource("9_qinw8")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="SairAviso" type="Button" parent="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus" unique_id=429258588]
-layout_mode = 0
-offset_left = 181.0
-offset_top = 133.0
-offset_right = 221.0
-offset_bottom = 164.0
-theme_override_font_sizes/font_size = 14
-text = "Ok"
 
 [node name="BotaoFecharPC" type="Button" parent="PopupPC/MonitorUI" unique_id=1040764459]
 layout_mode = 0
@@ -2221,8 +2211,146 @@ offset_left = 1034.0
 offset_top = 6.0
 offset_right = 1077.0
 offset_bottom = 43.0
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_m0mqe")
 text = "X"
+
+[node name="AppRansomware" type="Panel" parent="PopupPC/MonitorUI" unique_id=980463443]
+visible = false
+layout_mode = 0
+offset_left = 506.0
+offset_top = 365.0
+offset_right = 1472.0
+offset_bottom = 945.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aip8q")
+
+[node name="MargemGeral" type="MarginContainer" parent="PopupPC/MonitorUI/AppRansomware" unique_id=1865351541]
+layout_mode = 0
+offset_right = 965.0
+offset_bottom = 574.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DivisaoColunas" type="HBoxContainer" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral" unique_id=1948773310]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="ColunaEsquerda" type="VBoxContainer" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas" unique_id=1098738034]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FundoCadeado" type="Panel" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda" unique_id=571016108]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3qfri")
+
+[node name="IconeCadeado" type="TextureRect" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda/FundoCadeado" unique_id=1399467273]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 24.0
+offset_right = 219.0
+offset_bottom = 172.0
+texture = ExtResource("21_cwy6d")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Espacador1" type="Control" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda" unique_id=1831346023]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="TextoAvisoTempo" type="Label" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda" unique_id=336969088]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "O banco de dados do protheus será deletado em:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FundoCronometro" type="ColorRect" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda" unique_id=48419320]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+color = Color(0.99215686, 0.40392157, 0.1254902, 1)
+
+[node name="RelogioTexto" type="Label" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda/FundoCronometro" unique_id=1579717783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "00:09:32"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColunaDireita" type="VBoxContainer" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas" unique_id=410414306]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TituloOops" type="Label" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita" unique_id=829490632]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Ooops, seu ambiente Protheus foi criptografado!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextosExplicativos" type="RichTextLabel" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita" unique_id=482967984]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_tlrlx")
+bbcode_enabled = true
+text = "[b][u]O que aconteceu com meu ambiente Protheus?[/u][/b]
+Todos os seus arquivos críticos do ERP, incluindo o dicionário de dados (SX2) e as tabelas SQL, foram criptografados utilizando criptografia militar. Os acessos aos módulos de Faturamento, RH e Contabilidade estão completamente bloqueados. 
+
+[b][u]Posso recuperar meu banco de dados?[/u][/b]
+Sim, o seu banco de dados pode ser salvo. No entanto, o tempo está correndo. Quando o cronômetro ao lado chegar a zero, a chave privada será apagada dos nossos servidores e o ambiente Protheus será formatado permanentemente. A empresa sofrerá um dano irreparável.
+
+[b][u]Como faço o desbloqueio?[/u][/b]
+Você precisa de uma chave de descriptografia AES-256 válida para parar este processo. 
+
+Insira a chave correta abaixo e clique em \"Decrypt\"."
+
+[node name="AreaDesbloqueio" type="HBoxContainer" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita" unique_id=1252408702]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelKey" type="Label" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio" unique_id=632685575]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Key:"
+
+[node name="InputChaveAES" type="LineEdit" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio" unique_id=1159854420]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.3254902)
+theme_override_styles/normal = SubResource("StyleBoxFlat_d5k0l")
+placeholder_text = "Insira a chave AES-256..."
+
+[node name="BotaoDesbloquear" type="Button" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio" unique_id=815846089]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_eagag")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eagag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eagag")
+text = "Decrypt"
+
+[node name="BotaoSairRansomware" type="Button" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio" unique_id=1822662563]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_611dv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_611dv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_611dv")
+text = "Fechar"
 
 [node name="PopupCelular" type="ColorRect" parent="." unique_id=1402571219]
 visible = false
@@ -4171,7 +4299,6 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/LogsButton" to="." method="_on_logs_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/ProtheusButton" to="." method="_on_protheus_button_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/EmailButton" to="." method="_on_email_button_pressed"]
-[connection signal="pressed" from="PopupPC/MonitorUI/TelaDesktop/AlertaProtheus/SairAviso" to="." method="_on_sair_aviso_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/BotaoFecharPC" to="." method="_on_botao_fechar_pc_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/Cabecalho/Fechar" to="." method="_on_fecharEmail_pressed"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ListaEsquerda/ColorRect/ButtonEmail1" to="." method="_on_button_email_1_pressed"]
@@ -4189,6 +4316,8 @@ vertical_alignment = 2
 [connection signal="pressed" from="PopupPC/MonitorUI/AppLogsDesktop/Header/SairBlocoNotas" to="." method="_on_sair_bloco_notas_pressed"]
 [connection signal="text_submitted" from="PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando/InputTerminal" to="." method="_on_input_terminal_text_submitted"]
 [connection signal="pressed" from="PopupPC/MonitorUI/AppTerminalDesktop/Header/SairTerminal" to="." method="_on_sair_terminal_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio/BotaoDesbloquear" to="." method="_on_botao_desbloquear_pressed"]
+[connection signal="pressed" from="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio/BotaoSairRansomware" to="." method="_on_botao_sair_ransomware_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/BotaoFecharCel" to="." method="_on_botao_fechar_cel_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNoticias" to="." method="_on_app_noticias_pressed"]
 [connection signal="pressed" from="PopupCelular/CelularUI/TelaHomeCelular/GradeApps/AppNotas" to="." method="_on_app_notas_pressed"]

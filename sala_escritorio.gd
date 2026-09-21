@@ -87,6 +87,11 @@ var texto_original_logs = "" # Variável vazia que vai guardar o textão
 @onready var historico_terminal = $PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/HistoricoTerminal
 @onready var input_terminal = $PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando/InputTerminal
 
+# Desktop Ransomware
+@onready var app_ransomware = $PopupPC/MonitorUI/AppRansomware
+@onready var input_chave_ransomware = $PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio/InputChaveAES
+@onready var relogio_ransomware = $PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda/FundoCronometro/RelogioTexto
+
 var numero_digitado = ""
 
 
@@ -190,12 +195,6 @@ func _on_senha_pc_text_submitted(new_text: String) -> void:
 func _on_botao_olho_pressed():
 	# Inverte o estado atual: se está secreto, revela; se está revelado, oculta.
 	input_pc.secret = not input_pc.secret
-
-func _on_protheus_button_pressed():
-	alerta_protheus.show()
-	
-func _on_sair_aviso_pressed():
-	alerta_protheus.hide()
 	
 func _process(delta):
 	# Pega o tempo que falta no timer e converte pra número inteiro (corta os milissegundos)
@@ -205,8 +204,15 @@ func _process(delta):
 	var minutos = tempo_restante / 60
 	var segundos = tempo_restante % 60
 	
+	# Salva a formatação em uma variável para podermos distribuir para vários relógios
+	var tempo_formatado = "%02d:%02d" % [minutos, segundos]
+	
 	# Formata a string para sempre ter 2 dígitos. Ex: em vez de "5:9", fica "05:09"
-	label_relogio.text = "%02d:%02d" % [minutos, segundos]
+	label_relogio.text = tempo_formatado
+	
+	# ATUALIZAÇÃO RANSOMWARE: Espelha o mesmo tempo. 
+	# Adicionei "00:" na frente para imitar o formato (Horas:Minutos:Segundos) da imagem de referência
+	relogio_ransomware.text = "00:" + tempo_formatado
 	
 	# 1. Pega a hora exata do Windows/Mac/Linux do usuário
 	var tempo_real = Time.get_time_dict_from_system()
@@ -672,3 +678,30 @@ func _on_input_terminal_text_submitted(new_text: String) -> void:
 	else:
 		historico_terminal.text += "[color=#FF0000]Comando desconhecido. Digite 'help'.[/color]\n\n"
 	
+
+# Ransomware - Etapa final
+func _on_protheus_button_pressed():
+	app_ransomware.show()
+	input_chave_ransomware.grab_focus()
+	
+func _on_botao_sair_ransomware_pressed() -> void:
+	app_ransomware.hide()
+	
+func _on_botao_desbloquear_pressed() -> void:
+	# Pega o texto diretamente da propriedade .text do nó de input
+	var chave_digitada = input_chave_ransomware.text.strip_edges().to_upper()
+	
+	if chave_digitada == "4F8A-9B22-C37D":
+		# 1. Limpa a tela vermelha do ransomware
+		app_ransomware.hide()
+		# Aqui você coloca a lógica de vitória:
+		# 1. Tocar um som de sucesso.
+		# 2. Esconder a tela vermelha.
+		# 3. Parar o relógio do jogo.
+		# 4. Mostrar a tela final de "Parabéns, você salvou a empresa!".
+		# 2. Dispara a sua função que finaliza o jogo!
+		vencer_jogo()
+	else:
+		print("Chave incorreta!")
+		# Pode adicionar uma tremedeira na tela ou som de erro
+		input_chave_ransomware.text = ""
