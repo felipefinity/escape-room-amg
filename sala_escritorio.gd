@@ -405,6 +405,20 @@ func phishingMsg1():
 		# Passamos um tempo ínfimo (0.01) para forçar o sinal de timeout imediatamente
 		timer_jogo.start(0.01)
 		
+	# 3. EFEITO VISUAL NO RELÓGIO (Susto + Flash Vermelho)
+	# Centraliza o eixo do relógio para ele crescer a partir do meio
+	label_relogio.pivot_offset = label_relogio.size / 2
+	
+	# Fica vermelho vivo e aumenta 50% de tamanho instantaneamente
+	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
+	label_relogio.scale = Vector2(1.5, 1.5)
+	
+	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
+		
 func phishingMsg2():
 	phishingCelMsg2.disabled = true
 	som_armadilha.play()
@@ -421,6 +435,20 @@ func phishingMsg2():
 		# Se tiver menos de 30s, o jogador "morre" (Tempo zera)
 		# Passamos um tempo ínfimo (0.01) para forçar o sinal de timeout imediatamente
 		timer_jogo.start(0.01)
+		
+	# 3. EFEITO VISUAL NO RELÓGIO (Susto + Flash Vermelho)
+	# Centraliza o eixo do relógio para ele crescer a partir do meio
+	label_relogio.pivot_offset = label_relogio.size / 2
+	
+	# Fica vermelho vivo e aumenta 50% de tamanho instantaneamente
+	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
+	label_relogio.scale = Vector2(1.5, 1.5)
+	
+	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
 		
 	
 func _fechar_aviso_smishing():
@@ -644,6 +672,20 @@ func _on_button_phishing1email() -> void:
 		timer_jogo.start(tempo_atual - tempo_perdido)
 	else:
 		timer_jogo.start(0.01)
+		
+	# 3. EFEITO VISUAL NO RELÓGIO (Susto + Flash Vermelho)
+	# Centraliza o eixo do relógio para ele crescer a partir do meio
+	label_relogio.pivot_offset = label_relogio.size / 2
+	
+	# Fica vermelho vivo e aumenta 50% de tamanho instantaneamente
+	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
+	label_relogio.scale = Vector2(1.5, 1.5)
+	
+	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
 
 
 func _on_button_phishing2email() -> void:
@@ -663,6 +705,20 @@ func _on_button_phishing2email() -> void:
 		timer_jogo.start(tempo_atual - tempo_perdido)
 	else:
 		timer_jogo.start(0.01)
+	
+	# 3. EFEITO VISUAL NO RELÓGIO (Susto + Flash Vermelho)
+	# Centraliza o eixo do relógio para ele crescer a partir do meio
+	label_relogio.pivot_offset = label_relogio.size / 2
+	
+	# Fica vermelho vivo e aumenta 50% de tamanho instantaneamente
+	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
+	label_relogio.scale = Vector2(1.5, 1.5)
+	
+	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
 
 func _on_logs_button_pressed() -> void:
 	BlocoNotas.show()
