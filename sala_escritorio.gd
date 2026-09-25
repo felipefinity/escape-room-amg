@@ -5,7 +5,6 @@ extends Control
 
 @onready var tela_vitoria = $TelaVitoria
 @onready var label_nome_time = $TelaVitoria/LabelNomeTime
-@onready var label_tempo_vitoria = $TelaVitoria/LabelTempoVitoria
 
 # Variaveis de tempo
 @onready var label_relogio = $LabelRelogio
@@ -86,6 +85,8 @@ var texto_original_logs = "" # Variável vazia que vai guardar o textão
 @onready var app_terminal_desktop = $PopupPC/MonitorUI/AppTerminalDesktop
 @onready var historico_terminal = $PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/HistoricoTerminal
 @onready var input_terminal = $PopupPC/MonitorUI/AppTerminalDesktop/MargemInterna/OrganizadorVertical/LinhaDeComando/InputTerminal
+@onready var BtnDecrypt = $PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita/AreaDesbloqueio/BotaoDesbloquear
+
 
 # Desktop Ransomware
 @onready var app_ransomware = $PopupPC/MonitorUI/AppRansomware
@@ -93,6 +94,15 @@ var texto_original_logs = "" # Variável vazia que vai guardar o textão
 @onready var relogio_ransomware = $PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda/FundoCronometro/RelogioTexto
 
 var numero_digitado = ""
+
+# Audios
+@onready var audioErroXP = $SomErroWindowsXP
+@onready var audioLoginWindows = $WindowsXPLogin
+@onready var ErroLoginCelular = $ErroLoginCelular
+@onready var audioLoginCelular = $DesbloqueioCelular
+@onready var som_armadilha = $SomArmadilha
+@onready var musica_derrota = $SomGameOver
+@onready var musica_vitoria = $MusicaVitoria
 
 
 func _ready():
@@ -141,6 +151,8 @@ func validar_pin():
 		mensagem_pin.text = "DESBLOQUEADO"
 		mensagem_pin.modulate = Color.GREEN # Muda a cor do texto para verde
 		
+		audioLoginCelular.play()
+		
 		await get_tree().create_timer(1.5).timeout
 		
 		tela_login_celular.hide()
@@ -151,6 +163,7 @@ func validar_pin():
 		
 	else:
 		# Feedback de Erro
+		ErroLoginCelular.play()
 		mensagem_pin.text = "PIN INCORRETO"
 		mensagem_pin.modulate = Color.RED # Muda a cor do texto para vermelho
 		
@@ -171,7 +184,9 @@ func _on_entrar_pc_pressed() -> void:
 		mensagem_pc.modulate = Color.GREEN
 		
 		# Espera 1 segundinho pro jogador ler que acertou
-		await get_tree().create_timer(1.5).timeout 
+		await get_tree().create_timer(1.5).timeout
+		
+		audioLoginWindows.play()
 		
 		# Mágica da transição: Esconde o login, mostra o desktop
 		tela_login.hide()
@@ -181,6 +196,7 @@ func _on_entrar_pc_pressed() -> void:
 		# Feedback de Erro
 		mensagem_pc.text = "ACESSO NEGADO"
 		mensagem_pc.modulate = Color.RED
+		audioErroXP.play()
 		
 		await get_tree().create_timer(1.5).timeout
 		
@@ -228,6 +244,8 @@ func _on_timer_jogo_timeout():
 	
 	Global.salvar_log_partida("PERDEU", "20:00")
 	
+	musica_derrota.play()
+	
 	# Mostra a tela de derrota por cima de tudo
 	tela_game_over.show()
 	
@@ -250,31 +268,45 @@ func _on_sair_game_pressed():
 	get_tree().quit()
 	
 func vencer_jogo():
-	# 1. Troque o timer_jogo.wait_time pelo valor fixo da sala (20 min = 1200 seg)
-	var tempo_total = tempo_maximo_sala
-	var tempo_restante = timer_jogo.time_left
-	
-	# 2. Para o cronômetro
+	# 1. Pega direto o tempo que SOBROU no relógio e para o timer
+	var tempo_restante = int(timer_jogo.time_left)
 	timer_jogo.stop()
 	
-	# 3. Calcula o tempo exato (Tempo fixo - O que sobrou na tela)
-	var tempo_gasto = int(tempo_total - tempo_restante)
-	
-	# Matemática para minutos e segundos
-	var minutos = tempo_gasto / 60
-	var segundos = tempo_gasto % 60
+	# 2. Formata o tempo restante (Ex: 19:00)
+	var minutos = tempo_restante / 60
+	var segundos = tempo_restante % 60
 	var tempo_formatado = "%02d:%02d" % [minutos, segundos]
 	
-	# 4. Atualiza os textos na tela de vitória
-	label_nome_time.text = "Equipe: " + Global.nome_equipe
-	label_tempo_vitoria.text = "Tempo de Escape: " + tempo_formatado
+	# 3. Coloca Equipe e Tempo no mesmo Label (um em cima do outro com \n)
+	label_nome_time.text = "Equipe: " + Global.nome_equipe + "\nEscapou no tempo: " + tempo_formatado
 	
-	# SALVA NO EXCEL!
+	# 4. Salva no Excel o tempo que sobrou no relógio
 	Global.salvar_log_partida("VENCEU", tempo_formatado)
 	
-	# 5. Mostra a tela de vitória e pausa o jogo
+	# --- EFEITO DE VITÓRIA ---
+	# 5. Garante que a música ignore o pause e toque até o fim
+	if has_node("MusicaVitoria"):
+		$MusicaVitoria.process_mode = Node.PROCESS_MODE_ALWAYS
+		$MusicaVitoria.play()
+		
+	# 6. Centraliza o pivô da tela de vitória para ela crescer do meio
+	tela_vitoria.pivot_offset = tela_vitoria.size / 2
+	
+	# 7. Começa pequena e brilhando em verde claro
+	tela_vitoria.scale = Vector2(0.5, 0.5)
+	tela_vitoria.modulate = Color(0.3, 1.5, 0.3, 0.0) # Verde brilhante transparente
 	tela_vitoria.show()
+	
+	# 8. Pausa o resto do jogo
 	get_tree().paused = true
+	
+	# 9. Animação de "Saltar na tela" (Efeito elástico TRANS_BACK)
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS) # Garante que o Tween rode no pause!
+	tween.set_parallel(true) # Roda o tamanho e a cor ao mesmo tempo
+	
+	tween.tween_property(tela_vitoria, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(tela_vitoria, "modulate", Color(1, 1, 1, 1), 0.4)
 
 # Função universal para fechar qualquer app e voltar para a Home
 func _on_botao_home_universal_pressed():
@@ -356,7 +388,9 @@ func _on_btn_mensagem_4_pressed():
 	TelaChat4.show()
 
 func phishingMsg1():
+	
 	phishingCelMsg1.disabled = true
+	som_armadilha.play()
 	phishingCelMsg1.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
 	avisoPhisingCel.show()
 	
@@ -373,6 +407,7 @@ func phishingMsg1():
 		
 func phishingMsg2():
 	phishingCelMsg2.disabled = true
+	som_armadilha.play()
 	phishingCelMsg2.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
 	avisoPhisingCel.show()
 	
@@ -398,7 +433,7 @@ func _on_phone_pressed():
 # LÓGICA DE DIGITAÇÃO (App telefone)
 func adicionar_numero(digito: String):
 	# Se o visor estiver mostrando texto de erro/chamada, limpa a tela antes de digitar
-	if visor_numerico.text == "Chamando TI..." or visor_numerico.text == "Número Inexistente":
+	if visor_numerico.text == "Em chamada com TI" or visor_numerico.text == "Número Inexistente":
 		numero_digitado = ""
 		visor_numerico.text = ""
 		
@@ -428,7 +463,7 @@ func _on_btn_hashtag_pressed(): adicionar_numero("#")
 
 func _on_apagar_txt_pressed():
 	# Só apaga se tiver algo escrito e se não for uma mensagem de texto do sistema
-	if numero_digitado.length() > 0 and visor_numerico.text != "Chamando TI..." and visor_numerico.text != "Número Inexistente":
+	if numero_digitado.length() > 0 and visor_numerico.text != "Em chamada com TI" and visor_numerico.text != "Número Inexistente":
 		# Corta o último caractere da string
 		numero_digitado = numero_digitado.substr(0, numero_digitado.length() - 1)
 		visor_numerico.text = numero_digitado
@@ -445,7 +480,7 @@ func _on_ligar_pressed():
 		
 	# Verifica se é o ramal da pista!
 	if numero_digitado == "#3550":
-		visor_numerico.text = "Chamando TI..."
+		visor_numerico.text = "Em chamada com TI"
 		# Toca o áudio com a senha do PC
 		audio_senha.play()
 	else:
@@ -595,6 +630,7 @@ func _on_sair_aviso_phishing_pressed() -> void:
 func _on_button_phishing1email() -> void:
 	# 1. Desativa o botão e muda a cor da fonte para cinza
 	btn_phishing_email_1.disabled = true
+	som_armadilha.play()
 	btn_phishing_email_1.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
 	
 	# 2. Exibe o alerta vermelho gigante
@@ -613,6 +649,7 @@ func _on_button_phishing1email() -> void:
 func _on_button_phishing2email() -> void:
 	# 1. Desativa o botão e muda a cor da fonte para cinza
 	btn_phishing_email_5.disabled = true
+	som_armadilha.play()
 	btn_phishing_email_5.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))
 	
 	# 2. Exibe o alerta vermelho gigante
@@ -694,14 +731,39 @@ func _on_botao_desbloquear_pressed() -> void:
 	if chave_digitada == "4F8A-9B22-C37D":
 		# 1. Limpa a tela vermelha do ransomware
 		app_ransomware.hide()
-		# Aqui você coloca a lógica de vitória:
-		# 1. Tocar um som de sucesso.
-		# 2. Esconder a tela vermelha.
-		# 3. Parar o relógio do jogo.
-		# 4. Mostrar a tela final de "Parabéns, você salvou a empresa!".
-		# 2. Dispara a sua função que finaliza o jogo!
+		
 		vencer_jogo()
+		
 	else:
-		print("Chave incorreta!")
-		# Pode adicionar uma tremedeira na tela ou som de erro
+		
+		BtnDecrypt.disabled = true
+		
+		# 1. Limpa o texto e avisa no próprio campo
 		input_chave_ransomware.text = ""
+		input_chave_ransomware.placeholder_text = "❌ CHAVE INVÁLIDA! TENTE NOVAMENTE..."
+		
+		# 2. Toca o som de erro (se o nó existir)
+		if has_node("SomErroWindowsXP"):
+			$SomErroWindowsXP.play()
+		
+		# 3. Pinta a caixa de texto de vermelho claro para destacar onde foi o erro
+		input_chave_ransomware.modulate = Color(1, 0.4, 0.4) 
+		
+		# 4. TREMEDEIRA NA JANELA INTEIRA (AppRansomware)
+		var pos_janela = app_ransomware.position
+		var tween = create_tween()
+		
+		# Sacode a janela vermelha inteira para os lados com mais força (12 pixels)
+		tween.tween_property(app_ransomware, "position:x", pos_janela.x + 12, 0.04)
+		tween.tween_property(app_ransomware, "position:x", pos_janela.x - 12, 0.04)
+		tween.tween_property(app_ransomware, "position:x", pos_janela.x + 8, 0.04)
+		tween.tween_property(app_ransomware, "position:x", pos_janela.x - 8, 0.04)
+		tween.tween_property(app_ransomware, "position:x", pos_janela.x, 0.04)
+		
+		# Devolve a cor branca normal para a caixa de texto no final
+		tween.tween_property(input_chave_ransomware, "modulate", Color(1, 1, 1), 0.2)
+		
+		# 4. Espera a animação terminar completamente e destrava o botão!
+		await tween.finished
+		BtnDecrypt.disabled = false
+		input_chave_ransomware.grab_focus() # Já devolve o cursor pra pessoa digitar de novo!

@@ -57,6 +57,13 @@
 [ext_resource type="Texture2D" uid="uid://bkrlcpdy5incd" path="res://deletar.png" id="31_4w0u3"]
 [ext_resource type="AudioStream" uid="uid://bsglnidwq0qrw" path="res://este-numero-que-voce-ligou.mp3" id="32_4w0u3"]
 [ext_resource type="AudioStream" uid="uid://bscikdnx4qubt" path="res://SenhaPc.mp3" id="32_vexcn"]
+[ext_resource type="AudioStream" uid="uid://cd5yiqpg8bjir" path="res://SomErro.mp3" id="58_cwy6d"]
+[ext_resource type="AudioStream" uid="uid://mqo14ddkgxj0" path="res://MusicaVitoria.mp3" id="59_ffw1a"]
+[ext_resource type="AudioStream" uid="uid://btn2jvmja6ks6" path="res://windows-xp-login.mp3" id="60_ygr3r"]
+[ext_resource type="AudioStream" uid="uid://tnhyoeky0xys" path="res://desbloqueio-celular.mp3" id="61_g0wfd"]
+[ext_resource type="AudioStream" uid="uid://c6xuptr7frb5a" path="res://SomGameOver.mp3" id="62_g0wfd"]
+[ext_resource type="AudioStream" uid="uid://b2m8q2uwgs7ab" path="res://somarmadilha.mp3" id="63_178fr"]
+[ext_resource type="AudioStream" uid="uid://crgwokcs4r50e" path="res://ErroLoginCel.mp3" id="64_op7db"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -441,6 +448,7 @@ mouse_default_cursor_shape = 2
 flat = true
 
 [node name="PopupPC" type="ColorRect" parent="." unique_id=590835551]
+visible = false
 layout_mode = 0
 offset_left = 63.0
 offset_top = 113.0
@@ -2261,6 +2269,7 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="TextoAvisoTempo" type="Label" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaEsquerda" unique_id=336969088]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "O banco de dados do protheus será deletado em:"
@@ -2281,7 +2290,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 26
-text = "00:09:32"
+text = "00:20:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2291,6 +2300,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="TituloOops" type="Label" parent="PopupPC/MonitorUI/AppRansomware/MargemGeral/DivisaoColunas/ColunaDireita" unique_id=829490632]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Ooops, seu ambiente Protheus foi criptografado!"
@@ -2912,7 +2922,7 @@ offset_right = 770.0
 offset_bottom = 377.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Suporte TI AMG Brasil"
+text = "24365"
 
 [node name="Resumo" type="Label" parent="PopupCelular/CelularUI/TelaMensagens/Mensagem3" unique_id=251008703]
 layout_mode = 0
@@ -3241,7 +3251,9 @@ offset_right = 916.0
 offset_bottom = 422.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "Suporte TI"
+text = "24365"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=1277455557]
 layout_mode = 0
@@ -4269,25 +4281,41 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_i6onq")
 
 [node name="LabelNomeTime" type="Label" parent="TelaVitoria" unique_id=1887270848]
 layout_mode = 0
-offset_left = 738.0
-offset_top = 488.0
-offset_right = 879.0
-offset_bottom = 571.0
+offset_left = 398.0
+offset_top = 495.0
+offset_right = 1573.0
+offset_bottom = 697.0
 theme_override_font_sizes/font_size = 60
 text = "TIME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelTempoVitoria" type="Label" parent="TelaVitoria" unique_id=1139377572]
-layout_mode = 0
-offset_left = 610.0
-offset_top = 589.0
-offset_right = 817.0
-offset_bottom = 672.0
-theme_override_font_sizes/font_size = 60
-text = "TEMPO"
-horizontal_alignment = 1
-vertical_alignment = 2
+[node name="SomErroWindowsXP" type="AudioStreamPlayer" parent="." unique_id=2101764534]
+stream = ExtResource("58_cwy6d")
+
+[node name="MusicaVitoria" type="AudioStreamPlayer" parent="." unique_id=26978646]
+process_mode = 3
+stream = ExtResource("59_ffw1a")
+
+[node name="WindowsXPLogin" type="AudioStreamPlayer" parent="." unique_id=1687563958]
+process_mode = 3
+stream = ExtResource("60_ygr3r")
+
+[node name="DesbloqueioCelular" type="AudioStreamPlayer" parent="." unique_id=1483015332]
+process_mode = 3
+stream = ExtResource("61_g0wfd")
+
+[node name="SomGameOver" type="AudioStreamPlayer" parent="." unique_id=881911813]
+process_mode = 3
+stream = ExtResource("62_g0wfd")
+
+[node name="SomArmadilha" type="AudioStreamPlayer" parent="." unique_id=125288542]
+process_mode = 3
+stream = ExtResource("63_178fr")
+
+[node name="ErroLoginCelular" type="AudioStreamPlayer" parent="." unique_id=851076780]
+process_mode = 3
+stream = ExtResource("64_op7db")
 
 [connection signal="timeout" from="TimerJogo" to="." method="_on_timer_jogo_timeout"]
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhx1kl3ltn2o6" path="res://sala_principal.gd" id="1_kv3fb"]
 [ext_resource type="Texture2D" uid="uid://6e7nud74mgu5" path="res://Página inicial.png" id="2_ifxji"]
+[ext_resource type="AudioStream" uid="uid://igc2ojw6bgtp" path="res://Cyberpunk2077Theme.mp3" id="3_4t2ck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifxji"]
 bg_color = Color(0.050980393, 0.050980393, 0.050980393, 0)
@@ -77,5 +78,9 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MusicaInicial" type="AudioStreamPlayer" parent="." unique_id=1085292639]
+stream = ExtResource("3_4t2ck")
+parameters/looping = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
