@@ -1,5 +1,8 @@
 extends Control
 
+const COR_RELOGIO_NORMAL = Color(0.12, 0.16, 0.23) # Grafite escuro elegante
+const COR_RELOGIO_PERIGO = Color(0.80, 0.05, 0.05) # Vermelho rubi forte
+
 # Variaveis do game
 @onready var tela_game_over = $TelaGameOver
 
@@ -104,8 +107,21 @@ var numero_digitado = ""
 @onready var musica_derrota = $SomGameOver
 @onready var musica_vitoria = $MusicaVitoria
 
+# easter egg
+var cliques_biscoito: int = 0
+@onready var som_comer_mc = $mc_comer
+@onready var som_arroto_mc = $mc_arroto
+
+# Musica suspense
+@onready var musica_tensao = $MusicaTensao
+@onready var voz_aviso_tempo = $VozAvisoTempo
+var musica_tensao_tocando: bool = false
+
 
 func _ready():
+	
+	label_relogio.modulate = COR_RELOGIO_NORMAL
+	
 	# Garante que o modal sempre inicie escondido quando a sala carregar
 	$PopupPC.hide()
 	$PopupCelular.hide()
@@ -136,6 +152,15 @@ func _on_botao_celular_pressed() -> void:
 
 func _on_botao_fechar_cel_pressed() -> void:
 	$PopupCelular.hide()
+	
+func _on_botao_biscoito_pressed() -> void:
+	cliques_biscoito += 1
+	
+	if cliques_biscoito < 3:
+		som_comer_mc.play()
+	else:
+		som_arroto_mc.play()
+		cliques_biscoito = 0
 
 func _on_botao_numero_pressed(numero_digitado: String):
 	# Adiciona o número ao input
@@ -146,7 +171,7 @@ func _on_botao_numero_pressed(numero_digitado: String):
 		validar_pin()
 
 func validar_pin():
-	if input_pin.text == "1234": 
+	if input_pin.text == "3007": 
 		# Feedback de Sucesso
 		mensagem_pin.text = "DESBLOQUEADO"
 		mensagem_pin.modulate = Color.GREEN # Muda a cor do texto para verde
@@ -238,19 +263,60 @@ func _process(delta):
 	
 	# 3. Atualiza o relógio do Celular
 	label_hora_celular.text = hora_formatada
+	
+	# Dispara uma única vez quando bater 5 minutos (300s) ou menos
+	if timer_jogo.time_left <= 300 and not musica_tensao_tocando and not timer_jogo.is_stopped():
+		musica_tensao_tocando = true
+		iniciar_musica_tensao()
+	
+# Função que coordena a Voz + Música + Relógio Vermelho
+func iniciar_musica_tensao() -> void:
+	# 1. Deixa o relógio vermelho fixo para dar urgência visual
+	label_relogio.modulate = COR_RELOGIO_PERIGO
+	
+	# 2. Toca a voz "O tempo está acabando" alta e clara (0 dB)
+	voz_aviso_tempo.volume_db = 0.0
+	voz_aviso_tempo.play()
+	
+	# 3. Começa a música bem baixinha (-28 dB) por trás da voz
+	musica_tensao.volume_db = -10.0
+	musica_tensao.play()
+	
+	# 4. Sobe a música devagar ao longo de 6 segundos (assim ela só encorpa depois que a voz termina!)
+	var tween = create_tween()
+	tween.tween_property(musica_tensao, "volume_db", -8.0, 6.0)
 
 
 func _on_timer_jogo_timeout():
 	
-	Global.salvar_log_partida("PERDEU", "20:00")
+	musica_tensao.stop()
+	voz_aviso_tempo.stop()
+	# 1. Salva no Excel (Como mudamos a vitória para "tempo que sobrou", 
+	# na derrota sobrou "00:00" no relógio!)
+	Global.salvar_log_partida("PERDEU", "00:00")
 	
+	# 2. Garante que o som de derrota ignore o pause e toque até o fim
+	musica_derrota.process_mode = Node.PROCESS_MODE_ALWAYS
 	musica_derrota.play()
 	
-	# Mostra a tela de derrota por cima de tudo
+	# 3. Centraliza o pivô da tela de Game Over
+	tela_game_over.pivot_offset = tela_game_over.size / 2
+	
+	# 4. Começa MAIOR (1.3x) e brilhando em VERMELHO ALERTA
+	tela_game_over.scale = Vector2(1.3, 1.3)
+	tela_game_over.modulate = Color(2.0, 0.2, 0.2, 0.0) # Vermelho intenso transparente
 	tela_game_over.show()
 	
-	#Trava o resto do jogo para a pessoa não continuar clicando nas coisas por trás
+	# 5. Trava o resto do jogo
 	get_tree().paused = true
+	
+	# 6. Animação de "Impacto Pesado" (Cai na tela batendo seco com TRANS_BOUNCE)
+	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS) # Roda mesmo com o jogo pausado!
+	tween.set_parallel(true)
+	
+	tween.tween_property(tela_game_over, "scale", Vector2(1.0, 1.0), 0.45).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(tela_game_over, "modulate", Color(1, 1, 1, 1), 0.4)
 
 
 func _on_reiniciar_escape_room_pressed():
@@ -268,6 +334,9 @@ func _on_sair_game_pressed():
 	get_tree().quit()
 	
 func vencer_jogo():
+	
+	musica_tensao.stop()
+	voz_aviso_tempo.stop()
 	# 1. Pega direto o tempo que SOBROU no relógio e para o timer
 	var tempo_restante = int(timer_jogo.time_left)
 	timer_jogo.stop()
@@ -413,11 +482,13 @@ func phishingMsg1():
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
+	tween.tween_property(label_relogio, "modulate", cor_retorno, 0.6)
 		
 func phishingMsg2():
 	phishingCelMsg2.disabled = true
@@ -444,11 +515,13 @@ func phishingMsg2():
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
+	tween.tween_property(label_relogio, "modulate", cor_retorno, 0.6)
 		
 	
 func _fechar_aviso_smishing():
@@ -681,11 +754,13 @@ func _on_button_phishing1email() -> void:
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
+	tween.tween_property(label_relogio, "modulate", cor_retorno, 0.6)
 
 
 func _on_button_phishing2email() -> void:
@@ -714,11 +789,13 @@ func _on_button_phishing2email() -> void:
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# Animação voltando ao normal com efeito de "quicada" (Bounce)
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(label_relogio, "scale", Vector2(1.0, 1.0), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(label_relogio, "modulate", Color(1, 1, 1), 0.6)
+	tween.tween_property(label_relogio, "modulate", cor_retorno, 0.6)
 
 func _on_logs_button_pressed() -> void:
 	BlocoNotas.show()

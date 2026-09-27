@@ -5,7 +5,28 @@ var tempo_restante_formatado = "00:00"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Escolha o tamanho aqui: 
+	# 1.5 = 50% maior (48x48) | 2.0 = Dobro do tamanho (64x64)
+	var escala = 1.5
+	
+	configurar_cursor("res://cursor_seta.png", Input.CURSOR_ARROW, Vector2(0, 0), escala)
+	configurar_cursor("res://cursor_texto.png", Input.CURSOR_IBEAM, Vector2(16, 16), escala)
+	configurar_cursor("res://cursor_mao.png", Input.CURSOR_POINTING_HAND, Vector2(8, 0), escala)
+	
+
+func configurar_cursor(caminho: String, tipo: Input.CursorShape, ponta_clique: Vector2, escala: float) -> void:
+	var textura = load(caminho) as Texture2D
+	var imagem = textura.get_image()
+	
+	# Calcula o novo tamanho multiplicando pela escala
+	var novo_tamanho = Vector2i(imagem.get_size() * escala)
+	
+	# Redimensiona a imagem mantendo a nitidez
+	imagem.resize(novo_tamanho.x, novo_tamanho.y, Image.INTERPOLATE_LANCZOS)
+	
+	# Cria a nova textura aumentada e aplica ajustando também a ponta do clique
+	var nova_textura = ImageTexture.create_from_image(imagem)
+	Input.set_custom_mouse_cursor(nova_textura, tipo, ponta_clique * escala)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

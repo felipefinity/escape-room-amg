@@ -64,6 +64,13 @@
 [ext_resource type="AudioStream" uid="uid://c6xuptr7frb5a" path="res://SomGameOver.mp3" id="62_g0wfd"]
 [ext_resource type="AudioStream" uid="uid://b2m8q2uwgs7ab" path="res://somarmadilha.mp3" id="63_178fr"]
 [ext_resource type="AudioStream" uid="uid://crgwokcs4r50e" path="res://ErroLoginCel.mp3" id="64_op7db"]
+[ext_resource type="AudioStream" uid="uid://d4eusre3jwffa" path="res://minecraft_eat.mp3" id="65_ko440"]
+[ext_resource type="AudioStream" uid="uid://cvg5yds5u8eo" path="res://minecraft_arroto.mp3" id="66_ktyca"]
+[ext_resource type="AudioStream" uid="uid://c0lahx8l7rdtw" path="res://aviso_tempo_acabando.mp3" id="67_80ygi"]
+[ext_resource type="AudioStream" uid="uid://dcdmgof5u8qpf" path="res://SawTheme.mp3" id="68_bged8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt8ln"]
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q6if"]
 bg_color = Color(1, 1, 1, 1)
@@ -416,7 +423,7 @@ offset_left = 83.0
 offset_top = 109.0
 offset_right = 354.0
 offset_bottom = 230.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_d227g")
 theme_override_font_sizes/font_size = 120
 text = "20:00"
@@ -427,6 +434,17 @@ vertical_alignment = 1
 wait_time = 1200.0
 one_shot = true
 autostart = true
+
+[node name="BotaoBiscoito" type="Button" parent="." unique_id=1415701054]
+layout_mode = 0
+offset_left = 1243.0
+offset_top = 204.0
+offset_right = 1537.0
+offset_bottom = 685.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mt8ln")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mt8ln")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mt8ln")
 
 [node name="BotaoPC" type="Button" parent="." unique_id=1454272482]
 layout_mode = 0
@@ -3665,6 +3683,7 @@ stretch_mode = 4
 [node name="Ligar" type="TextureButton" parent="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores" unique_id=1947892481]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("30_84j3e")
 ignore_texture_size = true
 stretch_mode = 4
@@ -3672,6 +3691,7 @@ stretch_mode = 4
 [node name="ApagarTxt" type="TextureButton" parent="PopupCelular/CelularUI/TelaTelefone/ControlesInferiores" unique_id=1843831802]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("31_4w0u3")
 ignore_texture_size = true
 stretch_mode = 4
@@ -4317,7 +4337,22 @@ stream = ExtResource("63_178fr")
 process_mode = 3
 stream = ExtResource("64_op7db")
 
+[node name="mc_comer" type="AudioStreamPlayer" parent="." unique_id=118276117]
+stream = ExtResource("65_ko440")
+
+[node name="mc_arroto" type="AudioStreamPlayer" parent="." unique_id=347403758]
+stream = ExtResource("66_ktyca")
+
+[node name="VozAvisoTempo" type="AudioStreamPlayer" parent="." unique_id=1150815860]
+stream = ExtResource("67_80ygi")
+pitch_scale = 0.8
+
+[node name="MusicaTensao" type="AudioStreamPlayer" parent="." unique_id=1485369445]
+stream = ExtResource("68_bged8")
+parameters/looping = true
+
 [connection signal="timeout" from="TimerJogo" to="." method="_on_timer_jogo_timeout"]
+[connection signal="pressed" from="BotaoBiscoito" to="." method="_on_botao_biscoito_pressed"]
 [connection signal="pressed" from="BotaoPC" to="." method="_on_botao_pc_pressed"]
 [connection signal="pressed" from="BotaoCelular" to="." method="_on_botao_celular_pressed"]
 [connection signal="text_submitted" from="PopupPC/MonitorUI/TelaLogin/SenhaPC" to="." method="_on_senha_pc_text_submitted"]
