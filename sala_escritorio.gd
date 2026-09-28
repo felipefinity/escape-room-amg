@@ -264,8 +264,8 @@ func _process(delta):
 	# 3. Atualiza o relógio do Celular
 	label_hora_celular.text = hora_formatada
 	
-	# Dispara uma única vez quando bater 5 minutos (300s) ou menos
-	if timer_jogo.time_left <= 300 and not musica_tensao_tocando and not timer_jogo.is_stopped():
+	# Dispara uma única vez quando bater 3 minutos (180s) ou menos
+	if timer_jogo.time_left <= 180 and not musica_tensao_tocando and not timer_jogo.is_stopped():
 		musica_tensao_tocando = true
 		iniciar_musica_tensao()
 	
@@ -482,8 +482,8 @@ func phishingMsg1():
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
-	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 180s (3 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 180 else COR_RELOGIO_NORMAL
 	
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -515,8 +515,8 @@ func phishingMsg2():
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
-	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 180s (3 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 180 else COR_RELOGIO_NORMAL
 	
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -754,8 +754,8 @@ func _on_button_phishing1email() -> void:
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
-	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 180s (3 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 180 else COR_RELOGIO_NORMAL
 	
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -789,8 +789,8 @@ func _on_button_phishing2email() -> void:
 	label_relogio.modulate = Color(1.0, 0.15, 0.15) 
 	label_relogio.scale = Vector2(1.5, 1.5)
 	
-	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 300s (5 min) ou menos!
-	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 300 else COR_RELOGIO_NORMAL
+	# CORREÇÃO AQUI: Checa direto se o novo tempo já caiu para 180s (3 min) ou menos!
+	var cor_retorno = COR_RELOGIO_PERIGO if timer_jogo.time_left <= 180 else COR_RELOGIO_NORMAL
 	
 	var tween = create_tween()
 	tween.set_parallel(true)

@@ -1350,6 +1350,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="MensagemPadrao" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1894697691]
+visible = false
 layout_mode = 2
 
 [node name="Fundo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/MensagemPadrao" unique_id=615203903]
@@ -1797,7 +1798,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ko440")
 text = "Extrato FGTS 2026"
 
 [node name="Email6Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=66354035]
-visible = false
 layout_mode = 2
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=899000751]
@@ -1836,21 +1836,19 @@ vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=1746161710]
 layout_mode = 0
-offset_left = 396.0
-offset_top = 2.0
-offset_right = 972.0
+offset_left = 58.0
+offset_top = 35.0
+offset_right = 1133.0
 offset_bottom = 575.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yutck")
 bbcode_enabled = true
-text = "[center][color=red][b]⚠️ ALERTA DE INCIDENTE CRÍTICO ⚠️[/b][/color][/center]
+text = "[center][color=red][b]ALERTA DE INCIDENTE CRÍTICO [/b][/color][/center]
 
 [b]Prioridade:[/b] Máxima (Nível 1)
 [b]Ameaça:[/b] Infecção por Ransomware em andamento.
 
-Prezados colaboradores,
-
-Nossos sistemas de defesa detectaram um bloqueio em massa na rede. [b]NÃO DESLIGUEM AS MÁQUINAS.[/b] 
+Prezados colaboradores, nossos sistemas de defesa detectaram um bloqueio em massa na rede. [b]NÃO DESLIGUEM AS MÁQUINAS.[/b] 
 
 A equipe de Resposta a Incidentes encontrou uma vulnerabilidade no código do invasor: o script malicioso salva temporariamente a chave de criptografia (em formato Base64) no log local antes de travar o sistema.
 
@@ -2391,26 +2389,26 @@ color = Color(0, 0, 0, 0.5882353)
 
 [node name="FundoCelular" type="TextureRect" parent="PopupCelular" unique_id=910940579]
 layout_mode = 0
-offset_left = 734.0
-offset_top = 165.0
-offset_right = 1257.0
-offset_bottom = 890.0
+offset_left = 723.0
+offset_top = 185.0
+offset_right = 1246.0
+offset_bottom = 910.0
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="PopupCelular" unique_id=1751172209]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 170.0
-offset_right = 1340.0
-offset_bottom = 901.0
+offset_left = 745.0
+offset_top = 190.0
+offset_right = 1329.0
+offset_bottom = 921.0
 color = Color(0, 0.3529412, 0.61960787, 1)
 
 [node name="CelularUI" type="TextureRect" parent="PopupCelular" unique_id=1034048943]
 layout_mode = 0
-offset_left = 183.0
-offset_top = -81.0
-offset_right = 1881.0
-offset_bottom = 1168.0
+offset_left = 172.0
+offset_top = -61.0
+offset_right = 1870.0
+offset_bottom = 1188.0
 texture = ExtResource("6_sgto0")
 expand_mode = 1
 
@@ -3698,6 +3696,7 @@ stretch_mode = 4
 
 [node name="AudioSenha" type="AudioStreamPlayer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1283978779]
 stream = ExtResource("32_vexcn")
+volume_db = 3.0
 
 [node name="AudioErro" type="AudioStreamPlayer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1195828954]
 stream = ExtResource("32_4w0u3")
