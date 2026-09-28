@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Escape Room AMG"
+config/name="EscapeRoom AMG"
 run/main_scene="uid://cfkwc6wb1sueg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="uid://dxqov3cex48rl"
 
 [autoload]
 

@@ -1350,7 +1350,6 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="MensagemPadrao" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=1894697691]
-visible = false
 layout_mode = 2
 
 [node name="Fundo" type="TextureRect" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/MensagemPadrao" unique_id=615203903]
@@ -1798,6 +1797,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ko440")
 text = "Extrato FGTS 2026"
 
 [node name="Email6Conteudo" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita" unique_id=66354035]
+visible = false
 layout_mode = 2
 
 [node name="Cabecalho" type="Control" parent="PopupPC/MonitorUI/AppEmailDesktop/DivisaoTela/ConteudoDireita/Email6Conteudo" unique_id=899000751]
@@ -1855,11 +1855,11 @@ A equipe de Resposta a Incidentes encontrou uma vulnerabilidade no código do in
 [color=#005A9E][b]PLANO DE CONTENÇÃO (EXECUTE IMEDIATAMENTE):[/b][/color]
 
 1. Abra o arquivo [b]Logs.txt[/b] na sua Área de Trabalho.
-2. Procure a chave injetada (geralmente termina com o símbolo [b]=[/b] ).
+2. Vasculhe os registros do dia e localize a chave temporária injetada pelo malware.
 3. Abra o aplicativo [b]Terminal[/b].
-4. Digite o comando de descriptografia exato abaixo:
+4. Digite a palavra [b]decode[/b] seguida de um espaço e a chave encontrada. Exemplo:
 
-[center][b]decode <CHAVE_DE_DESCRIPTOGRAFIA>[/b][/center]
+[center][b]decode CHAVE_ENCONTRADA[/b][/center]
 
 Usem a verdadeira senha revelada pelo Terminal para desarmar a tela de bloqueio do Protheus. 
 Corram, a criptografia total do disco está iminente!
