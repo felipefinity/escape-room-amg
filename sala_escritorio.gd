@@ -82,7 +82,6 @@ var tempo_maximo_sala = 1200.0 # Caso trocar o tempo de game tenho que lembrar d
 # Desktop Blocos de Notas
 @onready var BlocoNotas = $PopupPC/MonitorUI/AppLogsDesktop
 @onready var texto_logs = $PopupPC/MonitorUI/AppLogsDesktop/TextEdit
-var texto_original_logs = "" # Variável vazia que vai guardar o textão
 
 # Desktop Terminal
 @onready var app_terminal_desktop = $PopupPC/MonitorUI/AppTerminalDesktop
@@ -132,9 +131,6 @@ func _ready():
 		if filho is Button:
 			# .bind() passa o texto do botão (ex: "1", "2") como argumento para a função
 			filho.pressed.connect(_on_botao_numero_pressed.bind(filho.text))
-	
-	# Salva o texto do log do desktop caso o usuário faça caquinha
-	texto_original_logs = texto_logs.text
 
 	# Boas vindas do terminal
 	historico_terminal.text = "[color=#00FF00]Terminal v1.0.4 - Sistema de Recuperacao de Emergencia\nDigite 'help' para ver os comandos disponiveis.\n\n[/color]"
@@ -580,7 +576,7 @@ func _on_ligar_pressed():
 		return
 		
 	# Verifica se é o ramal da pista!
-	if numero_digitado == "#3550":
+	if numero_digitado == "#127001":
 		visor_numerico.text = "Em chamada com TI"
 		# Toca o áudio com a senha do PC
 		audio_senha.play()
@@ -802,11 +798,6 @@ func _on_logs_button_pressed() -> void:
 
 func _on_sair_bloco_notas_pressed() -> void:
 	BlocoNotas.hide()
-	# Restaura o texto para o estado original
-	texto_logs.text = texto_original_logs
-	
-	# Zera o histórico do Ctrl+Z para o novo texto
-	texto_logs.clear_undo_history()
 
 func _on_sair_terminal_pressed() -> void:
 	app_terminal_desktop.hide()

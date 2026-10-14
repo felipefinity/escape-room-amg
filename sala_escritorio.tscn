@@ -1855,7 +1855,7 @@ A equipe de Resposta a Incidentes encontrou uma vulnerabilidade no código do in
 [color=#005A9E][b]PLANO DE CONTENÇÃO (EXECUTE IMEDIATAMENTE):[/b][/color]
 
 1. Abra o arquivo [b]Logs.txt[/b] na sua Área de Trabalho.
-2. Vasculhe os registros do dia e localize a chave temporária injetada pelo malware.
+[bgcolor=yellow][color=black]2. Vasculhe os registros do dia e localize a chave temporária injetada pelo malware.[/color][/bgcolor]
 3. Abra o aplicativo [b]Terminal[/b].
 4. Digite a palavra [b]decode[/b] seguida de um espaço e a chave encontrada. Exemplo:
 
@@ -2126,15 +2126,16 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qg4g3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qg4g3")
 text = "X"
 
-[node name="TextEdit" type="TextEdit" parent="PopupPC/MonitorUI/AppLogsDesktop" unique_id=1788749251]
+[node name="TextEdit" type="RichTextLabel" parent="PopupPC/MonitorUI/AppLogsDesktop" unique_id=1969782333]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 47.0
 offset_right = 759.0
 offset_bottom = 613.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_80ygi")
+bbcode_enabled = true
 text = "[2026-10-19 08:00:01] INFO: System boot sequence initiated.
 [2026-10-19 08:00:05] INFO: Loading kernel modules... OK.
 [2026-10-19 08:00:12] INFO: Network interfaces initialized. IP: 192.168.1.50
@@ -2156,7 +2157,6 @@ text = "[2026-10-19 08:00:01] INFO: System boot sequence initiated.
 [2026-10-19 11:45:00] ERROR: Invalid parameter passed to MATA410.
 [2026-10-19 12:00:00] INFO: System idle. Lunch break routine active.
 [2026-10-19 12:14:02] DEBUG: Temp backup flag toggled for emergency recovery.
-[2026-10-19 12:14:03] MALWARE_TEMP_KEY = VDBUVlNfU2F2ZXI=
 [2026-10-19 13:00:15] INFO: Afternoon session started. All nodes operational.
 [2026-10-19 13:10:00] INFO: Routine MATA030 executed successfully.
 [2026-10-19 13:40:50] INFO: Routine FINR480 executed successfully.
@@ -2167,8 +2167,10 @@ text = "[2026-10-19 08:00:01] INFO: System boot sequence initiated.
 [2026-10-19 14:22:18] INFO: Executing encrypt_all.sh...
 [2026-10-19 14:22:19] DEBUG: Encryption failed on main drive. Retrying...
 [2026-10-19 14:22:20] DEBUG: Emergency partition lock engaged.
-[2026-10-19 14:22:21] FATAL: SYSTEM LOCKDOWN INITIATED.
+[2026-10-19 14:22:21] [bgcolor=yellow][color=black]MALWARE_TEMP_KEY = VDBUVlNfU2F2ZXI=[/color][/bgcolor]
+[2026-10-19 14:22:22] FATAL: SYSTEM LOCKDOWN INITIATED.
 [2026-10-19 14:25:00] INFO: Diagnostic sweep awaiting manual intervention."
+selection_enabled = true
 
 [node name="AppTerminalDesktop" type="Panel" parent="PopupPC/MonitorUI" unique_id=1863530813]
 visible = false
@@ -3290,8 +3292,8 @@ text = "                                ⚠️ ALERTA DE SEGURANÇA ⚠️
 Detectamos uma tentativa de login suspeita e bloqueamos sua 
 estação de trabalho temporariamente.
 Para gerar uma nova senha de acesso e desbloquear seu PC,
-por favor, ligue para a nossa Caixa Postal Automática ramal 
-#3550 através do App de telefone."
+por favor, ligue para a nossa Caixa Postal Automática 
+#127001 através do App de telefone."
 
 [node name="VoltarMsg" type="TextureButton" parent="PopupCelular/CelularUI/TelaMensagens/TelaChat3" unique_id=382539841]
 custom_minimum_size = Vector2(50, 50)
