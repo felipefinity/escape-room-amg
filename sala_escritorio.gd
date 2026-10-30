@@ -197,9 +197,10 @@ func validar_pin():
 		mensagem_pin.modulate = Color.WHITE # Volta para a cor branca original
 
 func _on_entrar_pc_pressed() -> void:
-	var senha_digitada = input_pc.text
+	# .to_lower() transforma tudo que a pessoa digitou em minúsculo na hora de testar
+	var senha_digitada = input_pc.text.to_lower()
 	
-	if senha_digitada == "CyberSec!26":
+	if senha_digitada == "cybersec":
 		# Feedback de Sucesso
 		mensagem_pc.text = "ACESSO CONCEDIDO"
 		mensagem_pc.modulate = Color.GREEN

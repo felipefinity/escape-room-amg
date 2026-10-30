@@ -81,7 +81,7 @@ vertical_alignment = 1
 
 [node name="MusicaInicial" type="AudioStreamPlayer" parent="." unique_id=1085292639]
 stream = ExtResource("3_4t2ck")
-volume_db = -2.0
+volume_db = -10.0
 parameters/looping = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

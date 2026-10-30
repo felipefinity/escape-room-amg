@@ -56,7 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://bsw10pwci54ft" path="res://telefone.png" id="30_84j3e"]
 [ext_resource type="Texture2D" uid="uid://bkrlcpdy5incd" path="res://deletar.png" id="31_4w0u3"]
 [ext_resource type="AudioStream" uid="uid://bsglnidwq0qrw" path="res://este-numero-que-voce-ligou.mp3" id="32_4w0u3"]
-[ext_resource type="AudioStream" uid="uid://bscikdnx4qubt" path="res://SenhaPc.mp3" id="32_vexcn"]
+[ext_resource type="AudioStream" uid="uid://bt88uxntmhl0d" path="res://senhapcescaperoom.mp3" id="42_80ygi"]
 [ext_resource type="AudioStream" uid="uid://cd5yiqpg8bjir" path="res://SomErro.mp3" id="58_cwy6d"]
 [ext_resource type="AudioStream" uid="uid://mqo14ddkgxj0" path="res://MusicaVitoria.mp3" id="59_ffw1a"]
 [ext_resource type="AudioStream" uid="uid://btn2jvmja6ks6" path="res://windows-xp-login.mp3" id="60_ygr3r"]
@@ -3697,7 +3697,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="AudioSenha" type="AudioStreamPlayer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1283978779]
-stream = ExtResource("32_vexcn")
+stream = ExtResource("42_80ygi")
 volume_db = 3.0
 
 [node name="AudioErro" type="AudioStreamPlayer" parent="PopupCelular/CelularUI/TelaTelefone" unique_id=1195828954]
